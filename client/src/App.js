@@ -6,7 +6,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:4000/',{
+    fetch('http://localhost:3000/',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
@@ -20,7 +20,10 @@ function App() {
   return (
     <div className="App">
       <form onClick={handleSubmit}>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)}>
+        <textarea 
+        value={message} 
+        placeholder="Ask Steve Anything"
+        onChange={(e) => setMessage(e.target.value)}>
         </textarea>
         <button ype="submit">
           Submit
