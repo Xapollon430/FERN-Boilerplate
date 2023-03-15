@@ -6,7 +6,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:3000/',{
+    fetch('http://127.0.0.1.3000',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
