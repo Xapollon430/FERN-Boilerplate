@@ -1,0 +1,219 @@
+$green-buble: '../images/medical/green_buble.png';
+$blue-buble: '../images/medical/blue_buble.png';
+$red-buble: '../images/medical/red_buble.png';
+
+#speciality {
+  .root {
+    position: relative;
+    padding-bottom: $spacing5;
+    @include breakpoints-down(sm) {
+      text-align: center;
+    }
+    @include breakpoints-down(xs) {
+      padding-bottom: $spacing3;
+    }
+    h4 {
+      @include breakpoints-down(sm) {
+        margin-top: $spacing2 * -1;
+        margin-bottom: $spacing3
+      }
+    }
+  }
+
+  .decoration {
+    .theme--dark & {
+      fill: $palette-primary-dark;
+      stroke: $palette-primary-dark;
+    }
+    .theme--light & {
+      fill: $palette-primary-light;
+      stroke: $palette-primary-light;
+    }
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: -180px;
+    @include breakpoints-down(md) {
+      transform: scale(0.8);
+    }
+  }
+
+  .desc {
+    line-height: 32px;
+    @include breakpoints-up(sm) {
+      padding: spacing(3, 0)
+    }
+  }
+
+  .illustration-wrap {
+    position: relative;
+    margin-top: -360px;
+    @include right(0px);
+    height: 300px;
+    transform-origin: top;
+    span {
+      background-size: 100%;
+      display: block;
+      position: relative;
+    }
+    @include breakpoints-down(sm) {
+      display: none
+    }
+  }
+
+  .icon-green {
+    top: -179px;
+    @include left(30px);
+    width: 320px;
+    height: 600px;
+    background: url($green-buble) no-repeat
+  }
+
+  .icon-red {
+    width: 560px;
+    height: 560px;
+    @include left(-50px);
+    top: -620px;
+    background: url($red-buble) no-repeat
+  }
+
+  .icon-blue {
+    width: 560px;
+    height: 560px;
+    @include left(0px);
+    top: -1170px;
+    background: url($blue-buble) no-repeat
+  }
+
+  .desc-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    transform: rotate(45deg);
+    margin-bottom: $spacing1;
+    @include breakpoints-down(sm) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    i.icon {
+      transform: rotate(-45deg);
+      margin: 4px 0px 0px 5px;
+      @include breakpoints-down(sm) {
+        margin: 5px 0px 0px 0px;
+      }
+    }
+  }
+
+  .icon {
+    &-primary {
+      background: $palette-primary-light;
+      i.icon {
+        color: $palette-primary-dark;
+      }
+    }
+    &-secondary {
+      background: $palette-secondary-light;
+      i.icon {
+        color: $palette-secondary-dark;
+      }
+    }
+    &-accent {
+      background: $palette-accent-light;
+      i.icon {
+        color: $palette-accent-dark;
+      }
+    }
+    &-accent2 {
+      background: #FBEABB;
+      i.icon {
+        color: #F38D21;
+      }
+    }
+  }
+
+  .running-tag {
+    position: relative;
+    height: 130px;
+    @include breakpoints-between(sm, md) {
+      margin-bottom: $spacing10
+    }
+    .slick-active {
+      .tag-item {
+        background: $palette-primary-main;
+        color: $palette-common-white;
+        border-color: $palette-primary-main
+      }
+    }
+  }
+
+  .tag-item {
+    display: inline-block;
+    border-radius: 40px;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in;
+    border: 1px solid;
+    font-size: 14px;
+    @include palette-divider;
+    @include margin-right($spacing1);
+    margin: $spacing1 0;
+    padding: spacing(0.5, 2)
+  }
+
+  .tag-group {
+    display: block;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .circle-wave {
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $palette-primary-main;
+    position: relative;
+    &:before {
+      content: "";
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      position: absolute;
+      top: -45px;
+      left: -45px;
+      border: 1px solid $palette-primary-main;
+    }
+  }
+
+  .ball {
+    border-radius: 50%;
+    width: 256px;
+    height: 256px;
+    position: relative;
+    @include use-theme(background-image, linear-gradient(95deg, $palette-primary-light 0%, $palette-secondary-light 110%), linear-gradient(95deg,  $palette-primary-dark 0%, $palette-secondary-dark 110%));
+    &:before {
+      content: "";
+      @include use-theme(background, #fff, #000);
+      opacity: 0.7;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      width: 256px;
+      height: 256px;
+      top: 0;
+    }
+    img {
+      width: 416px;
+      position: relative;
+      top: -40px;
+      left: -40px;
+      @include rtl-flip
+    }
+  }
+}

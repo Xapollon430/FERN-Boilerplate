@@ -1,0 +1,33 @@
+.root
+  .container.fixed-width
+    .row
+      .col-md-6.pa-sm-6.hidden-sm-down
+        .puzzle
+          .deco.deco-1
+          .deco.deco-2
+          figure.img.big
+            |
+            |
+            img(src=img_artwork[20] alt='gallery')/
+            |
+            |
+          figure.img.medium
+            |
+            |
+            img(src=img_artwork[19] alt='gallery')/
+            |
+            |
+          figure.img.small
+            |
+            |
+            img(src=img_artwork[18] alt='gallery')/
+            |
+            |
+          .deco.deco-3
+          .deco.deco-4
+          .deco.deco-5
+      .col-md-5.px-0
+        h4.title-default.use-text-subtitle
+          | #{$t.marketing_landing.about_subtitle}
+        p Which is why we provide you with the human resources you need to build whenever you need them. Your team is dedicated to your projects. And the team is flexible!
+        include counter.pug

@@ -1,0 +1,97 @@
+@mixin align {
+  &.align-left {
+    @include breakpoints-up(md) {
+      @include text-align(left);
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      .deco-title {
+        @include margin-left(calc(50% - 21px));
+      }
+    }
+  }
+
+  &.align-right {
+    @include breakpoints-up(md) {
+      @include text-align(right);
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      .deco-title {
+        @include margin-left(calc(50% - 21px));
+      }
+    }
+    .deco-title {
+      @include margin-left(auto);
+      @include margin-right(30px);
+    }
+  }
+
+  &.align-center {
+    text-align: center;
+    .deco-title {
+      @include margin-left(calc(50% - 21px));
+    }
+  }
+}
+
+.title-main {
+  @include align;
+  display: block;
+  position: relative;
+  margin-bottom: $spacing3;
+  .deco-title {
+    @include pie2;
+    width: 21px;
+    height: 21px;
+    position: relative;
+    @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+    &:after {
+      content: "";
+      width: 30px;
+      height: 30px;
+      @include pie1;
+      @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+    }
+  }
+  h4 {
+    margin-top: $spacing2;
+    @include palette-text-primary;
+    font-weight: $font-bold;
+    font-size: 36px;
+    @include breakpoints-down(md) {
+      font-size: 32px;
+      line-height: 48px
+    }
+    @include breakpoints-down(xs) {
+      font-size: 28px;
+      line-height: 44px;
+    }
+  }
+}
+
+.title-secondary {
+  display: block;
+  position: relative;
+  h4 {
+    @include palette-text-primary;
+    font-size: 36px;
+    line-height: 56px;
+    text-transform: capitalize;
+    font-weight: $font-bold;
+    @include breakpoints-down(md) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 28px;
+      line-height: 44px;
+    }
+  }
+  strong {
+    @include palette-text-primary
+  }
+}

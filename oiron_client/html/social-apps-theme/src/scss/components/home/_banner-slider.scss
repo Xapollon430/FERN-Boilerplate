@@ -1,0 +1,302 @@
+$liquid-deco: '../images/social/liquid-deco.svg';
+
+.banner-slider {
+  .banner-wrap {
+    position: relative;
+    display: block;
+    .slick-slide * {
+      direction: ltr
+    }
+    .carousel {
+      @include breakpoints-down(xs) {
+        position: relative;
+        z-index: 5;
+      }
+    }
+    .slick-dots {
+      @include breakpoints-down(sm) {
+        bottom: $spacing4
+      }
+    }
+  }
+
+  .slider-deco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .slick-list {
+      @include breakpoints-down(sm) {
+        height: 100%
+      }
+    }
+  }
+
+  .deco-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    transition: all 1s ease;
+    @include breakpoints-down(md) {
+      top: -120px
+    }
+  }
+
+  .deco {
+    border-radius: 80px;
+    position: absolute;
+    background: url($liquid-deco) no-repeat transparent;
+    background-size: 100%;
+    width: 1122px;
+    height: 950px;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0, -0.01, 0, 0.96);
+    &.s1 {
+      transform: translateX(100px) scale(0.8);
+      top: -120px;
+      right: -680px;
+    }
+    &.s2 {
+      transform: translateX(-100px) scale(0.8);
+      top: -290px;
+      left: -580px;
+    }
+  }
+
+  .slide {
+    position: relative;
+    @include breakpoints-down('sm') {
+      text-align: center;
+      padding: spacing(15, 0, 5)
+    }
+    h4 {
+      @include use-theme(color, $palette-primary-main,  $palette-primary-light)
+    }
+    .img img {
+      margin: 80px auto 0;
+      position: relative;
+      z-index: 5;
+      max-height: 260px;
+      @include breakpoints-down('sm') {
+        margin-top: $spacing3;
+      }
+    }
+    &.slick-active {
+      .deco {
+        transform: translateX(0px) scale(1);
+        opacity: 0.15;
+      }
+      .deco-wrap {
+        opacity: 1;
+      }
+    }
+    &.center-content {
+      padding-top: 120px !important;
+    }
+  }
+
+  .img-slide1 {
+    @include breakpoints-up(md) {
+      float: left
+    }
+  }
+
+  .img-slide2 {
+    @include breakpoints-up(md) {
+      float: right
+    }
+  }
+  
+  .h-banner {
+    text-align: center;
+    &.img {
+      img {
+        margin-top: $spacing5;
+        z-index: 4;
+        @include breakpoints-up(md) {
+          height: 164px;
+        }
+        @include breakpoints-down(xs) {
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  .background-banner.img {
+    position: absolute;
+    z-index: 6;
+    right: -320px;
+    top: 20px;
+    img {
+      max-height: 350px;
+    }
+    @include breakpoints-up(xl) {
+      display: none;
+    }
+    @include breakpoints-down(md) {
+      display: none;
+    }
+  }
+
+  .slide-nav-group {
+    position: relative;
+  }
+
+  .slider-deco {
+    .slide {
+      height: 950px;
+    }
+  }
+
+  .slider {
+    height: auto;
+    .slide {
+      @include breakpoints-up('md') {
+        height: 600px;
+        padding-top: $spacing8;
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    @include breakpoints-down('md') {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .text {
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing2;
+    }
+    h5 {
+      @include palette-text-secondary;
+      margin-bottom: $spacing4
+    }
+  }
+
+ .btn-area {
+    @include breakpoints-down(sm) {
+      justify-content: center;
+    }
+    &.download {
+      display: flex;
+    }
+    .btn, .btn-flat {
+      font-size: 18px;
+      max-width: 200px;
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-bottom: $spacing2;
+      }
+    }
+    .btn-flat {
+      padding-left: $spacing1;
+      padding-right: $spacing1;
+      @include breakpoints-up(sm) {
+        margin-left: -8px;
+        margin-right: $spacing2;
+      }
+      .theme--dark & {
+        color: $palette-primary-light !important
+      }
+    }
+    a:not(.btn) {
+      display: inline-block;
+      @include breakpoints-up(sm) {
+        @include margin-right($spacing2)
+      }
+      @include breakpoints-down(xs) {
+        margin: 4px;
+      }
+      img {
+        width: 160px;
+        @include breakpoints-down(xs) {
+          width: 100%
+        }
+      }
+    }
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: auto;
+    a {
+      line-height: normal;
+      padding: 8px 24px 4px;
+      text-transform: none;
+      height: auto;
+      border: 1px solid transparent;
+      font-weight: $font-regular;
+      border-radius: 60px;
+      font-size: 14px;
+      strong {
+        line-height: normal;
+        text-transform: capitalize;
+        font-size: 28px;
+        position: relative;
+        display: block;
+        font-weight: $font-bold;
+        @include margin-left(-2px);
+        transition: all 0.3s ease-out;
+        &:before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          opacity: 0;
+          transform: scale(0);
+          transition: all 0.5s ease-out;
+          background: $palette-secondary-main;
+          position: absolute;
+          border-radius: 50%;
+          top: 12px;
+          @include left(0);
+        }
+      }
+      &:hover {
+        transition: all 0.3s ease-out;
+        @include use-theme(background, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+        strong {
+          color: $palette-secondary-main;
+        }
+      }
+      &.active {
+        strong {
+          color: $palette-secondary-main;
+          @include padding-left(24px);
+          &:before {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    margin: auto $spacing2;
+    @include palette-divider;
+    min-height: 0;
+    max-height: calc(100% - 16px);
+    align-self: stretch;
+    border: solid;
+    border-width: 0 thin 0 0;
+    display: inline-flex;
+    height: inherit;
+    max-width: 0;
+    width: 0;
+    vertical-align: text-bottom;
+    flex: 1 1 0px;
+  }
+}

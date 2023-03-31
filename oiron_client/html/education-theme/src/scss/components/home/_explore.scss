@@ -1,0 +1,113 @@
+#explore {
+  .root {
+    position: relative;
+    padding-top: $spacing5;
+    overflow: hidden;
+    @include breakpoints-up(sm) {
+      padding: spacing(5, 0);
+    }
+    .container {
+      @include breakpoints-down(md) {
+        padding: 0 !important;
+      }
+    }
+    &:before {
+      content: "";
+      opacity: 0.27;
+      width: calc(100% - 160px);
+      height: 105%;
+      position: absolute;
+      top: 0;
+      @include left(0);
+      @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+      @include breakpoints-up(sm) {
+        top: -160px;
+      }
+      @include breakpoints-down(sm) {
+        width: 100%;
+        border-radius: 0 !important
+      }
+      [dir="rtl"] & {
+        border-bottom-left-radius: 100px;
+      }
+      [dir="ltr"] & {
+        border-bottom-right-radius: 100px;
+      }
+    }
+  }
+
+  .category-title {
+    h3 {
+      font-size: 28px;
+      font-weight: $font-bold;
+      display: flex;
+    }
+    i {
+      @include palette-text-secondary;
+    }
+    @include breakpoints-up(sm) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include breakpoints-down(md) {
+      padding: spacing(0, 4);
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+    }
+  }
+
+  .rack {
+    display: block;
+    position: relative;
+    margin-top: $spacing10;
+    margin-bottom: 100px;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      border-radius: 60px;
+      @include use-theme(background, #000, #FFF);
+      opacity: 0.1;
+      bottom: -20px;
+      left: 0;
+    }
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    margin-top: $spacing4;
+    padding: 0 $spacing4;
+    @include breakpoints-down(md) {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  }
+
+  .view-all {
+    margin-bottom: 50px;
+    display: flex;
+    @include breakpoints-up(lg) {
+      @include margin-right(160px);
+    }
+    @include breakpoints-up(sm) {
+      font-size: 24px;
+    }
+    @include breakpoints-down(sm) {
+      margin-bottom: 0;
+      margin-top: 16px;
+    }
+    @include breakpoints-down(xs) {
+      justify-content: center
+    }
+    .icon {
+      @include margin-left($spacing1);
+      @include rtl-flip;
+      @include breakpoints-up(sm) {
+        font-size: 36px;
+      }
+    }
+  }
+}

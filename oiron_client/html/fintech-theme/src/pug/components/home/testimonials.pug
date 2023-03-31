@@ -1,0 +1,79 @@
+include ../titles/title.pug
+include ../cards/testi-card.pug
+
+-
+  var testiData = [
+    {
+      img: img_artwork[34],
+      text:
+        'Great app, with many advantages in daily activities, such as: pay bills, top up internet quota, etc, its make easier to have transactions in modern life.',
+      name: 'John Doe',
+      title: 'Chief Digital Officer'
+    },
+    {
+      img: img_artwork[35],
+      text:
+        'This is a great app. It enable transfer to any bank without administration fee, top up without administration fee and surely a lot of promos and cashbacks.',
+      name: 'Jean Doe',
+      title: 'Chief Digital Officer'
+    },
+    {
+      img: img_artwork[36],
+      text:
+        'Good app, many promos, also have a good UI.',
+      name: 'Jena Doe',
+      title: 'Graphic Designer'
+    },
+    {
+      img: img_artwork[37],
+      text: 'I personally enjoy this apps so much. It worked for me to pay at merchants, to transfer without admin to all bank account, to buy my pulse, transfer to my friend\'s.',
+      name: 'Jack Doe',
+      title: 'Senior Graphic Designer'
+    },
+    {
+      img: img_artwork[38],
+      text:
+        'Nice app, easy to use and lot of promotion and partner. Its free to transfer to another bank account which is its good. really good actually.',
+      name: 'James Doe',
+      title: 'CEO Software House'
+    },
+    {
+      img: img_artwork[35],
+      text:
+        'It\'s a great financial application. I get top up limit up to 20million IDR and use it for transfer between bank.',
+      name: 'Jovelin Doe',
+      title: 'Senior Graphic Designer'
+    }
+  ]
+
+.root
+  .container
+    +title-main("center", $t.fintech_landing.testi_title)
+    p.use-text-subtitle2.text-center
+      | #{$t.fintech_landing.testi_subtitle}
+    .slider-wrap
+      .carousel
+        |
+        |
+        button.waves-effect.btn.primary.nav.prev#prev_testi
+          |
+          |
+          i.ion-ios-arrow-back
+          |
+          |
+        |
+        |
+        .slick-carousel#testimonial_carousel
+          each item in testiData
+            .item
+              +testi-card(item.img, item.text, item.name, item.title)
+        |
+        |
+        button.waves-effect.btn.primary.nav.next#next_testi
+          |
+          |
+          i.ion-ios-arrow-forward
+          |
+          |
+        |
+        |

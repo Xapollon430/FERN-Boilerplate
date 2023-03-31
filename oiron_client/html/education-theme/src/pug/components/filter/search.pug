@@ -1,0 +1,20 @@
+// #### SEARCH ####
+include ../titles/title
+include ../hero-banner
+
++hero-banner
+  section.search-banner
+    .container.max-md
+      .row.search-block.align-items-center.justify-content-center
+        col-sm-12
+          +title-main('center', $t.common.list_title, $t.common.list_subtitle, 'secondary')
+          .search
+            .input-field
+              |
+              |
+              i.material-icons.prefix search
+              |
+              |
+              input#search_product(type='text' placeholder=$t.common.list_search)
+              |
+              |

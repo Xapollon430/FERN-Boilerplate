@@ -1,0 +1,25 @@
+mixin discover-card(img, illustration2d, illustration3d, color, title, desc)
+  .discover-card
+    figure.screen
+      |
+      |
+      img(src=img alt='screen')/
+      |
+      |
+    .card.paper
+      |
+      |
+      img.img-2d3d(
+        src=img_assets+illustration3d
+        data-2d=img_assets+illustration2d
+        data-3d=img_assets+illustration3d
+        alt='illustration'
+      )/
+      |
+      |
+      strong(class="use-text-" + color + "-color")
+        | #{title}
+      |
+      |
+      p
+        | #{desc}

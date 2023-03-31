@@ -1,0 +1,49 @@
+include ../titles/title.pug
+
+-
+  var imgSlider = [
+    img_artwork[32],
+    img_artwork[33],
+    img_artwork[34],
+    img_artwork[35],
+    img_artwork[36],
+    img_artwork[37]
+  ]
+
+.root
+  .illustration-bg
+    |
+    |
+    img.img-2d3d(src=img_assets+img_artwork[11] data-2d=img_assets+img_artwork[10] data-3d=img_assets+img_artwork[11] alt='feature')/
+    |
+    |
+  .container.max-md.fixed-width
+    .wrapper
+      .desc
+        +title-main('center', $t.cloud_landing.benefit_headtitle, $t.cloud_landing.benefit_title, true)
+        p.use-text-subtitle2
+          | #{$t.cloud_landing.banner_subtitle}
+        .carousel
+          .nav
+            |
+            |
+            a.prev#benefit_prev
+              i.material-icons keyboard_arrow_left
+            |
+            |
+            a.next#benefit_next
+              i.material-icons keyboard_arrow_right
+            |
+            |
+          .slider#benefit_slider
+            each item in imgSlider
+              .slide
+                .border-gradient
+                  figure
+                    |
+                    |
+                    img(src=item alt='screen')/
+                    |
+                    |
+
+

@@ -1,0 +1,124 @@
+include ../titles/title.pug
+
+-
+  var integration1 = [
+    {
+      color: 'primary',
+      icon: 'ion-android-time',
+      title: 'Retrospective',
+      subtitle: 'Saving time while eliminating error-prone manual processes that pose a security risk.'
+    },
+    {
+      color: 'accent',
+      icon: 'ion-ios-lightbulb-outline',
+      title: 'Decision-making framework',
+      subtitle: 'Define each person’s role in making high-impact  decisions.'
+    },
+    {
+      color: 'secondary',
+      icon: 'ion-ios-world-outline',
+      title: 'Role & Responsibilities',
+      subtitle: 'Clarify who does what, plus identify gaps and overlaps.'
+    }
+  ]
+
+  var integration2 = [
+    {
+      color: 'secondary',
+      icon: 'ion-ios-flask-outline',
+      title: 'Agile tools for agile teams',
+      subtitle: 'Stay on track as you plan, develop, and deliver products.'
+    },
+    {
+      color: 'primary',
+      icon: 'ion-ios-navigate-outline',
+      title: 'Move work forward',
+      subtitle: 'Create, organize, discuss, and complete work, together.'
+    },
+    {
+      color: 'accent',
+      icon: 'ion-wand',
+      title: 'Resolve incidents faster',
+      subtitle: 'Unite development, operations, & support to keep downtime to a minimum.'
+    }
+  ]
+
+.root
+  .decoration-bg
+    |
+    |
+    svg.wave(width="1440px" height="1038px" viewBox="0 0 1440 1038" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+      include ../svg/deco-bg2.pug
+    |
+    |
+  .container
+    .row
+      .dashed-divider
+      .col-md-6.px-sm-10.mb-10.mb-md-0
+        .wow.fadeInUpShort(data-wow-offset="-100" data-wow-delay="0.5s" data-wow-duration="0.5s")
+          div
+            figure.illustration
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[16]
+                data-2d=img_assets+img_artwork[15]
+                data-3d=img_assets+img_artwork[16]
+                alt='background'
+              )/
+              |
+              |
+            +title-main('center')
+              span
+                | #{$t.saas_landing.feature_title1}
+            h6.use-text-subtitle2.text-center
+              | #{$t.saas_landing.feature_desc1}
+      .col-md-6.px-sm-10
+        .wow.fadeInUpShort(data-wow-offset="-100" data-wow-delay="0.8s" data-wow-duration="0.5s")
+          div
+            figure.illustration
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[18]
+                data-2d=img_assets+img_artwork[17]
+                data-3d=img_assets+img_artwork[18]
+                alt='background'
+              )/
+              |
+              |
+            +title-main('center')
+              span
+                | #{$t.saas_landing.feature_title3}
+            h6.use-text-subtitle2.text-center
+              | #{$t.saas_landing.feature_desc2}
+  .container
+    .timeline
+      .solid-divider
+      .row
+        .col-sm-6.py-0.px-md-10
+          ul.left-side
+            each item, index in integration1
+              li(class="type-" + item.color)
+                .wow.fadeInRightShort(data-wow-offset="-100" data-wow-delay=(0.2 + (0.1 * index)) + "s" data-wow-duration="0.5s")
+                  .item
+                    .text
+                      strong #{item.title}
+                      p #{item.subtitle}
+                    .icon
+                      |
+                      |
+                      i(class=item.icon)
+                      |
+                      |
+        .col-sm-6.py-0.px-md-10
+          ul.right-side
+            each item, index in integration2
+              li(class="type-" + item.color)
+                .wow.fadeInLeftShort(data-wow-offset="-100" data-wow-delay=(0.2 + (0.2 * index)) + "s" data-wow-duration="0.5s")
+                  .item
+                    .icon
+                      i(class=item.icon)
+                    .text
+                      strong #{item.title}
+                      p #{item.subtitle}

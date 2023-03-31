@@ -1,0 +1,117 @@
+include ../titles/title.pug
+
+-
+  var integration1 = [
+    {
+      color: 'secondary',
+      icon: 'ion-flash',
+      title: 'Complete set block services',
+      subtitle: 'Choose from a wide variety of services'
+    },
+    {
+      color: 'secondary',
+      icon: 'ion-folder',
+      title: 'Rich marketplace apps',
+      subtitle: 'Leverage popular web application frameworks'
+    },
+    {
+      color: 'secondary',
+      icon: 'ion-locked',
+      title: 'Innovate on a secure hybrid',
+      subtitle: 'Run machine learning workloads'
+    }
+  ]
+
+  var integration2 = [
+    {
+      color: 'primary',
+      icon: 'ion-merge',
+      title: 'Predictable costs and billing',
+      subtitle: 'Always know what you’ll pay per month'
+    },
+    {
+      color: 'primary',
+      icon: 'ion-soup-can',
+      title: 'Build business machine',
+      subtitle: 'Empower developers to build'
+    },
+    {
+      color: 'primary',
+      icon: 'ion-upload',
+      title: 'Deliver responsible solutions',
+      subtitle: 'Develop models for explainability'
+    }
+  ]
+
+.root
+  .container
+    .row
+      .dashed-divider
+      .col-md-6.px-sm-10.mb-10.mb-md-0
+        .wow.fadeInDownShort(data-wow-delay="0.5s" data-wow-duration="0.5s")
+          div
+            figure.illustration
+              |
+              |
+              svg.droplet.secondary-color(width="7px" height="128px" viewBox="0 0 7 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+                include ../svg/droplet
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[21]
+                data-2d=img_assets+img_artwork[20]
+                data-3d=img_assets+img_artwork[21]
+                alt='background'
+              )/
+              |
+              |
+            +title-main('center', $t.cloud_landing.mainfeature_titleitem2, $t.cloud_landing.mainfeature_titleitem1)
+      .col-md-6.px-sm-10
+        .wow.fadeInDownShort(data-wow-delay="0.8s" data-wow-duration="0.5s")
+          div
+            figure.illustration
+              |
+              |
+              svg.droplet.primary-color(width="7px" height="128px" viewBox="0 0 7 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+                include ../svg/droplet
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[23]
+                data-2d=img_assets+img_artwork[22]
+                data-3d=img_assets+img_artwork[23]
+                alt='background'
+              )/
+              |
+              |
+            +title-main('center', $t.cloud_landing.morefeature_headtitle2, $t.cloud_landing.benefit_title)
+  .container
+    .timeline
+      .solid-divider
+      .row
+        .col-sm-6.py-0.px-md-10
+          ul.left-side
+            each item, index in integration1
+              li(class="type-" + item.color)
+                .wow.fadeInRightShort(data-wow-offset="-100" data-wow-delay=(0.2 + (0.1 * index)) + "s" data-wow-duration="0.5s")
+                  .item
+                    .text
+                      strong.use-text-subtitle2 #{item.title}
+                      p #{item.subtitle}
+                    .icon
+                      |
+                      |
+                      i(class=item.icon)
+                      |
+                      |
+        .col-sm-6.py-0.px-md-10
+          ul.right-side
+            each item, index in integration2
+              li(class="type-" + item.color)
+                .wow.fadeInLeftShort(data-wow-offset="-100" data-wow-delay=(0.2 + (0.2 * index)) + "s" data-wow-duration="0.5s")
+                  .item
+                    .icon
+                      i(class=item.icon)
+                    .text
+                      strong.use-text-subtitle2 #{item.title}
+                      p #{item.subtitle}

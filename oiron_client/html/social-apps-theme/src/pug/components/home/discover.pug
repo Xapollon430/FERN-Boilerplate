@@ -1,0 +1,65 @@
+include ../titles/title.pug
+include ../cards/discover-card.pug
+
+-
+  var discoverData = [
+    {
+      title: 'item1_title',
+      desc: 'item1_desc',
+      color: 'primary',
+      illustration: [img_artwork[15], img_artwork[16]],
+      img: img_artwork[30]
+    },
+    {
+      title: 'item2_title',
+      desc: 'item2_desc',
+      color: 'secondary',
+      illustration: [img_artwork[17], img_artwork[18]],
+      img: img_artwork[31]
+    },
+    {
+      title: 'item3_title',
+      desc: 'item3_desc',
+      color: 'accent',
+      illustration: [img_artwork[19], img_artwork[20]],
+      img: img_artwork[32]
+    },
+    {
+      title: 'item4_title',
+      desc: 'item4_desc',
+      color: 'primary',
+      illustration: [img_artwork[21], img_artwork[22]],
+      img: img_artwork[33]
+    },
+    {
+      title: 'item5_title',
+      desc: 'item5_desc',
+      color: 'secondary',
+      illustration: [img_artwork[23], img_artwork[24]],
+      img: img_artwork[34]
+    },
+    {
+      title: 'item6_title',
+      desc: 'item6_desc',
+      color: 'accent',
+      illustration: [img_artwork[25], img_artwork[26]],
+      img: img_artwork[35]
+    }
+  ]
+
+.root
+  +title-main("center")
+    | #{$t.social_landing.discover_title}
+  .slider-wrap
+    .carousel
+      .slick-carousel#slider_discover
+        each item in discoverData
+          .item
+            +discover-card(
+              item.img,
+              item.illustration[0],
+              item.illustration[1],
+              item.color,
+              $t.social_landing['discover_' + item.title],
+              $t.social_landing['discover_' + item.desc]
+            )

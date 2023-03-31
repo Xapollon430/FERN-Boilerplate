@@ -1,0 +1,50 @@
+.subsribe-form{
+  .root {
+    position: relative;
+    text-align: center;
+    margin-top: 300px;
+    margin-bottom: $spacing10;
+    @include breakpoints-down(xs) {
+      margin-top: 130px
+    }
+  }
+
+  .form {
+    position: relative;
+    margin-top: $spacing2
+  }
+
+  .field {
+    padding-right: 150px;
+    padding-left: $spacing3;
+    color: #fff;
+    width: 100%;
+    border-radius: $rounded-medium;
+    border: 1px solid $palette-primary-main;
+    .input-field {
+      margin: 0;
+      border: none;
+    }
+    input {
+      border: none;
+      margin-bottom: 0;
+      height: auto;
+      padding: 18px 0;
+    }
+  }
+
+  .button {
+    position: absolute;
+    @include right($spacing1);
+    top: 7px;
+    width: 140px;
+    @include breakpoints-down(sm) {
+      padding: spacing(0.5, 3);
+      min-width: 0;
+      width:auto;
+    }
+    @include breakpoints-down(xs) {
+      padding: spacing(0.5, 1)
+    }
+  }
+}

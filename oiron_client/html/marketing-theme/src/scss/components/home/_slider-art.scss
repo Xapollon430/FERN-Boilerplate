@@ -1,0 +1,20 @@
+.slider-art {
+  .figure {
+    width: 310px;
+    max-height: 400px;
+    margin-top: $spacing5;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.3s ease;
+    img {
+      position: relative;
+      width: 100%;
+      @include margin-left($spacing3);
+      margin-top: $spacing10;
+    }
+  }
+
+  .faded {
+    opacity: 0.15;
+  }
+}

@@ -1,0 +1,17 @@
+include ../cards/news-card.pug
+include ../titles/title.pug
+
+.root
+  +title-main("center")
+    | #{$t.retail_landing.news_title}
+  p.use-text-subtitle2.text-center
+    | #{$t.retail_landing.news_desc}
+  .blog-wrap
+    .container.fixed-width
+      .row.spacing6.list-news
+        .col-md-5.py-0.px-sm-5.px-lg-10
+          +news-card("Sed imperdiet enim ligula, vitae viverra justo.", "headline", "portrait", "over", imgAPI.photo[21], link.retail.blogDetail)
+        .col-md-7.py-0.px-sm-5.px-lg-10
+          +news-card("Vestibulum dignissim orci vitae eros rutrum euismod.", "news", "landscape", "over", imgAPI.photo[22], link.retail.blogDetail)
+          +news-card("Vestibulum dignissim orci vitae eros rutrum euismod.", "news", "landscape", "over", imgAPI.photo[37], link.retail.blogDetail)
+

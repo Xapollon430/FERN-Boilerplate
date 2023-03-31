@@ -1,0 +1,32 @@
+#about {
+  .root {
+    position: relative;
+    @include breakpoints-down(sm) {
+      text-align: center;
+      padding-bottom: $spacing1;
+      .title-main {
+        text-align: center
+      }
+    }
+    p {
+      margin-bottom: $spacing5
+    }
+  }
+
+  .illu-wrap {
+    position: static;
+  }
+
+  .btn {
+    min-width: 150px;
+  }
+
+  .illustration {
+    @include breakpoints-down(sm) {
+      margin-bottom: $spacing6
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+include ../../titles/title.pug
+
+.more-feature
+  .container
+    .item
+      .row.spacing6
+        .col-md-6.pa-sm-4.px-0.order-md-last
+          .text
+            +title-main("left", $t.cloud_landing.morefeature_headtitle1, $t.cloud_landing.morefeature_title1)
+            div.text-center.text-md-start
+              p.use-text-subtitle2.text-center.text-md-start
+                | #{$t.cloud_landing.morefeature_desc1}
+              a.btn.primary.waves-effect(href="#")
+                | #{$t.cloud_landing.learnmore}
+        .col-md-6.px-sm-6.px-0.order-md-first
+          .wow.fadeInRightShort(data-wow-delay="0.4s" data-wow-offset="100" data-wow-duration="0.3s")
+            figure.illustration
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[17]
+                data-2d=img_assets+img_artwork[16]
+                data-3d=img_assets+img_artwork[17]
+                alt='feature'
+              )/
+              |
+              |
+    hr.divider/
+    .item
+      .row.spacing6
+        .col-md-6.pa-sm-4.px-0
+          .text.text-right
+            .wow.fadeInRightShort(data-wow-delay="0.4s" data-wow-duration="0.3s")
+              div
+                +title-main("right", $t.cloud_landing.morefeature_headtitle2, $t.cloud_landing.morefeature_title2)
+                div.text-center.text-md-end
+                  p.use-text-subtitle2.text-center.text-md-end
+                    | #{$t.cloud_landing.morefeature_desc2}
+                  a.btn.primary.waves-effect(href="#")
+                    | #{$t.cloud_landing.learnmore}
+        .col-md-6.pa-sm-6.px-0
+          .wow.fadeInLeftShort(data-wow-delay="0.4s" data-wow-duration="0.3s")
+            figure.illustration
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[19]
+                data-2d=img_assets+img_artwork[18]
+                data-3d=img_assets+img_artwork[19]
+                alt='feature'
+              )/
+              |
+              |

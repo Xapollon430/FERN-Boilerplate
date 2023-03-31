@@ -1,0 +1,216 @@
+$pipe-deco: '../images/retail/pipe-deco.svg';
+
+#feature {
+  .root {
+    position: relative;
+    z-index: 4;
+    .modal.video-popup {
+      @include breakpoints-down(xs) {
+        width: 99%
+      }
+      .modal-content {
+        padding: $spacing2
+      }
+    }
+    .btn {
+      width: 160px;
+    }
+  }
+
+  .item {
+    position: relative;
+    min-height: 320px;
+    margin-bottom: $spacing5;
+    @include breakpoints-up(sm) {
+      margin-bottom: $spacing10;
+    }
+    @include breakpoints-down(sm) {
+      text-align: center
+    }
+    .desc {
+      position: relative;
+      z-index: 60
+    }
+    &.last {
+      margin-bottom: $spacing10;
+      .container {
+        position: relative;
+      }
+    }
+    h6 {
+      margin-bottom: $spacing5
+    }
+  }
+
+  .illustration {
+    position: relative;
+  }
+
+  .mobile-screen {
+    width: 203px;
+    height: 405px;
+    overflow: hidden;
+    position: relative;
+    border-radius: $rounded-big;
+    @include shade2;
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+    img {
+      height: 100%;
+      min-width: 100%;
+    }
+  }
+
+  .desktop-screen {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    border-radius: $rounded-big;
+    @include shade2;
+    background: $palette-common-white;
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+  }
+
+  .graphic {
+    position: relative;
+    img {
+      max-width: 100%
+    }
+  }
+
+  .screen1 {
+    margin: 0 auto;
+  }
+
+  .artwork1 {
+    @include breakpoints-up(lg) {
+      left: 100px;
+    }
+    @include breakpoints-up(md) {
+      width: 160px;
+      position: absolute;
+      top: -50px;
+      left: 50px;
+    }
+    @include breakpoints-down(sm) {
+      margin: 0 auto;
+    }
+  }
+
+  .artwork2 {
+    @include breakpoints-up(md) {
+      width: 380px;
+      position: absolute;
+      bottom: $spacing3;
+      @include right(-220px);
+      .v-application--is-rtl & {
+        @include right($spacing15 * -1);
+      }
+    }
+    @include breakpoints-up(lg) {
+      @include right($spacing15 * -1);
+    }
+    @include breakpoints-down(sm) {
+      margin: 0 auto;
+    }
+  }
+
+  .bg {
+    position: absolute;
+    background: url($pipe-deco) no-repeat transparent;
+    width: 457px;
+    height: 362px;
+    opacity: 0.15;
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+  }
+
+  .pipe1 {
+    top: 100px;
+    left: -50px;
+  }
+
+  .pipe2 {
+    top: -20px;
+    left: -120px;
+    transform: rotate(90deg) scaleY(-1);
+  }
+
+  .pipe3 {
+    top: 400px;
+    left: -160px;
+  }
+
+  .pipe4 {
+    bottom: -80px;
+    right: -120px;
+  }
+
+  .video {
+    overflow: hidden;
+    font-weight: $font-bold;
+    text-align: center;
+    margin-top: $spacing5;
+    width: 100%;
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $palette-common-black;
+    @include breakpoints-down(xs) {
+      height: 180px;
+    }
+    img {
+      position: absolute;
+      @include left(0);
+      width: 100%;
+      min-height: 100%;
+      opacity: 0.7
+    }
+    .button {
+      background: $palette-primary-main;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      @include breakpoints-up(sm) {
+        line-height: 130px;
+        width: 130px;
+        height: 130px;
+      }
+      i {
+        color: $palette-common-white;
+        display: inline-block;
+        line-height: inherit;
+        font-size: 14px;
+        @include breakpoints-up(sm) {
+          font-size: 32px;
+          transform: scale(1.7) translateX(2px);
+        }
+      }
+    }
+  }
+
+  .video-popup {
+    .modal-close {
+      position: absolute;
+      top: 4px;
+      @include right(0px)
+    }
+    max-width: none;
+    @include breakpoints-up(sm) {
+      width: 690px;
+    }
+    @include breakpoints-down(xs) {
+      iframe {
+        width: 100%
+      }
+    }
+  }
+}

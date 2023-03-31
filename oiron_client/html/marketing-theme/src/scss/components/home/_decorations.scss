@@ -1,0 +1,76 @@
+.home-deco {
+  .primary-light {
+    fill: $palette-primary-light
+  }
+
+  .primary-light-stroke {
+    stroke: $palette-primary-light
+  }
+
+  .primary-main {
+    fill: $palette-primary-main
+  }
+
+  .primary-main-stroke {
+    stroke: $palette-primary-main
+  }
+
+  .primary-dark {
+    fill: $palette-primary-dark
+  }
+
+  .secondary-light {
+    fill: $palette-secondary-light
+  }
+
+  .secondary-light-stroke {
+    stroke: $palette-secondary-light
+  }
+
+  .secondary-main {
+    fill: $palette-secondary-main
+  }
+
+  .secondary-main-stroke {
+    stroke: $palette-secondary-main
+  }
+
+  .secondary-dark {
+    fill: $palette-secondary-dark
+  }
+
+  .accent-light {
+    fill: $palette-accent-light
+  }
+
+  .accent-main {
+    fill: $palette-accent-main
+  }
+
+  .accent-dark {
+    fill: $palette-accent-dark
+  }
+
+  .deco {
+    &-mountain {
+      position: absolute;
+      left: 80px;
+      top: 50px;
+    }
+    &-building {
+      position: absolute;
+      left: 20px;
+      top: -30px;
+    }
+    &-light {
+      position: absolute;
+      left: 60px;
+      top: 70px;
+    }
+    &-room {
+      position: absolute;
+      right: -20px;
+      top: 150px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.footer-deco {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: url('../images/marketing/footer-deco.svg') repeat-x bottom;
+  .theme--dark & {
+    opacity: 0.2
+  }
+}

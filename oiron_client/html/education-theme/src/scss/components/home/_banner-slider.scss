@@ -1,0 +1,305 @@
+.banner-slider {
+  .banner-wrap {
+    position: relative;
+    display: block;
+    .slick-slider {
+      height: auto;
+    }
+    .slick-dots {
+      bottom: 0;
+      @include breakpoints-down(xs) {
+        bottom: $spacing4
+      }
+    }
+  }
+
+  .bg-deco {
+    position: absolute;
+    width: 110%;
+    height: 1260px;
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+    opacity: 0.27;
+    transform: rotate(-10deg);
+    top: -560px;
+    left: -40px;
+    border-radius: 80px;
+  }
+
+  .small-deco {
+    position: relative;
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+    & > div {
+      position: absolute;
+      width: 475px;
+      height: 300px;
+      @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+      transform: rotate(-10deg);
+      top: -200px;
+      @include right(-40px);
+      border-radius: 40px;
+    }
+  }
+
+  .slide {
+    direction: ltr;
+    position: relative;
+    padding-top: $spacing2;
+    @include breakpoints-up(lg) {
+      height: 580px;
+    }
+    @include breakpoints-down(md) {
+      padding-top: $spacing20;
+      padding-bottom: $spacing5
+    }
+    @include breakpoints-down(xs) {
+      padding-top: $spacing15;
+    }
+    * {
+      direction: ltr;
+    }
+    img {
+      margin: 0 auto;
+      max-height: 350px;
+      position: relative;
+      @include breakpoints-up(sm) {
+        max-width: 100%;
+      }
+      @include breakpoints-down(sm) {
+        margin-top: $spacing6
+      }
+    }
+    &.center-content {
+      @include breakpoints-up(md) {
+        padding-top: $spacing12;
+      }
+    }
+  }
+
+  .img-slide1 {
+    @include breakpoints-down(lg) {
+      float: left
+    }
+  }
+
+  .img-slide2 {
+    @include breakpoints-between(md, lg) {
+      float: right
+    }
+    @include breakpoints-down(xs) {
+      left: -150px
+    }
+  }
+
+  .h-banner {
+    text-align: center;
+    margin-top: $spacing3;
+    img {
+      @include breakpoints-up(md) {
+        width: 50%;
+      }
+      @include breakpoints-down(sm) {
+        margin-top: $spacing10;
+      }
+      @include breakpoints-down(xs) {
+        left: 0;
+      }
+    }
+  }
+
+  .background-banner {
+    position: absolute;
+    z-index: 3;
+    right: -250px;
+    bottom: 100px;
+    img {
+      max-height: 300px;
+    }
+    @include breakpoints-down(md) {
+      bottom: 0;
+    }
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+    @include breakpoints-up(xl) {
+      display: none;
+    }
+  }
+  
+  .slide-nav-group {
+    position: relative;
+  }
+
+  .inner {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    @include breakpoints-down('md') {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .text {
+    @include breakpoints-down(sm) {
+      text-align: center;
+    }
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing2;
+    }
+    h5 {
+      @include palette-text-secondary;
+      margin-bottom: $spacing4
+    }
+  }
+
+  .title {
+    position: relative;
+    h4 {
+      position: relative;
+    }
+    &-left {
+      &:before {
+        content: '';
+        height: 20px;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+        @include use-theme(opacity, 1, 0.7);
+        width: 40%;
+        position: absolute;
+        bottom: 10px;
+        @include left(0);
+        z-index: 0;
+        @include breakpoints-down(sm) {
+          height: 10px;
+          @include left(30%);
+        }
+      }
+    }
+    &-right {
+      &:before {
+        content: '';
+        height: 20px;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+        @include use-theme(opacity, 1, 0.7);
+        width: 40%;
+        position: absolute;
+        bottom: 10px;
+        @include right(0);
+        z-index: 0;
+        @include breakpoints-down(sm) {
+          height: 10px;
+          @include left(30%);
+        }
+      }
+    }
+    &-center {
+      &:before {
+        content: '';
+        height: 20px;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+        @include use-theme(opacity, 1, 0.7);
+        width: 40%;
+        position: absolute;
+        bottom: 10px;
+        @include left(30%);
+        z-index: 0;
+      }
+    }
+  }
+
+  .title-wrap {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .btn-area {
+    & > * {
+      @include breakpoints-up(sm) {
+        @include margin-right($spacing3);
+      }
+    }
+    .btn-flat {
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+      font-size: 18px;
+      padding: spacing(0, 0.5);
+    }
+    .btn {
+      width: 180px;
+      font-size: 18px;
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-bottom: $spacing2
+      }
+    }
+  }
+
+  .slide-nav {
+    display: flex;
+    a {
+      text-transform: none;
+      height: auto;
+      padding: $spacing1;
+      line-height: initial;
+      border-radius: $rounded-small;
+      flex: 1;
+      font-weight: $font-regular;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 0 auto;
+      @include text-align(left);
+      strong {
+        text-transform: capitalize;
+        font-size: 28px;
+        display: block;
+        font-weight: $font-bold;
+        @include margin-left(-2px);
+        z-index: 1;
+      }
+      &:after {
+        content: '';
+        height: 14px;
+        @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+        width: 0%;
+        position: absolute;
+        top: 24px;
+        @include left(4px);
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        transition: all 0.3s ease-out;
+        background: none;
+        &:after {
+          width: 60%;
+        }
+      }
+      &.active {
+        &:after {
+          width: 60%;
+        }
+        strong {
+          @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+        }
+      }
+    }
+  }
+
+  .divider {
+    margin: auto $spacing2;
+    @include palette-divider;
+    min-height: 0;
+    max-height: calc(100% - 16px);
+    align-self: stretch;
+    border: solid;
+    border-width: 0 thin 0 0;
+    display: inline-flex;
+    height: inherit;
+    max-width: 0;
+    width: 0;
+    vertical-align: text-bottom;
+    flex: 1 1 0px;
+  }
+}

@@ -1,0 +1,29 @@
+.slider-art {
+  .deco {
+    @include breakpoints-up(lg) {
+      width: 640px
+    }
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+    img {
+      z-index: 5;
+      position: relative;
+      width: 100%;
+      @include breakpoints-down(md) {
+        width: 70%;
+      }
+    }
+  }
+
+  .figure {
+    height: 600px;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.3s ease;
+  }
+
+  .faded {
+    opacity: 0.15;
+  }
+}

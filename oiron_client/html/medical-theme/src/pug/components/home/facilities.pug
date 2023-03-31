@@ -1,0 +1,87 @@
+include ../cards/facility-card.pug
+include ./slider-art
+
+-
+  var facilityList = [
+    {
+      title: 'Lorem Ipsum',
+      desc:
+        'Proin ac arcu nisl. Duis eu molestie lectus. Nam quis mauris faucibus, aliquet elit eu, rhoncus ipsum.',
+      img: img_artwork[26]
+    },
+    {
+      title: 'Etiam rhoncus',
+      desc:
+        'Proin quis pellentesque dui. Ut sed leo neque. Nullam aliquet iaculis neque a commodo.',
+      img: img_artwork[27]
+    },
+    {
+      title: 'Duis fermentum',
+      desc:
+        'Quisque consectetur lectus vel orci porttitor gravida ac eu erat. Nullam accumsan nibh tortor.',
+      img: img_artwork[28]
+    },
+    {
+      title: 'Lorem Ipsum',
+      desc:
+        'Proin ac arcu nisl. Duis eu molestie lectus. Nam quis mauris faucibus, aliquet elit eu, rhoncus ipsum.',
+      img: img_artwork[29]
+    },
+    {
+      title: 'Etiam rhoncus',
+      desc:
+        'Proin quis pellentesque dui. Ut sed leo neque. Nullam aliquet iaculis neque a commodo.',
+      img: img_artwork[30]
+    },
+    {
+      title: 'Duis fermentum',
+      desc:
+        'Quisque consectetur lectus vel orci porttitor gravida ac eu erat. Nullam accumsan nibh tortor.',
+      img: img_artwork[26]
+    }
+  ]
+
+.root
+  .container.carousel-header
+    .text
+      h4.use-text-title
+        | #{$t.medical_landing.services_title}
+      p.use-text-subtitle2 Nam sollicitudin dignissim nunc, cursus ullamcorper eros vulputate sed. 
+    a.btn-flat.primary-text.waves-effect.view-all(href=link.medical.product)
+      | #{$t.common.btn_seeall}
+      i.material-icons.icon arrow_forward
+  .carousel-handle
+    .carousel-wrap
+      #facilities_carousel.carousel(data-length=facilityList.length)
+        .item.carousel-prop.show-lg-up
+          div
+        each item in facilityList
+          .item
+            +facility-card(item.img, item.title, item.desc, 'See Detail')
+  .floating-artwork
+    .container.fixed-width
+      .artwork
+        +slider-art('facilities')
+          .wow.fadeInLeftShort(data-wow-offset="250" data-wow-delay="0.3s" data-wow-duration="0.5s")
+            div
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[13]
+                data-2d=img_assets+img_artwork[12]
+                data-3d=img_assets+img_artwork[13]
+                alt='facilities'
+              )/
+              |
+              |
+        nav.arrow
+          |
+          |
+          button#prev_facility.btn-floating.margin
+            i.material-icons arrow_back
+          |
+          |
+          button#next_facility.btn-floating.margin
+            i.material-icons arrow_forward
+          |
+          |

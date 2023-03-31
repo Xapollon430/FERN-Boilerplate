@@ -1,0 +1,172 @@
+.left-title {
+  @include text-align(left);
+  @include breakpoints-down(sm) {
+    text-align: center !important;
+  }
+  &:before {
+    @include left(0);
+    @include breakpoints-down(sm) {
+      @include left(50% !important);
+      @include margin-left(-35px);
+    }
+  }
+}
+
+.right-title {
+  @include text-align(right);
+  @include breakpoints-down(sm) {
+    text-align: center !important;
+  }
+  &:before {
+    @include right(0);
+    @include breakpoints-down(sm) {
+      @include left(50% !important);
+      @include margin-left(-35px);
+    }
+  }
+}
+
+.center-title {
+  text-align: center;
+  &:before {
+    @include left(50%);
+    @include margin-left(-35px);
+  }
+}
+
+.title-main {
+  display: block;
+  position: relative;
+  margin-bottom: $spacing9;
+  text-transform: capitalize;
+  h4 {
+    @include palette-text-primary;
+    font-weight: $font-bold;
+    font-size: 46px;
+    text-transform: capitalize;
+    @include breakpoints-down(md) {
+      font-size: 38px;
+      line-height: 50px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+  &:before {
+    content: "";
+    width: 70px;
+    height: 12px;
+    bottom: -32px;
+    border-radius: 12px;
+    position: absolute;
+    @include use-theme(background-image, linear-gradient(-20deg, $palette-secondary-light, $palette-primary-light), linear-gradient(-20deg, $palette-secondary-dark, $palette-primary-dark))
+  }
+  & strong {
+    @include palette-text-primary
+  }
+  &.left-title {
+    &:before {
+      @include left(0)
+    }
+    &:after {
+      @include left(58px);
+    }
+  }
+  &.right-title {
+    &:before {
+      @include right(0)
+    }
+    &:after {
+      @include right(58px);
+    }
+  }
+  &.center-title {
+    &:before {
+      @include left(50%);
+      @include margin-left(-35px)
+    }
+    &:after {
+      @include left(calc(50% + 23px));
+    }
+  }
+  &.dark {
+    h3 {
+      color: $palette-common-white
+    }
+  }
+}
+
+.title-secondary {
+  display: block;
+  position: relative;
+  margin: spacing(4, 0);
+  @include breakpoints-down(sm) {
+    margin: spacing(0, 0, 4)
+  }
+  h3 {
+    @include palette-text-primary;
+    font-size: 32px;
+    line-height: 56px;
+    font-weight: $font-medium;
+    @include breakpoints-down(xs) {
+      font-size: 24px;
+      line-height: 36px
+    }
+  }
+  &:after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: $palette-secondary-main;
+    position: absolute;
+  }
+  strong {
+    @include palette-text-primary
+  }
+  &.left-title {
+    @include breakpoints-up(md) {
+      @include padding-left($spacing4);
+    }
+    &:after {
+      @include left(0);
+      top: 20px
+    }
+    @include breakpoints-down(sm) {
+      margin-bottom: $spacing6;
+      &:after {
+        @include left(50%);
+        @include margin-left(-8px);
+        bottom: -35px;
+        top: auto;
+      }
+    }
+  }
+  &.right-title {
+    @include breakpoints-up(md) {
+      @include padding-right($spacing4);
+    }
+    &:after {
+      @include right(0);
+      top: 20px
+    }
+    @include breakpoints-down(sm) {
+      margin-bottom: $spacing6;
+      &:after {
+        @include left(50%);
+        @include margin-left(-8px);
+        bottom: -35px;
+        top: auto;
+      }
+    }
+  }
+  &.center-title {
+    margin-bottom: $spacing6;
+    &:after {
+      @include left(50%);
+      @include margin-left(-8px);
+      bottom: -35px
+    }
+  }
+}

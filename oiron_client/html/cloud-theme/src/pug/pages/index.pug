@@ -1,0 +1,93 @@
+extends ../layouts/app.pug
+
+block variables
+  - var pageTitle = " Homepage"
+  - var pageName = "homepage"
+  - var headerHome = true
+
+block content
+  div#home
+    .main-wrap
+      include ../components/header/main.pug
+      |
+      |
+      |
+      main.container-wrap
+        // ##### BANNER #####
+        section#banner
+          include ../components/home/banner-slider.pug
+        // ##### END BANNER #####
+        |
+        |
+        |
+        // ##### PROMOTION #####
+        section#promotion
+          include ../components/home/promotion.pug
+        // ##### PROMOTION #####
+        |
+        |
+        |
+        // ##### COMPANY LOGO #####
+        section.mt-5
+          include ../components/company-logo.pug
+        // ##### END COMPANY LOGO #####
+        |
+        |
+        |
+        // ##### FEATURE #####
+        section#feature.space-top-short
+          include ../components/home/feature/feature.pug
+        // ##### END FEATURE #####
+        |
+        |
+        |
+        // ##### BENEFIT #####
+        section#benefit.space-top-short
+          include ../components/home/benefit.pug
+        // ##### END BENEFIT #####
+        |
+        |
+        |
+        // ##### INTEGRATION #####
+        section#integration.space-top
+          include ../components/home/integration.pug
+        // ##### END INTEGRATION #####
+        |
+        |
+        |
+        // ##### MAP #####
+        section#map-locations.space-top-short
+          include ../components/home/map/map.pug
+        // ##### END MAP #####
+        |
+        |
+        |
+        // ##### TESTIMONIALS #####
+        section#testimonials.space-top-short
+          include ../components/home/testimonials.pug
+        // ##### END TESTIMONIALS #####
+        |
+        |
+        |
+      // ##### FOOTER #####
+      include ../components/footer/extend.pug
+      +footer-extend(true)
+        div
+          include ../components/footer/main.pug
+      // ##### END FOOTER #####
+      |
+      |
+      |
+      // ##### NOTIFICATIONS #####
+      .hidden-md-down
+        include ../components/notifications.pug
+      // ##### END NOTIFICATIONS #####
+      |
+      |
+      |
+      // ##### CORNER #####
+      .hidden-md-down
+        include ../components/corner.pug
+      // ##### END CORNER #####
+      |
+      |

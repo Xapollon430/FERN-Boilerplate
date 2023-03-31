@@ -1,0 +1,56 @@
+#testimonials {
+  .root {
+    position: relative;
+  }
+
+  .slider-wrap {
+    @include breakpoints-down(xs) {
+      margin: spacing(0, -2);
+    }
+  }
+
+  .carousel {
+    position: relative;
+    @include breakpoints-up(sm) {
+      padding: spacing(0, 8)
+    }
+  }
+
+  .item {
+    padding: $spacing1;
+    @include breakpoints-up(sm) {
+      padding: spacing(7, 1, 0)
+    }
+    &:focus {
+      outline: none
+    }
+  }
+
+  .nav.btn {
+    position: absolute;
+    top: 48%;
+    width: 60px;
+    height: 60px;
+    padding: 0px;
+    min-width: 0px;
+    background: $palette-primary-dark;
+    @include rtl-flip;
+    @include breakpoints-down(xs) {
+      display: none
+    }
+    i {
+      font-size: 48px;
+      color: $palette-common-white;
+    }
+  }
+
+  .prev {
+    @include left(-8px);
+    border-radius: 30px 5px 30px 5px;
+  }
+
+  .next {
+    @include right(-8px);
+    border-radius: 5px 30px 5px 30px;
+  }
+}

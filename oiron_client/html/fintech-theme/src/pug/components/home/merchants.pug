@@ -1,0 +1,107 @@
+include ../titles/title
+-
+  var logos1 = [
+    '/images/logos/architect.png',
+    '/images/logos/cloud.png',
+    '/images/logos/coin.png',
+    '/images/logos/mobile.png',
+    '/images/logos/profile.png',
+    '/images/logos/saas.png',
+    '/images/logos/agency-logo.png',
+    '/images/logos/crypto-logo.png',
+    '/images/logos/saas-logo.png',
+    '/images/logos/cloud-logo.png',
+    '/images/logos/fashion.png',
+    '/images/logos/hosting-logo.png'
+  ];
+  var logos2 = [
+    '/images/logos/agency-logo.png',
+    '/images/logos/education-logo.png',
+    '/images/logos/fashion-logo.png',
+    '/images/logos/medical-logo.png',
+    '/images/logos/mobile.png',
+    '/images/logos/profile.png',
+    '/images/logos/profile-logo.png',
+    '/images/logos/starter.png',
+    '/images/logos/coin.png',
+    '/images/logos/profile.png',
+    '/images/logos/saas.png',
+    '/images/logos/agency.png'
+  ];
+  var logos3 = [
+    '/images/logos/saas.png',
+    '/images/logos/mobile.png',
+    '/images/logos/profile.png',
+    '/images/logos/profile-logo.png',
+    '/images/logos/starter.png',
+    '/images/logos/agency.png',
+    '/images/logos/cloud-logo.png',
+    '/images/logos/agency-logo.png',
+    '/images/logos/mobile-logo.png',
+    '/images/logos/fashion.png',
+    '/images/logos/movie-logo.png',
+    '/images/logos/education-logo.png'
+  ];
+
+.root
+  .container
+    +title-main('center', $t.fintech_landing.partner_title)
+    .tab
+      .row.spacing6.justify-content-center
+        .col-md-10.pa-md-6
+          ul.tabs.primary
+            li.tab
+              |
+              |
+              a.tab-label.active.waves-effect(href='#tab-1') Online
+              |
+              |
+            li.tab
+              |
+              |
+              a.tab-label.waves-effect(href='#tab-2') Offline
+              |
+              |
+            li.tab
+              |
+              |
+              a.tab-label.waves-effect(href='#tab-3') Channel
+              |
+              |
+          #tab-1.tab-item
+            .tab-content
+              section
+                .row
+                  each logo, index in logos1
+                    .col-sm-2.col-4
+                      .img-logo
+                        |
+                        |
+                        img(src=assets+logo alt="logo"+index)/
+                        |
+                        |
+          #tab-2.tab-item
+            .tab-content
+              section
+                .row
+                  each logo, index in logos2
+                    .col-sm-2.col-4
+                      .img-logo
+                        |
+                        |
+                        img(src=assets+logo alt="logo"+index)/
+                        |
+                        |
+          #tab-3.tab-item
+            .tab-content
+              section
+                .row
+                  each logo, index in logos3
+                    .col-sm-2.col-4
+                      .img-logo
+                        |
+                        |
+                        img(src=assets+logo alt="logo"+index)/
+                        |
+                        |
+  

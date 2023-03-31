@@ -1,0 +1,145 @@
+include ../titles/title.pug
+
+-
+  var integration1 = [
+    {
+      icon: 'search',
+      title: 'Vestibulum a massa'
+    },
+    {
+      icon: 'device_hub',
+      title: 'Document collaboration'
+    },
+    {
+      icon: 'layers',
+      title: 'Project and issue tracking'
+    },
+    {
+      icon: 'rss_feed',
+      title: 'Role & Responsibilities'
+    },
+    {
+      icon: 'desktop_mac',
+      title: 'Launch Your First Application'
+    },
+    {
+      icon: 'thumb_up',
+      title: 'Powering innovation'
+    },
+    {
+      icon: 'cloud_upload',
+      title: 'Serverless Computing'
+    },
+    {
+      icon: 'build',
+      title: 'Learn, Build & Get Connected'
+    }
+  ]
+
+  var integration2 = [
+    {
+      icon: 'keyboard_hide',
+      title: ' Analytics & Data Lakes'
+    },
+    {
+      icon: 'device_hub',
+      title: 'Enjoy the freedom to access'
+    },
+    {
+      icon: 'insert_chart',
+      title: 'Optimize Business Value'
+    },
+    {
+      icon: 'add_circle',
+      title: 'Files on demand'
+    },
+    {
+      icon: 'pie_chart',
+      title: 'Reinvent with Data'
+    },
+    {
+      icon: 'supervisor_account',
+      title: 'Share and collaborate'
+    },
+    {
+      icon: 'call_merge',
+      title: 'Unify your infrastructure'
+    },
+    {
+      icon: 'sync',
+      title: 'Migrate your workloads'
+    }
+  ]
+
+.root
+  .decoration-bg
+    |
+    |
+    svg.wave
+      include ../svg/deco-bg2.pug
+    |
+    |
+  .container
+    .row.spacing6.justify-content-center
+      .col-lg-9.py-0.py-sm-6.px-6
+        +title-main("center")
+          span
+            | #{$t.saas2_landing.feature_title1} #{$t.saas2_landing.feature_titlestrong1}
+        h6.text-center.use-text-subtitle2
+          | #{$t.saas2_landing.feature_desc3}
+        .list
+          .row.mb-sm-12
+            .col-sm-6.px-sm-6.px-0
+              .wow.fadeInUpShort(data-wow-offset="-100" data-wow-delay="0.5s" data-wow-duration="0.5s")
+                .text-sm-end.text-center
+                  figure.illustration.left-illustration
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[16]
+                      data-2d=img_assets+img_artwork[15]
+                      data-3d=img_assets+img_artwork[16]
+                      alt='background'
+                    )/
+                    |
+                    |
+                  h3.use-text-primary.use-text-subtitle
+                    | Reinvent your business
+                  p.use-text-subtitle2
+                    | Building a business that is sustainable for a long period of time isn't easy. It requires reinvention—likely multiple times over.
+            .col-sm-6.px-sm-6.py-6.px-0
+              .wow.fadeInUpShort(data-wow-offset="-100" data-wow-delay="0.5s" data-wow-duration="0.5s")
+                div
+                  ul.list-primary
+                    each item, index in integration1
+                      li
+                        i.material-icons.icon #{item.icon}
+                        | #{item.title}
+          .row
+            .col-sm-6.px-sm-6.px-0.order-sm-last
+              .wow.fadeInUpShort(data-wow-offset="-100" data-wow-delay="0.8s" data-wow-duration="0.5s")
+                .text-sm-start.text-center
+                  figure.illustration.right-illustration
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[18]
+                      data-2d=img_assets+img_artwork[17]
+                      data-3d=img_assets+img_artwork[18]
+                      alt='background'
+                    )/
+                    |
+                    |
+                  h3.use-text-secondary.use-text-subtitle
+                    | Start Building
+                  p.use-text-subtitle2
+                    | Whether you're looking for compute power, database storage, content delivery, or other functionality.
+            .col-sm-6.px-sm-6.py-6.px-0
+              .wow.fadeInUpShort(data-wow-offset="-100" data-wow-delay="0.8s" data-wow-duration="0.5s")
+                div
+                  ul.list-secondary
+                    each item, index in integration2
+                      li
+                        | #{item.title}
+                        i.material-icons.icon #{item.icon}
+

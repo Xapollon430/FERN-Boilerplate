@@ -1,0 +1,150 @@
+include ../titles/title.pug
+include ./book.pug
+
+-
+  var bookOpen1 = 3;
+  var bookOpen2 = 2;
+  var bookOpen3 = 6;
+  var courseData = [
+    {
+      img: img_artwork[7],
+      title: 'Interiors Beyond Architecture',
+      color: '#f74e10',
+      rating: 5,
+      price: 50,
+      desc:
+        'The overall premise of the book is to learn Revit Architecture while developing the interior of a two story law office'
+    },
+    {
+      img: img_artwork[6],
+      title: 'Modern Art',
+      color: '#c7618c',
+      rating: 4,
+      price: 10,
+      desc:
+        'The works stand out for being an intellectual painter in the creation of the pictorial work from scratch'
+    },
+    {
+      img: img_artwork[5],
+      title: 'Joy of Cooking',
+      color: '#e59546',
+      rating: 5,
+      price: 50,
+      desc:
+        'The famously irreverent chef also offers playful riffs on classics, reimagining tuna-and-rice bowls.'
+    },
+    {
+      img: img_artwork[4],
+      color: '#8f46e5',
+      title: 'Metaverse For Beginners',
+      rating: 3,
+      price: 25,
+      desc:
+        'When people talk about the future, they usually mean virtual reality.'
+    },
+    {
+      img: img_artwork[3],
+      color: '#ac8a55',
+      title: 'Face the Music',
+      rating: 5,
+      price: 50,
+      desc:
+        'Face the Music is the shocking inspirational story of one of rock’s most enduring icons.'
+    },
+    {
+      img: img_artwork[2],
+      color: '#274be3',
+      title: 'Key Concepts in Geography',
+      rating: 5,
+      price: 40,
+      desc:
+        'This book clearly outlines key concepts that all geographers should readily be able to explain'
+    },
+    {
+      img: img_artwork[0],
+      color: '#6DB4A7',
+      title: 'On Photography',
+      rating: 5,
+      price: 50,
+      desc:
+        'Photographs are everywhere and it has profoundly altered our relationship with the world.'
+    }
+  ]
+
+.root
+  .container
+    .px-lg-6
+      .px-8.px-lg-0
+        +title-main('left', $t.education_landing.explore_title, $t.education_landing.explore_desc, 'primary')
+      #cat1.rack
+        .category-title
+          h3
+            i.material-icons.small palette
+            | &nbsp; Lorem Ipsum
+          |
+          |
+          a.btn-flat.waves-effect.primary-text.view-all(href=link.education.product)
+            | #{$t.common.btn_seeall}
+            i.material-icons.icon arrow_forward
+          |
+          |
+        .content
+          each item, index in courseData
+            +book(
+              item.img,
+              item.title,
+              item.desc,
+              item.rating,
+              item.price,
+              link.education.productDetail,
+              item.color,
+              index === bookOpen1
+            )
+      #cat2.rack
+        .category-title
+          h3
+            i.material-icons.small brightness_low
+            | &nbsp; Lorem Ipsum
+          |
+          |
+          a.btn-flat.waves-effect.primary-text.view-all(href=link.education.product)
+            | #{$t.common.btn_seeall}
+            i.material-icons.icon arrow_forward
+          |
+          |
+        .content
+          each item, index in courseData
+            +book(
+              item.img,
+              item.title,
+              item.desc,
+              item.rating,
+              item.price,
+              link.education.productDetail,
+              item.color,
+              index === bookOpen2
+            )
+      #cat3.rack.mb-10
+        .category-title
+          h3
+            i.material-icons.small language
+            | &nbsp; Lorem Ipsum
+          |
+          |
+          a.btn-flat.waves-effect.primary-text.view-all(href=link.education.product)
+            | #{$t.common.btn_seeall}
+            i.material-icons.icon arrow_forward
+          |
+          |
+        .content
+          each item, index in courseData
+            +book(
+              item.img,
+              item.title,
+              item.desc,
+              item.rating,
+              item.price,
+              link.education.productDetail,
+              item.color,
+              index === bookOpen3
+            )

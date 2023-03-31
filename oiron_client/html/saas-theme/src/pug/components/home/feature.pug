@@ -1,0 +1,85 @@
+include ../titles/title.pug
+
+.root
+  .decoration-bg
+    |
+    |
+    svg.wave(width="1281px" height="1569px" viewBox="0 0 1281 1569" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+      include ../svg/deco-bg.pug
+    |
+    |
+  .container.mq-md-up(data-class="fixed-width")
+    .item
+      .row
+        .col-md-6.px-0.order-md-last
+          .desc
+            +title-main("left")
+              | #{$t.saas_landing.feature_title1} #{$t.saas_landing.feature_titlestrong1}
+            h6.use-text-subtitle2.text-center.text-md-start
+              | #{$t.saas_landing.feature_desc1}
+            |
+            |
+            a.btn.secondary.btn-large.waves-effect(href="#")
+              | #{$t.saas_landing.see_detail}
+            |
+            |
+        .col-md-6.pa-sm-8.order-md-first
+          .wow.fadeInLeftShort(data-wow-duration="0.5s" data-wow-delay="0.5s" data-wow-offset="200")
+            .illustration-left
+              figure.figure.graphic
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[10]
+                  data-2d=img_assets+img_artwork[9]
+                  data-3d=img_assets+img_artwork[10]
+                  alt='illustration'
+                )
+                |
+                |
+    .item
+      .row
+        .col-md-6.px-0
+          .desc
+            +title-main("right")
+              | #{$t.saas_landing.feature_title1} #{$t.saas_landing.feature_titlestrong2}
+            h6.use-text-subtitle2.text-sm-right #{$t.saas_landing.feature_desc2}
+            .text-center.text-md-end
+              |
+              |
+              a.btn.secondary.btn-large.waves-effect(href="#") #{$t.saas_landing.see_detail}
+              |
+              |
+        .col-md-6.pa-sm-8
+          .wow.fadeInRightShort(data-wow-duration="0.5s" data-wow-delay="0.5s" data-wow-offset="200")
+            .illustration-right
+              figure.figure.graphic
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[12]
+                  data-2d=img_assets+img_artwork[11]
+                  data-3d=img_assets+img_artwork[12]
+                  alt='illustration'
+                )
+                |
+                |
+    .item.last
+      +title-main("center")
+        | #{$t.saas_landing.feature_title3} #{$t.saas_landing.feature_titlestrong3}
+      .tab
+        .row.spacing6.justify-content-center
+          .col-md-10.pa-sm-6
+            h6.text-center.use-text-subtitle2 #{$t.saas_landing.feature_desc3}
+            .illustration-center
+              figure.figure.graphic
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[14]
+                  data-2d=img_assets+img_artwork[13]
+                  data-3d=img_assets+img_artwork[14]
+                  alt='illustration'
+                )
+                |
+                |

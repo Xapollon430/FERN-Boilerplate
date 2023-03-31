@@ -1,0 +1,82 @@
+-
+  var sliderData = [
+    {
+      icon: 'ion-cube',
+      title: 'Wordpress Hosting start from $2/mo',
+      desc:
+        'Our managed WordPress hosting comes with ready-to-use features, so you can start building your website right away.',
+      date: '12 Jul - 10 Aug'
+    },
+    {
+      icon: 'ion-ios-toggle',
+      title: 'Dedicated VPS start from $5/mo',
+      desc:
+        'Get the power, flexibility and speed you need with our virtual private server hosting.',
+      date: '12 Jul - 10 Aug'
+    },
+    {
+      icon: 'ion-filing',
+      title: '.COM + Hosting Only $15/mo',
+      desc:
+        'Use our advanced domain name generator to get your ideal choice right away.',
+      date: '12 Jul - 10 Aug'
+    }
+  ]
+
+.root
+  .nav
+    .container.max-md
+      |
+      |
+      a.prev#promotion_prev(href='#!')
+        i.material-icons.icon keyboard_arrow_left
+      |
+      |
+      a.next#promotion_next(href='#!')
+        i.material-icons.icon keyboard_arrow_right
+      |
+      |
+  .slider-wrap
+    #promotion_slider.slide.slider-content
+      each item in sliderData
+        .inner.item
+          .container
+            .row.justify-content-center
+              .col-sm-4.col-md-3.promo-image
+                section
+                  .image
+                    |
+                    |
+                    span.icon(class=item.icon)
+                    |
+                    |
+              .col-md-7.col-sm-8
+                .text
+                  h1
+                    a.btn-flat
+                      span.btn-content #{item.title}
+                  p.use-text-subtitle2 #{item.desc}
+                  .time
+                    h6.use-text-caption
+                      |
+                      |
+                      span
+                        | #{$t.cloud_landing.promo_periode} : #{item.date}
+                      |
+                      |
+                    |
+                    |
+    .cloud-top
+      |
+      |
+      svg
+        include ../svg/cloud-top
+      |
+      |
+    .cloud-top-cover
+      |
+      |
+      svg
+        include ../svg/cloud-top
+      |
+      |

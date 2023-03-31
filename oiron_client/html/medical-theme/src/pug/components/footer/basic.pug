@@ -1,0 +1,30 @@
+footer.footer-basic
+  include ./decoration
+  .root
+    .container.max-lg
+      nav
+        ul
+          each item in menu.medical
+            li
+              a(href="#" + item.name) #{$t.medical_landing["header_"+item.name]}
+      .socmed
+        |
+        |
+        a.btn-icon.btn-large.waves-effect.waves-light(href="#")
+          i.ion-social-twitter
+        |
+        |
+        a.btn-icon.btn-large.waves-effect.waves-light(href="#")
+          i.ion-social-facebook
+        |
+        |
+        a.btn-icon.btn-large.waves-effect.waves-light(href="#")
+          i.ion-social-instagram
+        |
+        |
+    .copyright
+      |
+      |
+      p.body-2.text-center
+        | &copy; #{brand.medical.footerText}
+

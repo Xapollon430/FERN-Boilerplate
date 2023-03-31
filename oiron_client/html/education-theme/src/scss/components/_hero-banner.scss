@@ -1,0 +1,94 @@
+.hero-banner-wrap  {
+  padding-bottom: $spacing5;
+  position: relative;
+  .title {
+    position: relative;
+    h4 {
+      position: relative;
+    }
+    &-left {
+      &:before {
+        content: '';
+        height: 20px;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+        @include use-theme(opacity, 1, 0.7);
+        width: 50%;
+        position: absolute;
+        bottom: 10px;
+        @include left(0);
+        z-index: 0;
+        @include breakpoints-down(sm) {
+          height: 10px;
+          @include left(30%);
+        }
+      }
+    }
+    &-right {
+      &:before {
+        content: '';
+        height: 20px;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+        @include use-theme(opacity, 1, 0.7);
+        width: 50%;
+        position: absolute;
+        bottom: 10px;
+        @include right(0);
+        z-index: 0;
+        @include breakpoints-down(sm) {
+          height: 10px;
+          @include left(30%);
+        }
+      }
+    }
+    &-center {
+      &:before {
+        content: '';
+        height: 20px;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+        @include use-theme(opacity, 1, 0.7);
+        width: 50%;
+        position: absolute;
+        bottom: 10px;
+        @include left(30%);
+        z-index: 0;
+      }
+    }
+  }
+  .container {
+    position: relative;  
+  }
+  .bg-deco {
+    position: absolute;
+    width: 120%;
+    height: 1100px;
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+    opacity: 0.27;
+    transform: rotate(-10deg);
+    top: -560px;
+    left: -40px;
+    border-radius: 80px;
+    @include breakpoints-down(xs) {
+      width: 110%;
+    }
+  }
+  .small-deco {
+    position: relative;
+    @include breakpoints-down(xs) {
+      display: none
+    }
+    & > div {
+      position: absolute;
+      width: 475px;
+      height: 300px;
+      @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+      transform: rotate(-10deg);
+      top: -200px;
+      @include right(-40px);
+      border-radius: 40px;
+    }
+  }
+  .img {
+    margin-top: $spacing5
+  }
+}
+

@@ -1,0 +1,146 @@
+.banner-slider
+  .banner-wrap
+    .carousel
+      .slider-deco#slider_deco
+        .slide
+          .inner
+            .deco-wrap
+              .deco.s1 &nbsp;
+        .slide
+          .inner
+            .deco-wrap
+              .deco.s2 &nbsp;
+        .slide
+          .inner &nbsp;
+      .slider#banner_slider
+        #slide1.slide
+          .inner
+            .img.background-banner
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[5]
+                data-2d=img_assets+img_artwork[4]
+                data-3d=img_assets+img_artwork[5]
+                alt='background'
+              )/
+              |
+              |
+            .container
+              .row
+                .col-md-7.col-lg-6.px-sm-6.px-0.d-flex.align-center
+                  .text
+                    h4.use-text-title #{$t.social_landing.banner_title}
+                    h5.use-text-subtitle #{$t.social_landing.banner_desc}
+                    .btn-area.download
+                      |
+                      |
+                      a(href='#')
+                        img(src=assets+"/images/social/app-store.png" alt="app store")/
+                      |
+                      |
+                      a(href='#')
+                        img(src=assets+"/images/social/play-store.png" alt="play store")/
+                      |
+                      |
+                .col-md-5.col-lg-6.px-lg-6
+                  .img
+                    |
+                    |
+                    img.img-slide1.img-2d3d(
+                      src=img_assets+img_artwork[1]
+                      data-2d=img_assets+img_artwork[0]
+                      data-3d=img_assets+img_artwork[1]
+                      alt='banner 1 3D'
+                    )/
+                    |
+                    |
+        #slide2.slide
+          .inner
+            .container
+              .row
+                .col-md-7.col-lg-6.px-sm-6.px-0.d-flex.align-center.order-md-last
+                  .text
+                    h4.use-text-title #{$t.social_landing.banner_title}
+                    h5.use-text-subtitle #{$t.social_landing.banner_desc}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.primary-text(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.secondary(href=link.social.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-md-5.col-lg-6.order-md-first
+                  .img
+                    |
+                    |
+                    img.img-2d3d.img-slide2(
+                      src=img_assets+img_artwork[3]
+                      data-2d=img_assets+img_artwork[2]
+                      data-3d=img_assets+img_artwork[3]
+                      alt='banner 2 3D'
+                    )/
+                    |
+                    |
+        #slide3.slide.center-content
+          .inner
+            .container
+              .row.justify-content-center
+                .col-xs-12.px-md-12
+                  .text.text-center
+                    h4.use-text-title #{$t.social_landing.banner_title}
+                    h5.use-text-subtitle #{$t.social_landing.banner_desc}
+                    .btn-area.justify-content-center
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.primary-text(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.secondary(href=link.social.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-xs-12
+                  .img.h-banner
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[7]
+                      data-2d=img_assets+img_artwork[6]
+                      data-3d=img_assets+img_artwork[7]
+                      alt='banner 3 3D'
+                    )/
+                    |
+                    |
+    .slide-nav-group
+      .hidden-sm-down
+        .container
+          nav.slide-nav#banner_nav
+            |
+            |
+            a.waves-effect.active(data-slide='0')
+              strong First Slide
+              | Interdum et malesuada fames ac ante
+            |
+            |
+            hr.divider
+            |
+            |
+            a.waves-effect(data-slide='1')
+              strong Second Slide
+              | Interdum et malesuada fames ac ante
+            |
+            |
+            hr.divider
+            |
+            |
+            a.waves-effect(data-slide='2')
+              strong Third Slide
+              | Interdum et malesuada fames ac ante
+            |
+            |

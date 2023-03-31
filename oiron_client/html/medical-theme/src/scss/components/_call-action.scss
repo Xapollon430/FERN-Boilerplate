@@ -1,0 +1,64 @@
+.call-to-action {
+  .root {
+    position: relative;
+    z-index: 10;
+    p {
+      margin: 0
+    }
+  }
+
+  .btn.button {
+    color: $palette-primary-main !important;
+    height: 48px;
+    font-size: 14px;
+    @include breakpoints-up(sm) {
+      min-height: 64px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  .paper {
+    border-radius: 24px !important;
+    &.card {
+      padding: $spacing4;
+      color: $palette-common-white;
+      @include use-theme(background-image, linear-gradient(95deg, $palette-primary-main 0%, $palette-secondary-light 130%), linear-gradient(95deg,  $palette-primary-dark 0%, $palette-secondary-dark 110%));
+      @include breakpoints-up(lg) {
+        padding: spacing(4, 5);
+        margin: spacing(0, 4);
+      }
+      @include breakpoints-down(xs) {
+        padding: spacing(4, 0);
+        text-align: center
+      }
+    }
+    @include breakpoints-down(sm) {
+      text-align: center
+    }
+    @include breakpoints-down(sm) {
+      margin-bottom: $spacing5
+    }
+    p {
+      font-size: 22px;
+      @include breakpoints-down(sm) {
+        margin-bottom: $spacing5
+      }
+      @include breakpoints-down(xs) {
+        font-size: 18px;
+        margin-bottom: $spacing3
+      }
+    }
+  }
+
+  .right-icon {
+    @include margin-left($spacing1);
+    [dir="rtl"] & {
+      transform: rotate(180deg)
+    }
+  }
+
+}

@@ -1,0 +1,58 @@
+include ../titles/title.pug
+include ../cards/promo-card.pug
+
+-
+  var promoData = [
+    {
+      img: img_artwork[25],
+      title: 'Latest arrivals and trends release',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[26],
+      title: 'Up to US $20 off shipping on marketplace',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[27],
+      title: 'One request, multiple quotes from suppliers',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[28],
+      title: 'Buy 2, Get 1 Free On Select Products at GNC.com!',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[29],
+      title: 'Valvoline Instant Oil Change (Up to 31% Off)',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[30],
+      title: 'Stay for two in the standard or twins room',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[31],
+      title: '$15 Off w/ Avis Promo Code Exclusive',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    },
+    {
+      img: img_artwork[33],
+      title: 'Buy 2, Get 1 Free On Select Products at GNC.com!',
+      periode: 'Periode 27 Dec 2020 - 1 Jan 2021'
+    }
+  ]
+  
+.root
+  .container
+    +title-main('center', $t.fintech_landing.promotion_title)
+    p.use-text-subtitle2.text-center
+      | #{$t.fintech_landing.promotion_desc}
+  .slider-wrap
+    .carousel
+      .slick-carousel#promotions_slider
+        each item in promoData
+          .item
+            +promo-card(item.img, item.title, item.periode)

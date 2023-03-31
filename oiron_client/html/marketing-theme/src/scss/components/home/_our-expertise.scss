@@ -1,0 +1,85 @@
+#our-expertise {
+  .root {
+    position: relative;
+    @include breakpoints-down(sm) {
+      text-align: center;
+    }
+    h4 {
+      @include breakpoints-down(sm) {
+        margin-top: $spacing2 * -1;
+        margin-bottom: $spacing3
+      }
+    }
+  }
+
+  .desc {
+    line-height: 32px;
+    @include breakpoints-up(sm) {
+      padding: spacing(3, 0)
+    }
+  }
+
+  .running-tag {
+    position: relative;
+    height: 130px;
+    @include breakpoints-down(xs) {
+      margin-top: $spacing4
+    }
+    .slick-active {
+      &.tag-group {
+        & > .tag-item {
+          &:first-child {
+            @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+            border-color: $palette-primary-main
+          }
+          &:nth-child(2) {
+            @include use-theme(color, $palette-secondary-dark, $palette-secondary-light);
+            border-color: $palette-secondary-main
+          }
+          &:last-child {
+           @include use-theme(color, $palette-accent-dark, $palette-accent-light);
+            border-color: $palette-accent-main
+          }
+        }
+      }
+    }
+  }
+
+  .tag-item {
+    display: inline-block;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in;
+    border: 1px solid;
+    font-size: 14px;
+    @include palette-divider;
+    @include margin-right($spacing1);
+    margin-bottom: 17px;
+    padding: calc($spacing1 / 2);
+    @include breakpoints-up(md) {
+      padding: spacing(0.5, 4)
+    }
+  }
+
+  .tag-group {
+    display: block;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .illustration-wrap {
+    position: relative;
+    figure {
+      max-width: 370px;
+      position: relative;
+      img {
+        width: 100%;
+      }
+    }
+    @include breakpoints-down(sm) {
+      display: none
+    }
+  }
+
+
+}

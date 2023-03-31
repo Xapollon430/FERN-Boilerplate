@@ -1,0 +1,17 @@
+include ../cards/news-card.pug
+include ../titles/title.pug
+
+.root
+  +title-main("center")
+    | #{$t.social_landing.news_title}
+  p.use-text-subtitle2.text-center
+    | #{$t.social_landing.news_desc}
+  .blog-wrap
+    .container.fixed-width
+      .row.spacing6.list-news
+        .col-md-5.pa-6.pa-sm-5
+          +news-card("Sed imperdiet enim ligula, vitae viverra justo.", "headline", "portrait", "over", imgAPI.photo[20], link.social.blogDetail)
+        .col-md-7.pa-6.pa-sm-5
+          +news-card("Vestibulum dignissim orci vitae eros rutrum euismod.", "news", "landscape", "over", imgAPI.photo[19], link.social.blogDetail)
+          +news-card("Vestibulum dignissim orci vitae eros rutrum euismod.", "news", "landscape", "over", imgAPI.photo[16], link.social.blogDetail)
+

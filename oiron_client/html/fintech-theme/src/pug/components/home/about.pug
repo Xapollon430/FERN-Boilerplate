@@ -1,0 +1,88 @@
+include ../titles/title.pug
+
+div
+  if youtube.use
+    #video_modal.modal.video-popup
+      .modal-content
+        |
+        |
+        .headline
+          h4 #{$t.fintech_landing.banner_title}
+          |
+          |
+          button.btn-icon.modal-close.waves-effect
+            i.material-icons close
+        .text-center
+          #video_iframe
+.main-feature
+  .container.fixed-width
+    .row.spacing6
+      .col-md-6.px-6.order-lg-last
+        +title-main("left", $t.fintech_landing.about_title)
+        p.pb-2.use-text-subtitle2.text-center.text-md-start
+          | #{$t.fintech_landing.about_subtitle}
+        .card.video
+          figure
+            |
+            |
+            img(src=img_artwork[18] alt='cover')/
+            |
+            |
+          |
+          |
+          button.btn-icon.play-btn.modal-trigger.waves-effect(data-target="video_modal" data-video="rP_UAPcIG4I")
+            i.ion-ios-play-outline
+          |
+          |
+      .col-md-6.px-6.feature-wrap
+        .deco.show-sm-up
+          |
+          |
+          svg(width='530px', height='534px', viewbox='0 0 530 534', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+            g#deco-about(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+              g#Deco
+                path#primary-light.primary-light-bg(d='M530,133 C529.998175,206.336568 470.484102,265.797961 397,266 L397,133 L530,133 Z')
+                path#secondary-light.secondary-light-bg(d='M530,0 C456.515898,0.200218968 397,59.6688928 397,132.99636 L397,133 L530,133 L530,0 Z')
+                path#secondary-main.secondary-main-bg(d='M133,133 C59.6615934,133.001825 0.200219516,192.515898 0,266 L133,266 L133,133 Z')
+                path#primary-light2.primary-light-bg(d='M133,397 C59.6615934,396.997992 0.200219516,337.4839 0,264 L133,264 L133,397 Z')
+                path#primary-main.primary-main-bg(d='M520,388 C519.997996,307.495017 454.666758,242.221787 374,242 L374,388 L520,388 Z')
+                path#primary-light3.primary-light-bg(d='M374,388 C374.002004,468.506423 439.333242,533.779611 520,534 L520,388 L374,388 Z', transform='translate(447.000000, 461.000000) scale(-1, 1) translate(-447.000000, -461.000000) ')
+          |
+          |
+        .counter
+          .wow.flipInY(data-wow-offset="420" data-wow-duration="0.5s")
+            .lower
+              .card.paper.pie2.accent
+                |
+                |
+                span.ion-person-stalker
+                |
+                |
+                h6.title +600K
+                p #{$t.fintech_landing.about_registered}
+              .card.paper.pie3.primary
+                |
+                |
+                span.ion-android-home
+                |
+                |
+                h6.title +200K
+                p #{$t.fintech_landing.about_merchant}
+          .wow.flipInY(data-wow-offset="420" data-wow-duration="0.5s")
+            .higher
+              .card.paper.pie2.primary
+                |
+                |
+                span.ion-briefcase
+                |
+                |
+                h6.title +20M
+                p #{$t.fintech_landing.about_deposit}
+              .card.paper.pie4.secondary
+                |
+                |
+                span.ion-ios-pricetags
+                |
+                |
+                h6.title +50M
+                p #{$t.fintech_landing.about_discount}

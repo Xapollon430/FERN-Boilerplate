@@ -1,0 +1,68 @@
+include ../titles/title.pug
+include ../cards/testi-stack-card.pug
+
+-
+  var testiContent = [
+    {
+      text: 'Super easy to use on the go when you not near your PC. Well done for make the mobile experience an absolute breeze!',
+      name: 'John Doe',
+      avatar: imgAPI.avatar[6],
+      title: 'Chief Digital Officer'
+    },
+    {
+      text: 'Truly awesome collaboration tool and so intuitive it almost feels as though you are interacting with a fellow human.',
+      name: 'Jean Doe',
+      avatar: imgAPI.avatar[7],
+      title: 'Chief Digital Officer'
+    },
+    {
+      text: 'Its a great app, makes managing and updateling work on the go very easy. #NoDaysOff.',
+      name: 'Jena Doe',
+      avatar: imgAPI.avatar[1],
+      title: 'Graphic Designer'
+    },
+    {
+      text: 'Great app, can edit alot without having to take out your laptop, or geting too your stationary pc, so that is a big plus.',
+      name: 'Jovelin Doe',
+      avatar: imgAPI.avatar[2],
+      title: 'Senior Graphic Designer'
+    },
+    {
+      text: 'Wery useful for task management between team.',
+      name: 'Jihan Doe',
+      avatar: imgAPI.avatar[3],
+      title: 'CEO Software House'
+    },
+    {
+      text: 'The productivity level increases to a great extent with this Mobile Application. Being a PM, having a way to track everything on my mobile phone just makes you even more mobile.',
+      name: 'John Doe',
+      avatar: imgAPI.avatar[9],
+      title: 'Senior Graphic Designer'
+    }
+  ]
+
+.root
+  .container.fixed-width-lg-up
+    +title-main("center")
+      | #{$t.saas2_landing.testi_titlestrong}
+    .row.spacing6.justify-content-center
+      .col-md-10.my-md-6
+        .slider-wrap
+          .carousel
+            |
+            |
+            button.btn.nav.prev.waves-effect#prev_testi
+              i.ion-ios-arrow-back
+            |
+            |
+            .slick-carousel#testimonial_carousel
+              each item in testiContent
+                .item
+                  .testi-content
+                    +testi-card(item.text, item.name, item.title, item.avatar)
+            |
+            |
+            button.btn.nav.next.waves-effect#next_testi
+              i.ion-ios-arrow-forward
+            |
+            |

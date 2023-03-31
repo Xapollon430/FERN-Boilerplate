@@ -1,0 +1,112 @@
+include ../titles/title.pug
+
+.root
+  .decoration-bg
+    |
+    |
+    svg.wave
+      include ../svg/deco-bg.pug
+    |
+    |
+  .container.mq-lg-up(data-class="fixed-width")
+    .item
+      .row
+        .col-md-6.px-md-6.px-0.px-lg-12.order-md-last
+          .desc
+            +title-main("left")
+              | #{$t.saas2_landing.feature_title1} #{$t.saas2_landing.feature_titlestrong1}
+            h6.use-text-subtitle2.text-center.text-md-start
+              | #{$t.saas2_landing.feature_desc1}
+            |
+            |
+            a.btn.secondary.btn-large.waves-effect(href="#")
+              | #{$t.saas2_landing.see_detail}
+            |
+            |
+        .col-md-6.px-6.px-lg-12.order-md-first
+          .wow.fadeInLeftShort(data-wow-duration="0.5s" data-wow-delay="0.5s" data-wow-offset="200")
+            .screen-wrap
+              |
+              |
+              img.plant1.img-2d3d(
+                src=img_assets+img_artwork[10]
+                data-2d=img_assets+img_artwork[9]
+                data-3d=img_assets+img_artwork[10]
+                alt='plant'
+              )/
+              |
+              |
+              .illustration
+                figure
+                  |
+                  |
+                  img(
+                    src=img_artwork[19]
+                    alt="screen"
+                  )/
+                  |
+                  |
+    .item
+      .row
+        .col-md-6.px-md-6.px-0.px-lg-12
+          .desc
+            +title-main("right")
+              | #{$t.saas2_landing.feature_title1} #{$t.saas2_landing.feature_titlestrong2}
+            h6.use-text-subtitle2.text-md-end #{$t.saas2_landing.feature_desc2}
+            .text-center.text-md-end
+              |
+              |
+              a.btn.secondary.btn-large.waves-effect(href="#") #{$t.saas2_landing.see_detail}
+              |
+              |
+        .col-md-6.px-6.px-lg-12
+          .wow.fadeInRightShort(data-wow-duration="0.5s" data-wow-delay="0.5s" data-wow-offset="200")
+            .screen-wrap
+              |
+              |
+              img.plant2.img-2d3d(
+                src=img_assets+img_artwork[12]
+                data-2d=img_assets+img_artwork[11]
+                data-3d=img_assets+img_artwork[12]
+                alt='plant'
+              )/
+              |
+              |
+              .illustration
+                figure
+                  |
+                  |
+                  img(
+                    src=img_artwork[20]
+                    alt="screen"
+                  )/
+                  |
+                  |
+    .item.last
+      +title-main("center")
+        | #{$t.saas2_landing.feature_title3} #{$t.saas2_landing.feature_titlestrong3}
+      .row.justify-content-center
+        .col-md-10.pa-sm-6
+          h6.text-center.use-text-subtitle2 #{$t.saas2_landing.feature_desc3}
+          .wow.fadeInUpShort(data-wow-offset="10" data-wow-duration="0.5s")
+            .screen-wrap
+              |
+              |
+              img.plant3.img-2d3d(
+                src=img_assets+img_artwork[14]
+                data-2d=img_assets+img_artwork[13]
+                data-3d=img_assets+img_artwork[14]
+                alt='plant'
+              )
+              |
+              |
+              .illustration.screen-center
+                figure.figure.graphic
+                  |
+                  |
+                  img(
+                    src=img_artwork[21]
+                    alt="screen"
+                  )/
+                  |
+                  |

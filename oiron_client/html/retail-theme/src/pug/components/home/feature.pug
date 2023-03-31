@@ -1,0 +1,102 @@
+include ../titles/title.pug
+include ../titles/title-secondary.pug
+
+.root
+  if youtube.use
+    #video_modal.modal.video-popup
+      .modal-content
+        |
+        |
+        h4.use-text-subtitle.mb-5 #{$t.retail_landing.banner_title}
+        |
+        |
+        button.btn-icon.modal-close.waves-effect
+          i.material-icons close
+        .text-center
+          #video_iframe
+  .container.mq-lg-up(data-class="fixed-width")
+    +title-main('center')
+      | #{$t.retail_landing.feature_title}
+    .item
+      .row.align-items-center.justify-content-center
+        .col-md-6.order-md-last.px-0
+          .desc
+            +title-secondary("left")
+              | #{$t.retail_landing.feature_title1}
+            h6.use-text-subtitle2.text-center.text-md-start
+              | #{$t.retail_landing.feature_desc1}
+        .col-md-4.px-sm-8.px-0.order-md-first
+          .wow.fadeInLeftShort(data-wow-duration="0.5s" data-wow-offset="400")
+            .illustration
+              .bg.pipe1
+              figure.screen1.mobile-screen
+                |
+                |
+                img(
+                  src=img_artwork[25]
+                  alt='screen'
+                )/
+                |
+                |
+              figure.graphic.artwork1
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[10]
+                  data-2d=img_assets+img_artwork[9]
+                  data-3d=img_assets+img_artwork[10]
+                  alt='illustration'
+                )/
+                |
+                |
+    .item
+      .row.align-items-center
+        .col-md-6.px-sm-8.px-0
+          .desc
+            +title-secondary("right")
+              | #{$t.retail_landing.feature_title2}
+            h6.use-text-subtitle2.text-center.text-md-end
+              | #{$t.retail_landing.feature_desc2}
+        .col-md-6.px-sm-12.px-0
+          .wow.fadeInRightShort(data-wow-duration="0.5s" data-wow-delay="0.5s" data-wow-offset="200")
+            .illustration
+              .bg.pipe2
+              figure.screen2.desktop-screen
+                |
+                |
+                img(
+                  src=img_artwork[26]
+                  alt='screen'
+                )/
+                |
+                |
+              figure.graphic.artwork2
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[12]
+                  data-2d=img_assets+img_artwork[11]
+                  data-3d=img_assets+img_artwork[12]
+                  alt='illustration'
+                )/
+                |
+                |
+    .item.last
+      .container
+        .row.justify-content-center
+          .col-md-8.px-0
+            .bg.pipe3
+            .bg.pipe4
+            +title-secondary("center")
+              | #{$t.retail_landing.feature_title3}
+            p.use-text-subtitle2.text-center
+              | #{$t.retail_landing.feature_desc3}
+            .wow.fadeInUpShort(data-wow-offset="100" data-wow-delay="0.5s" data-wow-duration="0.5s")
+              .card.video
+                |
+                |
+                img(src=img_artwork[27] alt='screen')/
+                |
+                |
+                .btn-icon.btn-large.button.waves-effect.modal-trigger(data-target="video_modal" data-video="MltGO66gTbo")
+                  i.ion-play

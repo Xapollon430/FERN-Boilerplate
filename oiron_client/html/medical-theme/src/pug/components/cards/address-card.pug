@@ -1,0 +1,36 @@
+mixin address-card(img, name, phone, email, address, link)
+  .card.address-card
+    .paper
+      figure
+        |
+        |
+        img(src=img alt='clinic')/
+        |
+        |
+      .detail-info
+        h6.use-text-subtitle2.mb-sm-6
+          | #{name}
+        .row
+          .col-lg-6.px-sm-2.py-sm-1.pa-0
+            i.material-icons.icon.use-text-primary-color local_phone
+            | #{phone}
+          .col-lg-6.px-2.py-1
+            .hidden-xs-down
+              i.material-icons.icon.use-text-secondary-color email
+              | #{email}
+          .col-md-12.px-sm-2.px-0.py-1
+            .text-truncate
+              i.material-icons.icon.use-text-accent-color location_on
+              | #{address}
+        .hidden-xs-down
+          |
+          |
+          a.btn.btn-outlined.secondary.block.btn-small.waves-effect(href=link)
+            | Contact
+          |
+          |
+      |
+      |
+      a.mobile-link.waves-effect(href=link)
+      |
+      |

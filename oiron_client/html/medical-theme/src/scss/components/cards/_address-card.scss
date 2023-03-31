@@ -1,0 +1,61 @@
+/* Address Card */
+.address-card {
+  .paper {
+    position: relative;
+    padding: calc($spacing1 / 2);
+    display: flex;
+    @include text-align(left);
+    @include breakpoints-up(sm) {
+      padding: $spacing2;
+    }
+    h6 {
+      font-weight: $font-bold;
+    }
+    figure {
+      border-radius: $rounded-small;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      @include margin-right($spacing2);
+      @include breakpoints-down(xs) {
+        width: 100px;
+        height: 100px;
+      }
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .detail-info {
+    flex: 1;
+    overflow: hidden;
+    @include breakpoints-down(xs) {
+      font-size: 14px
+    }
+  }
+
+  .btn {
+    height: 35px;
+    line-height: 35px;
+  }
+
+  .icon {
+    @include margin-right($spacing1);
+    position: relative;
+    top: 6px;
+  }
+
+  .mobile-link {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include breakpoints-down(xs) {
+      display: block;
+    }
+  }
+
+}

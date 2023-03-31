@@ -1,0 +1,129 @@
+include ../../titles/title
+include ./location-buble
+-
+  var locationData = [
+    {
+      name: 'Location 1',
+      color: 'primary',
+      x: 100,
+      y: 150
+    },
+    {
+      name: 'Location 2',
+      color: 'primary',
+      x: 120,
+      y: 100
+    },
+    {
+      name: 'Location 3',
+      color: 'primary',
+      x: 400,
+      y: 40
+    },
+    {
+      name: 'Location 4',
+      color: 'primary',
+      x: 500,
+      y: 300
+    },
+    {
+      name: 'Location 5',
+      color: 'primary',
+      x: 270,
+      y: 220
+    },
+    {
+      name: 'Location 6',
+      color: 'primary',
+      x: 100,
+      y: 200
+    },
+    {
+      name: 'Location 6',
+      color: 'secondary',
+      x: 100,
+      y: 40
+    },
+    {
+      name: 'Location 7',
+      color: 'secondary',
+      x: 330,
+      y: 100
+    },
+    {
+      name: 'Location 8',
+      color: 'secondary',
+      x: 30,
+      y: 50
+    },
+    {
+      name: 'Location 9',
+      color: 'secondary',
+      x: 400,
+      y: 150
+    },
+    {
+      name: 'Location 10',
+      color: 'secondary',
+      x: 480,
+      y: 100
+    },
+    {
+      name: 'Location 11',
+      color: 'secondary',
+      x: 250,
+      y: 100
+    },
+    {
+      name: 'Location 12',
+      color: 'secondary',
+      x: 150,
+      y: 300
+    },
+    {
+      name: 'Location 13',
+      color: 'secondary',
+      x: 300,
+      y: 140
+    },
+    {
+      name: 'Location 14',
+      color: 'secondary',
+      x: 480,
+      y: 280
+    },
+    {
+      name: 'Location 15',
+      color: 'secondary',
+      x: 300,
+      y: 100
+    }
+  ]
+
+.root
+  .container
+    +title-main('center', $t.cloud_landing.mainfeature_title, $t.cloud_landing.morefeature_title2)
+    .row
+      .col-md-7.map-wrap
+        .world-map
+          .location-wrap
+            each item in locationData
+              .location-item(style=`left: ${item.x}px; top: ${item.y}px`)
+                button.btn-icon.waves-effect.tooltipped(data-position="top" data-tooltip=item.name type="button")
+                  +location-buble(item.color)
+      .col-md-5
+        .text
+          .wow.fadeInLeftShort(data-wow-offset='100' data-wow-delay='0.2s' data-wow-duration='0.3s')
+            .px-4
+              h3.use-text-subtitle.title-primary
+                span
+                | Region A
+              p.use-text-paragraph
+                | Spans 84 Availability Zones within 26 geographic regions around the world, with announced plans for 24 more Availability Zones.
+          .wow.fadeInLeftShort(data-wow-offset='100' data-wow-delay='0.2s' data-wow-duration='0.3s')
+            .px-4
+              h3.use-text-subtitle.title-secondary
+                span
+                | Region B
+              p.use-text-paragraph
+                | Customers across virtually every industry and of every size, including start-ups, enterprises, and public sector organizations.

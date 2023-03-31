@@ -1,0 +1,106 @@
+include ../titles/title.pug
+include ../titles/title-secondary.pug
+
+.root
+  .container.mq-lg-up(data-class="fixed-width")
+    +title-main('center')
+      | #{$t.social_landing.feature_title}
+    .item
+      .row.align-items-center.justify-content-center
+        .col-md-6.order-md-last
+          .desc
+            +title-secondary("left")
+              | #{$t.social_landing.feature_title1}
+            h6.use-text-subtitle2.text-center.text-md-start
+              | #{$t.social_landing.feature_desc1}
+        .col-md-6.px-8.order-md-first
+          .wow.fadeInLeftShort(data-wow-duration="0.5s" data-wow-offset="400")
+            .illustration
+              .bg.liquid1
+              figure.screen1.mobile-screen
+                |
+                |
+                img(
+                  src=img_artwork[27]
+                  alt='screen'
+                )/
+                |
+                |
+              figure.graphic.artwork1
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[10]
+                  data-2d=img_assets+img_artwork[9]
+                  data-3d=img_assets+img_artwork[10]
+                  alt='illustration'
+                )/
+                |
+                |
+    .item
+      .row.align-items-center
+        .col-md-6.px-8
+          .desc
+            +title-secondary("right")
+              | #{$t.social_landing.feature_title2}
+            h6.use-text-subtitle2.text-lg-right
+              | #{$t.social_landing.feature_desc2}
+        .col-md-6.px-sm-12
+          .wow.fadeInRightShort(data-wow-duration="0.5s" data-wow-delay="0.5s" data-wow-offset="200")
+            .illustration
+              .bg.liquid2
+              figure.screen2.mobile-screen
+                |
+                |
+                img(
+                  src=img_artwork[28]
+                  alt='screen'
+                )/
+                |
+                |
+              figure.graphic.artwork2
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+img_artwork[12]
+                  data-2d=img_assets+img_artwork[11]
+                  data-3d=img_assets+img_artwork[12]
+                  alt='illustration'
+                )/
+                |
+                |
+    .item.last
+      .decoration-bg
+        |
+        |
+        svg.wave
+          include ../svg/deco-bg2.pug
+        |
+        |
+      +title-secondary("center")
+        | #{$t.social_landing.feature_title3}
+      .container
+        .row.justify-content-center.spacing6
+          .col-md-10.pa-6
+            h6.text-center.use-text-subtitle2
+              | #{$t.social_landing.feature_desc3}
+            .wow.fadeInUpShort(data-wow-offset="10" data-wow-delay="0.5s" data-wow-duration="0.5s")
+              .illustration
+                .bg.liquid3
+                figure.screen3.desktop-screen
+                  |
+                  |
+                  img(src=img_artwork[29] alt='screen')/
+                  |
+                  |
+                figure.graphic.artwork3
+                  |
+                  |
+                  img.img-2d3d(
+                    src=img_assets+img_artwork[14]
+                    data-2d=img_assets+img_artwork[13]
+                    data-3d=img_assets+img_artwork[14]
+                    alt='illustration'
+                  )/
+                  |
+                  |

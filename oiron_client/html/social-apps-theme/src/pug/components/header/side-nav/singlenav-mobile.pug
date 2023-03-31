@@ -1,0 +1,17 @@
+#slide_menu.sidenav.mobile-nav
+  ul.collection
+    each item in menu.social
+      li.collection-item
+        a.sidenav-close.waves-effect.menu-list(href='#' + item.name)
+          | #{$t.social_landing['header_' + item.name]}
+  .dropdown-divider
+  .collection
+      ul
+        each item in ['login', 'register']
+          li.collection-item
+            |
+            |
+            a.sidenav-close.waves-effect.menu-list(href=link.social[item])
+              | #{$t.common[item]}
+            |
+            |

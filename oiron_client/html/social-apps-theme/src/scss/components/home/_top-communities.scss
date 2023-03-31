@@ -1,0 +1,123 @@
+#community {
+  .icon-group {
+    @include breakpoints-up(md) {
+      margin-top: $spacing10 * -1;
+    }
+    @include breakpoints-down(sm) {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+    @include breakpoints-down(xs) {
+      max-width: 400px;
+    }
+    & > * {
+      @include breakpoints-down(sm) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .big-icon {
+    position: relative;
+    text-align: center;
+    margin: spacing(10, 0);
+    @include breakpoints-down(sm) {
+      margin: spacing(5, 0)
+    }
+    @include breakpoints-down(xs) {
+      margin: spacing(2, 0)
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: $font-bold;
+      @include breakpoints-up(sm) {
+        font-size: 24px;
+      }
+      @include breakpoints-up(lg) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .icon {
+    line-height: 300px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: $spacing2;
+    width: 200px;
+    height: 200px;
+    @include breakpoints-down(xs) {
+      width: 120px;
+      height: 120px;
+      line-height: 165px;
+    }
+    i {
+      width: 205px;
+      height: 205px;
+      display: block;
+      -webkit-background-clip: text !important;
+      color: transparent;
+      @include breakpoints-up(sm) {
+        -webkit-text-fill-color: transparent;
+      }
+      &:before {
+        background: inherit
+      }
+      @include breakpoints-down(xs) {
+        width: 115px;
+        height: 115px;
+      }
+      &:before {
+        font-size: 140px;
+        @include breakpoints-down(xs) {
+          font-size: 84px
+        }
+      }
+    }
+  }
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    @include use-theme(background, $light-background-paper, $dark-background-default);
+  }
+
+  .members {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacing2;
+    .avatar-img {
+      margin-left: -10px;
+      border: 1px solid;
+      @include use-theme(border-color, $light-background-paper, $dark-background-default);
+      @include breakpoints-down(xs) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .chip {
+      color: $palette-common-white;
+      font-weight: $font-medium;
+      margin-left: -10px;
+      border: 3px solid !important;
+      @include use-theme(border-color, $light-background-paper !important, $dark-background-default !important);
+      @include breakpoints-down(xs) {
+        display: none;
+      }
+    }
+  }
+
+  .btn-explore {
+    font-size: 22px;
+    @include breakpoints-down(sm) {
+      font-size: 14px
+    }
+  }
+
+}

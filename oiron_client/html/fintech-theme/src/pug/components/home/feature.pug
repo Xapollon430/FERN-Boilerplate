@@ -1,0 +1,63 @@
+include ../titles/title.pug
+
+.more-feature
+  .container.fixed-width-lg-up
+    .item
+      .row.spacing6
+        .col-md-6
+          .text
+            +title-main("left", $t.fintech_landing.morefeature_title1)
+            p.use-text-subtitle2.text-center.text-md-start
+              | #{$t.fintech_landing.morefeature_subtitle1}
+        .col-md-6.py-md-0.px-6
+          .wow.fadeInRightShort(data-wow-offset="100" data-wow-delay="0.4s" data-wow-duration="0.3s")
+            figure.illustration
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[11]
+                data-2d=img_assets+img_artwork[10]
+                data-3d=img_assets+img_artwork[11]
+                alt='feature'
+              )/
+              |
+              |
+    .item
+      .row.spacing6.align-items-center
+        .col-md-6.pa-sm-6.order-md-last
+          .text.text-left.text-md-center
+            +title-main("left", $t.fintech_landing.morefeature_title2)
+            p.use-text-subtitle2.text-center.text-md-start #{$t.fintech_landing.morefeature_subtitle2}
+        .col-md-6.py-md-0.px-6.order-md-first
+          .wow.fadeInRightShort(data-wow-offset="200" data-wow-delay="0.3s" data-wow-duration="0.3s")
+            figure.illustration
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[13]
+                data-2d=img_assets+img_artwork[12]
+                data-3d=img_assets+img_artwork[13]
+                alt='feature'
+              )/
+              |
+              |
+    #statistic.item
+      .row
+        .col-md-12.px-sm-6.px-0
+          .text.text-center
+            +title-main("center", $t.fintech_landing.morefeature_title3)
+            p.text-center.use-text-subtitle2 #{$t.fintech_landing.morefeature_subtitle3}
+          .wow.fadeInUpShort(data-wow-delay="o.4s" data-wow-offset="100" data-wow-duration="0.3s")
+            figure.illustration.horizontal
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[15]
+                data-2d=img_assets+img_artwork[14]
+                data-3d=img_assets+img_artwork[15]
+                alt='feature'
+              )/
+              |
+              |
+
+          

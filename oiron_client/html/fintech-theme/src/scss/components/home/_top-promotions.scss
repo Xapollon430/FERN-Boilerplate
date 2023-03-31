@@ -1,0 +1,50 @@
+#promotions {
+  .root {
+    position: relative;
+    padding: spacing(10, 0);
+    @include breakpoints-down(sm) {
+      padding: spacing(5, 0);
+    }
+  }
+
+  .carousel {
+    position: relative;
+    z-index: 5;
+    @include breakpoints-up(md) {
+      margin-top: $spacing6;
+      margin-bottom: 20px;
+    }
+    .slick-dots{
+      position: relative;
+      bottom: $spacing2 * -1;
+      li {
+        width: 15px;
+        height: 15px;
+        border: 2px solid $palette-primary-main;
+        border-radius: 15px;
+        opacity: 0.7;
+        transition: all 0.5s ease-out;
+        margin: 0 4px;
+        &.slick-active {
+          background: $palette-primary-main;
+        }
+      }
+      li button:before {
+        display: none
+      }
+    }
+  }
+  .item {
+    padding: $spacing1;
+    @include use-theme(border-color, $palette-primary-light, $palette-primary-dark);
+    &:focus {
+      outline: none
+    }
+    > * {
+      margin: 0 auto
+    }
+  }
+
+
+
+}

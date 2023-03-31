@@ -1,0 +1,15 @@
+mixin promo-card(img, title, periode)
+  .promo-card
+    .card
+      figure
+        |
+        |
+        img(src=img alt='promotion')/
+        |
+        |
+      .property
+        .card-content
+          .card-title.promo-title
+            | #{title}
+          .date-line
+            | #{periode}

@@ -1,0 +1,29 @@
+.call-to-action
+  .container.fixed-width-md-up
+    .root
+      .deco
+        span.deco-top
+        span.deco-bottom
+        span.deco-right
+      .wow.fadeInUpShort(data-wow-delay="0.3s" data-wow-duration="0.5s" data-wow-offset="40")
+        .card.paper
+          .deco-button
+          .row.align-items-center.mb-0
+            .col-md-8.px-sm-6.px-0
+              h4.use-text-title2.pb-2 #{$t.marketing_landing.cta_title}
+              p
+                | Is your business ready? We'll make sure you are prepared.
+            .col-md-4.ps-md-12
+              .d-flex.align-items-center
+                |
+                |
+                a.waves-effect.btn.button.white.btn-outlined.btn-large.show-sm-down.block(
+                  href=link.marketing.contact
+                ) #{$t.common.btn_contact}
+                |
+                |
+                a.waves-effect.btn.button.primary.btn-large.show-md-up.block(
+                  href=link.marketing.contact
+                ) #{$t.common.btn_contact}
+                |
+                |

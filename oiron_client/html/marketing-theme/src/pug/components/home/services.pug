@@ -1,0 +1,82 @@
+include ../cards/product-card.pug
+include ./slider-art
+
+-
+  var servicesList = [
+    {
+      title: 'Technical support',
+      desc:
+        'After launch, we keep up with our clients and provide technical support.',
+      img: img_artwork[21]
+    },
+    {
+      title: 'Resource Augmentation',
+      desc:
+        'We have accumulated many years of experience in sourcing for IT professionals.',
+      img: img_artwork[22]
+    },
+    {
+      title: 'UX Design',
+      desc:
+        'We build products with modernized processes which incentivizes people to come back to.',
+      img: img_artwork[23]
+    },
+    {
+      title: 'Professional Services',
+      desc:
+        'With an in-depth understanding of business process in the Banking and Financial industry.',
+      img: img_artwork[24]
+    },
+    {
+      title: 'Managed Services',
+      desc:
+        'Our Managed Services offering provides the ideal cost-saving outsourcing alternative for companies.',
+      img: img_artwork[25]
+    },
+    {
+      title: 'Software Development',
+      desc:
+        'Our software development outsourcing service is ideal for fixed-scope self-managed projects.',
+      img: img_artwork[26]
+    }
+  ]
+
+.root
+  .container.carousel-header
+    .text
+      h4.use-text-title2.text-capitalize
+        | #{$t.marketing_landing.services_title}
+      p.use-text-subtitle2 We make the complex simple and intuitive
+    a.btn-flat.primary-text.waves-effect.view-all(href=link.marketing.product)
+      | #{$t.common.btn_seeall}
+      i.material-icons.icon arrow_forward
+  .carousel-handle
+    .carousel-wrap
+      .carousel
+        #services_carousel(data-length=servicesList.length)
+          .item.carousel-prop
+            div
+          each item in servicesList
+            .item
+              +product-card(0, 0, item.img, item.title, item.desc, 'full', 'portrait')
+  .floating-artwork
+    .container.fixed-width
+      .artwork
+        +slider-art('services')
+          div
+            .wow.fadeIn(data-wow-offset="0" data-wow-delay="0s" data-wow-duration="0.3s")
+              div
+                include ./deco/mountain
+            .wow.fadeInLeftShort(data-wow-offset="-250" data-wow-delay="0.3s" data-wow-duration="0.5s")
+              img.img-2d3d(src=img_assets+img_artwork[11] data-2d=img_assets+img_artwork[10] data-3d=img_assets+img_artwork[11] alt='services 3d')
+        nav.arrow
+          |
+          |
+          button#prev_services.btn-floating.margin.waves-effect
+            i.material-icons arrow_back
+          |
+          |
+          button#next_services.btn-floating.margin.waves-effect
+            i.material-icons arrow_forward
+          |
+          |

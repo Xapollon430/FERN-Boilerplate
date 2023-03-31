@@ -1,0 +1,145 @@
+#services {
+  .root {
+    position: relative;
+    padding-bottom: $spacing5;
+    @include breakpoints-up(sm) {
+      padding-bottom: $spacing10;
+    }
+  }
+  
+  .carousel-header {
+    position: relative;
+    z-index: 3;
+    @include breakpoints-up(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+    }
+    .text {
+      flex: 1;
+      @include breakpoints-up(sm) {
+        padding: spacing(0, 3)
+      }
+    }
+  }
+
+  .view-all {
+    display: flex;
+    margin-bottom: 50px;
+    @include breakpoints-up(lg) {
+      @include margin-right(160px);
+    }
+    @include breakpoints-up(sm) {
+      font-size: 24px;
+    }
+    @include breakpoints-down(sm) {
+      margin-bottom: 32px
+    }
+    @include breakpoints-down(xs) {
+      justify-content: center;
+    }
+    .icon {
+      @include margin-left($spacing1);
+      @include rtl-flip;
+      @include breakpoints-up(sm) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .carousel-handle {
+    height: 420px;
+    position: relative;
+    z-index: 10
+  }
+
+  .carousel-wrap {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden
+  }
+
+  .item {
+    margin: spacing(3, 1);
+    & > div {
+      width: 260px;
+    }
+    &:focus {
+      outline: none
+    }
+  }
+
+  .carousel-prop {
+    width: auto !important;
+    @include breakpoints-down(md) {
+      display: none;
+    }
+    div {
+      width: 350px
+    }
+  }
+
+  .floating-artwork {
+    position: absolute;
+    width: 100%;
+    @include left($spacing4 * -1);
+    top: 140px;
+    @media (min-width: 1400px) {
+      left: $spacing20
+    }
+    .artwork {
+      @include breakpoints-up(md) {
+        margin-right: $spacing5
+      }
+      @include breakpoints-up(lg) {
+        float: left
+      }
+      @media (min-width: 1400px) {
+        margin-left: $spacing10 * -1
+      }
+    }
+  }
+
+  .arrow {
+    @include padding-left($spacing15);
+    [dir="rtl"] & {
+      direction: rtl;
+      button i {
+        transform: rotate(180deg)
+      }
+    }
+    [dir="ltr"] & {
+      direction: ltr
+    }
+    margin-top: $spacing2;
+    position: relative;
+    z-index: 10;
+    button {
+      @include palette-background-paper;
+      margin: calc($spacing1 / 2);
+      @include shade2;
+      &:hover {
+        @include palette-background-default
+      }
+      i {
+        .theme--dark & {
+          color: $palette-primary-light
+        }
+        .theme--light & {
+          color: $palette-primary-dark
+        }
+      }
+    }
+    @media (max-width: 1279px) {
+      display: none
+    }
+    @include breakpoints-down(md) {
+      display: none;
+      margin-top: 560px
+    }
+  }
+}

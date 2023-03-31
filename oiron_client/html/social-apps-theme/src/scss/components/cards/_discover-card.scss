@@ -1,0 +1,64 @@
+.discover-card {
+  @include breakpoints-up(sm) {
+    display: flex;
+    align-items: center;
+  }
+  .screen {
+    width: 220px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    @include palette-background-paper;
+    @include shade2;
+    z-index: 2;
+    @include breakpoints-down(xs) {
+      margin: 0 auto;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .paper {
+    text-align: center;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 100%;
+    overflow: visible;
+    @include breakpoints-up(sm) {
+      padding: $spacing3;
+      margin-bottom: $spacing2;
+      height: 290px;
+      @include padding-left(240px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @include margin-left(-220px);
+    }
+    @include breakpoints-down(xs) {
+      padding-top: $spacing10;
+      margin-top: $spacing5 * -1;
+    }
+    &.card {
+      border-radius: 40px;
+      @include breakpoints-down(xs) {
+        background: none;
+        box-shadow: none;
+      }
+    }
+    img {
+      max-width: 100%;
+      max-height: 210px;
+      margin: 0 auto $spacing1;
+      @include breakpoints-down(xs) {
+        display: none;
+      }
+    }
+    strong {
+      font-weight: $font-bold;
+      font-size: 24px;
+      margin-bottom: $spacing2;
+    }
+  }
+}

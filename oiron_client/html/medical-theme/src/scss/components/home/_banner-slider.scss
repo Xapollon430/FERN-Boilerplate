@@ -1,0 +1,273 @@
+.banner-slider {
+  .banner-wrap {
+    position: relative;
+    display: block;
+    .slick-slider {
+      height: auto;
+    }
+    .slick-dots {
+      bottom: 0px;
+    }
+  }
+
+  .slide {
+    direction: ltr;
+    position: relative;
+    img {
+      margin-top: 80px;
+      max-height: 320px;
+      @include breakpoints-up(sm) {
+        max-width: 560px;
+      }
+      @include breakpoints-down(xs) {
+        height: 220px;
+        width: auto;
+      }
+    }
+    &.slick-active {
+      .deco-wrap {
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+      }
+    }
+    @include breakpoints-up(md) {
+      height: 600px;
+      &.center-content {
+        padding-top: $spacing10;
+      }
+    }
+    @include breakpoints-down(md) {
+      padding-top: $spacing5;
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      height: auto;
+      padding: spacing(15, 0, 0);
+      img {
+        margin-top: $spacing6 !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .background-banner {
+    position: absolute;
+    right: -300px;
+    img {
+      max-width: 480px;
+    }
+    @include breakpoints-up(xl) {
+      display: none;
+    }
+    @include breakpoints-down(md) {
+      display: none;
+    }
+  }
+
+  .h-banner {
+    text-align: center;
+    padding-top: $spacing3;
+    @include breakpoints-down(xs) {
+      justify-content: flex-end;
+      display: flex;
+      margin-right: -120px;
+    }
+    img {
+      margin: 0 auto;
+      @include breakpoints-up(md) {
+        width: 60%
+      }
+      @include breakpoints-down(md) {
+        max-width: none;
+        max-height: none;
+      }
+      @include breakpoints-down(xs) {
+        margin-left: -50%;
+      }
+    }
+  }
+
+  .slider-deco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .slide {
+      @include breakpoints-down(sm) {
+        height: 600px
+      }
+    }
+    .slick-list {
+      @include breakpoints-down(sm) {
+        height: 100%
+      }
+    }
+  }
+
+  .deco-wrap {
+    width: 100%;
+    height: 100%;
+    transition: all 1s cubic-bezier(0, -0.01, 0, 0.96);
+    transform: translateX(-50px) scale(0.8);
+    opacity: 0;
+    position: relative;
+    @include breakpoints-down(md) {
+      top: -120px
+    }
+  }
+
+  .deco {
+    border-radius: 50%;
+    position: absolute;
+    &.top {
+      @include use-theme(background-image, linear-gradient(95deg, $palette-primary-light 0%, $palette-secondary-light 110%), linear-gradient(95deg,  $palette-primary-dark 0%, $palette-secondary-dark 110%));
+      width: 1300px;
+      height: 1300px;
+      opacity: 0.3;
+      &.s1 {
+        top: -900px;
+        right: -800px;
+      }
+      &.s2 {
+        top: -900px;
+        left: -800px;
+      }
+    }
+    &.bottom {
+      border: 1px solid $palette-primary-main;
+      opacity: 0.3;
+      width: 800px;
+      height: 800px;
+      &.s1 {
+        top: -200px;
+        right: -340px;
+      }
+      &.s2 {
+        top: -200px;
+        left: -340px;
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    @include breakpoints-down('md') {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .text {
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing2;
+    }
+    h5 {
+      @include palette-text-secondary;
+      margin-bottom: $spacing4
+    }
+  }
+
+  .btn-area {
+    & > * {
+      font-size: 18px;
+      @include breakpoints-up(sm) {
+        @include margin-right($spacing2);
+      }
+    }
+    .btn {
+      font-size: 18px;
+      width: 200px;
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-bottom: $spacing2
+      }
+    }
+    .btn-flat {
+      margin-left: -12px;
+      padding-left: $spacing2;
+      padding-right: $spacing2;
+    }
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    a {
+      text-transform: none;
+      height: auto;
+      position: relative;
+      line-height: initial;
+      flex: 1;
+      font-weight: $font-regular;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 0 auto;
+      @include text-align(left);
+      span {
+        display: block;
+        border-radius: 36px;
+        padding: $spacing1;
+      }
+      strong {
+        text-transform: capitalize;
+        font-size: 28px;
+        display: block;
+        font-weight: $font-bold;
+      }
+      &:after {
+        content: '';
+        border-bottom: 6px solid #fff;
+        border-radius: 6px;
+        width: 0%;
+        position: absolute;
+        bottom: -18px;
+        @include left($spacing2);
+        transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
+        transform-origin: left center;
+      }
+      &.active {
+        strong {
+          color: $palette-link
+        }
+        &:after {
+          border-bottom-color: $palette-primary-main;
+          width: 50%;
+          @include left($spacing1);
+        }
+      }
+      &:hover {
+        transition: all 0.3s ease-out;
+        background: none;
+        &:after {
+          width: 50%;
+          @include left($spacing1);
+          border-bottom-color: $palette-primary-main
+        }
+      }
+    }
+  }
+
+  .divider {
+    margin: 0 $spacing2;
+    @include palette-divider;
+    min-height: 0;
+    max-height: calc(100% - 16px);
+    align-self: stretch;
+    border: solid;
+    border-width: 0 thin 0 0;
+    display: inline-flex;
+    height: inherit;
+    max-width: 0;
+    width: 0;
+    vertical-align: text-bottom;
+    flex: 1 1 0px;
+  }
+}

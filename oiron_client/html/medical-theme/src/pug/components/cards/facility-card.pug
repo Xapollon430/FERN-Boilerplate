@@ -1,0 +1,12 @@
+mixin facility-card(img, title, desc, button)
+  .card.facility-card
+    figure
+      img(src=img alt='img')/
+    .text
+      h6 #{title} 
+      p #{desc}
+    |
+    |
+    a.btn.waves-effect.block.secondary.button(href="#") #{button}
+    |
+    |

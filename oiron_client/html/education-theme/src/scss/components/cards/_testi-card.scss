@@ -1,0 +1,52 @@
+/* Testimonial Card */
+.testimonial-card {
+  height: 260px;
+  overflow: visible;
+  @include palette-background-paper;
+  border-radius: 40px;
+  border: 1px solid $palette-primary-main;
+  @include shade;
+  padding: spacing(4, 2);
+  position: relative;
+  @include breakpoints-up(sm) {
+    padding: $spacing8
+  }
+  .icon {
+    border-Radius: 20px;
+    transform: rotate(45deg);
+    background: $palette-primary-main;
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    @include left(32px);
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    @include breakpoints-down(xs) {
+      display: none
+    }
+    span {
+      background: url(../images/education/quote.png) no-repeat transparent;
+      width: 37px;
+      height: 37px;
+      display: block;
+      transform: rotate(-45deg) translate(0px, 20px);
+      vertical-align: top;
+    }
+  }
+  h6 {
+    font-weight: $font-medium
+  }
+  .text {
+    margin-bottom: $spacing4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: $spacing9
+  }
+
+  .caption {
+    @include palette-text-secondary
+  }
+}

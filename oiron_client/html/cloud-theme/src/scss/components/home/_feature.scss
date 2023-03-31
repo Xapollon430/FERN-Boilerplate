@@ -1,0 +1,126 @@
+#feature {
+  .main-feature {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    margin-bottom: $spacing5;
+    figure {
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      margin: 0 auto $spacing5;
+      position: relative;
+      @include use-theme(background, linear-gradient(180deg, $palette-secondary-light 20%, $palette-secondary-main 70%), linear-gradient(180deg, $palette-secondary-main 20%, $palette-secondary-dark 70%));
+      &:before {
+        border-radius: 15px;
+        content: "";
+        position: absolute;
+        width: 142px;
+        height: 142px;
+        @include use-theme(background-color, $light-background-paper, $dark-background-default);
+        top: 4px;
+        left: 4px;
+      }
+    }
+    svg {
+      position: relative;
+      height: 104px;
+      width: 104px;
+      margin: 0 auto;
+      @include use-theme(fill, $palette-primary-main, $palette-primary-light)
+    }
+    h6 {
+      margin-bottom: $spacing2;
+      font-weight: $font-bold
+    }
+    .item {
+      opacity: 1
+    }
+  }
+
+  .grid {
+    margin-top: $spacing5
+  }
+
+  .more-feature {
+    position: relative;
+    z-index: 3;
+    figure {
+      margin: 0
+    }
+    .divider {
+      border: none;
+      display: block;
+      background: none;
+      height: 1px;
+      margin: spacing(5, 0);
+      max-height: none;
+      @include breakpoints-down(sm) {
+        margin: spacing(10, 0)
+      }
+      &:before {
+        content: "";
+        @include use-theme(background, $light-divider, $dark-divider);
+        width: 80px;
+        height: 8px;
+        border-radius: 8px;
+        @include left(50%);
+        @include margin-left(-40px);
+        position: absolute;
+        @include breakpoints-up(md) {
+          @include margin-left(-60px)
+        }
+      }
+      &:after {
+        content: "";
+        @include use-theme(background, $light-divider, $dark-divider);
+        width: 20px;
+        height: 8px;
+        @include left(50%);
+        @include margin-left(25px);
+        border-radius: 8px;
+        position: absolute;
+        @include breakpoints-down(xs) {
+          display: none
+        }
+      }
+    }
+  }
+
+  .item {
+    position: relative;
+    padding: spacing(0, 3);
+    &.last {
+      figure {
+        margin-top: $spacing10
+      }
+    }
+    p {
+      margin-bottom: $spacing3
+    }
+  }
+
+  .text {
+    margin: spacing(8, 0);
+    @include breakpoints-down(sm) {
+      margin: 0
+    }
+  }
+
+  .illustration {
+    img {
+      display: block;
+      margin: 0 auto;
+      max-height: 400px;
+      max-width: 400px;
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-top: $spacing3
+      }
+    }
+  }
+  
+}

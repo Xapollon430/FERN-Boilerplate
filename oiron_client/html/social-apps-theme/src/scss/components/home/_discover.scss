@@ -1,0 +1,49 @@
+#discover {
+  .root {
+    position: relative;
+    @include breakpoints-down(sm) {
+      margin-bottom: $spacing15
+    }
+    @include breakpoints-down(xs) {
+      margin-bottom: $spacing10
+    }
+  }
+
+  .carousel {
+    position: relative;
+    .slick-dots{
+      position: relative;
+      bottom: -25px;
+      @include breakpoints-down(xs) {
+        bottom: 0;  
+      }
+      li {
+        width: 15px;
+        height: 15px;
+        border: 1px solid $palette-secondary-main;
+        border-radius: 15px;
+        opacity: 0.7;
+        transition: all 0.5s ease-out;
+        margin: 0 4px;
+        &.slick-active {
+          background: $palette-secondary-main;
+          width: 40px;
+        }
+      }
+      li button:before {
+        display: none
+      }
+    }
+  }
+
+  .item {
+    padding: spacing(0, 3);
+    @include breakpoints-up(sm) {
+      padding: $spacing3
+    }
+    &:focus {
+      outline: none
+    }
+  }
+
+}

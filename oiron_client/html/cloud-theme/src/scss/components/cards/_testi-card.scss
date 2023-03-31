@@ -1,0 +1,47 @@
+.testimonial-card {
+  height: 260px;
+  @include palette-background-paper;
+  border-radius: $spacing1;
+  border: 3px solid;
+  @include use-theme(border-color, $palette-primary-light, $palette-primary-dark);
+  padding: spacing(4, 2);
+  position: relative;
+  @include breakpoints-up(sm) {
+    padding: $spacing8
+  }
+  .icon {
+    border-Radius: 50%;
+    background: $palette-primary-main;
+    width: 100px;
+    height: 100px;
+    top: -56px;
+    @include left(32px);
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    @include breakpoints-down(xs) {
+      display: none
+    }
+    i {
+      font-size: 100px;
+      vertical-align: middle;
+      color: $palette-common-white;
+      background: linear-gradient($palette-primary-light, $palette-primary-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  h6 {
+    font-weight: $font-bold;
+    margin-bottom: 4px;
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+  }
+  .text {
+    margin-bottom: $spacing4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 75px
+  }
+}

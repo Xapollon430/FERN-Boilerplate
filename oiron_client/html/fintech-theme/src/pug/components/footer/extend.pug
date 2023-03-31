@@ -1,0 +1,36 @@
+mixin footer-extend(withcounter)
+  .footer-counter(class=withcounter ? 'with-counter' : '')
+    if withcounter
+      .counter
+        include ../counter-single
+        .action
+          h4.use-text-title2
+            | #{$t.common.about_ready}
+          |
+          |
+          a.btn.btn-large.secondary(href="#")
+            | #{$t.fintech_landing.getstarted}
+          |
+          |
+    .footer-container
+      .deco
+        if withcounter
+          .container
+            figure
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[17]
+                data-2d=img_assets+img_artwork[16]
+                data-3d=img_assets+img_artwork[17]
+                alt='feature'
+              )/
+              |
+              |
+        .deco-main
+          .deco-left
+          .deco-right
+      block
+      .deco-footer
+        span.deco-bottom
+        span.deco-top

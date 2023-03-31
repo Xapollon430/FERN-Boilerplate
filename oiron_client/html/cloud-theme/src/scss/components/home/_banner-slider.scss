@@ -1,0 +1,252 @@
+$cloud-bottom-light: '../images/cloud/cloud_bottom_light.svg';
+$cloud-bottom-dark:  '../images/cloud/cloud_bottom_dark.svg';
+
+.banner-slider {
+  .banner-wrap {
+    position: relative;
+    display: block;
+    .slick-slider {
+      height: auto;
+    }
+    .slick-dots {
+      bottom: $spacing5;
+    }
+  }
+  .root {
+    position: relative;
+    overflow: hidden;
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include use-theme(background, $palette-common-white, $palette-common-black);
+      opacity: 0.5;
+    }
+  }
+  .cloud-deco {
+    @include use-theme(background-image, url($cloud-bottom-light), url($cloud-bottom-dark));
+    background-repeat: repeat-x;
+    background-position: center 80px;
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    opacity: 0.5;
+    bottom: -320px;
+  }
+  .inner-deco {
+    height: 800px;
+    width: 100%;
+    position: absolute;
+    display: block;
+    .deco-wrap {
+      height: 500px;
+      margin: 0px;
+      width: 100%;
+      display: block;
+      position: absolute
+    }
+    .deco-wrap > div {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      svg {
+        position: absolute
+      }
+    }
+  }
+  .slider {
+    z-index: 1;
+  }
+  .slide {
+    position: relative;
+    direction: ltr;
+    * {
+      direction: ltr;
+    }
+    @include breakpoints-down('sm') {
+      text-align: center;
+      padding: spacing(15, 0, 10, 0);
+    }
+    @include breakpoints-down('xs') {
+      padding: spacing(15, 0, 5)
+    }
+    img {
+      margin: 0 auto;
+      max-height: 350px;
+      position: relative;
+      @include breakpoints-up(md) {
+        max-width: 100%;
+      }
+    }
+    &.center-content {
+      @include breakpoints-up(md) {
+        padding-top: 80px !important;
+      }
+    }
+  }
+  .img-slide1 {
+    @include breakpoints-down(lg) {
+      float: left
+    }
+    @include breakpoints-down(sm) {
+      right: 0px;
+    }
+    @include breakpoints-down(xs) {
+      right: auto;
+      left: -80px;
+    }
+  }
+  .img-slide2 {
+    @include breakpoints-between(md, xl) {
+      float: right
+    }
+  }
+  .h-banner {
+    text-align: center;
+    img {
+      margin-top: 0;
+      @include breakpoints-up(md) {
+        width: 50%;
+      }
+    }
+  }
+  .background-banner {
+    position: absolute;
+    z-index: 3;
+    right: -280px;
+    img {
+      max-height: 320px;
+    }
+    @include breakpoints-up(xl) {
+      display: none;
+    }
+    @include breakpoints-down(md) {
+      right: -160px;
+    }
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+  }
+  .carousel {
+    z-index: 5;
+    .slide {
+      @include breakpoints-up('md') {
+        height: 600px;
+        padding-top: $spacing5
+      }
+    }
+  }
+  .inner {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    z-index: 5;
+    @include breakpoints-down('md') {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .text {
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing2;
+    }
+    h5 {
+      @include palette-text-secondary;
+      margin-bottom: $spacing4;
+      font-weight: $font-medium;
+    }
+  }
+  .title {
+    position: relative;
+    h4 {
+      position: relative;
+    }
+  }
+  .title-wrap {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  .btn-area {
+    .btn {
+      font-size: 18px;
+      font-weight: $font-bold;
+      height: auto;
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-bottom: $spacing1
+      }
+    }
+    .btn-flat {
+      padding-left: $spacing1;
+      padding-right: $spacing1;
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+      @include breakpoints-up(sm) {
+        margin-right: $spacing2;
+      }
+    }
+  }
+  .slide-nav-group {
+    position: relative;
+    z-index: 2
+  }
+  .slide-nav {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    max-width: 1080px;
+    margin: 0 auto;
+    a {
+      text-transform: none;
+      height: auto;
+      padding: spacing(0, 2, 1);
+      line-height: initial;
+      border-radius: $rounded-small;
+      flex: 1;
+      font-weight: $font-regular;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 0 auto;
+      @include text-align(left);
+      transition: all 0.3s ease;
+      font-size: 14px;
+      strong {
+        transition: all 0.3s ease;
+        text-transform: capitalize;
+        font-size: 28px;
+        display: block;
+        font-weight: $font-bold;
+        @include margin-left(-2px);
+        z-index: 1;
+      }
+      &.active {
+        @include use-theme(color, $palette-secondary-dark, $palette-secondary-light);
+        strong {
+          color: $palette-primary-main;
+        }
+      }
+    }
+  }
+
+  .divider {
+    margin: auto $spacing2;
+    @include palette-divider;
+    min-height: 0;
+    max-height: calc(100% - 16px);
+    align-self: stretch;
+    border: solid;
+    border-width: 0 thin 0 0;
+    display: inline-flex;
+    height: inherit;
+    max-width: 0;
+    width: 0;
+    vertical-align: text-bottom;
+    flex: 1 1 0px;
+  }
+}

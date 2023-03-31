@@ -1,0 +1,9 @@
+mixin logo(type = '', size='medium')
+  |
+  |
+  span.logo-main(class=type+' '+size)
+    |
+    img(src=assets + brand.education.img alt='logo')/
+    | #{type !== 'only' ? brand.education.name : ''}
+  |
+  |

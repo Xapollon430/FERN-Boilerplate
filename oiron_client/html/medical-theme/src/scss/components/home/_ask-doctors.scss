@@ -1,0 +1,89 @@
+#ask-doctors {
+  .root {
+    position: relative;
+    z-index: 10;
+    @include breakpoints-down(sm) {
+      text-align: center;
+    }
+    .nav {
+      @include breakpoints-down(sm) {
+        overflow: auto;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  .deco {
+    position: absolute;
+    width: 470px;
+    height: 410px;
+    bottom: 0;
+    @include right(0);
+    opacity: 0.3;
+    img {
+      width: 100%;
+    }
+  }
+
+  .side-filter {
+    .nav {
+      background: none;
+      & > * {
+        @include breakpoints-down(xs) {
+          padding: spacing(0, 0.5)
+        }
+      }
+    }
+    .collection {
+      border: none;
+    }
+    .filter {
+      text-transform: capitalize;
+      margin-bottom: $spacing1;
+      border: none;
+      min-height: 36px;
+      padding: 0;
+      a {
+        border-radius: 40px;
+        padding: $spacing2;
+        display: block;
+        @include breakpoints-down(sm) {
+          padding: spacing(1, 2);
+          margin: spacing(0, 0.5)
+        }
+      }
+      &:before {
+        border-radius: 40px;
+        opacity: 0;
+      }
+      @include breakpoints-down(sm) {
+        > div {
+          text-align: center
+        }
+      }
+      @include breakpoints-up(sm) {
+        width: 90%;
+        overflow: hidden;
+      }
+      @include breakpoints-down(sm) {
+        > div {
+          text-align: center
+        }
+      }
+    }
+    .active {
+      background: none;
+      a {
+        background: $palette-primary-light;
+        color: $palette-primary-dark;
+      }
+    }
+  }
+
+  .massonry {
+    button {
+      width: 100%
+    }
+  }
+
+}

@@ -1,0 +1,31 @@
+mixin footer-extend(withcounter)
+  .footer-counter(class=withcounter ? 'extend' : '')
+    |
+    |
+    span.round
+    |
+    |
+    if withcounter
+      div
+        include ../counter-single
+        .action
+          h4.use-text-title2
+            | #{$t.common.about_ready}
+          |
+          |
+          a.btn.btn-large.secondary(href="#")
+            | #{$t.cloud_landing.getstarted}
+          |
+          |
+    block
+    if withcounter
+      .building-deco-footer
+        |
+        |
+        img.img-2d3d.img-left(src=img_assets+img_artwork[29] data-2d=img_assets+img_artwork[28] data-3d=img_assets+img_artwork[29] alt='building')/
+        |
+        |
+        img.img-2d3d.img-center(src=img_assets+img_artwork[31] data-2d=img_assets+img_artwork[30] data-3d=img_assets+img_artwork[31] alt='building')/
+        |
+        |
+        img.img-2d3d.img-left(src=img_assets+img_artwork[29] data-2d=img_assets+img_artwork[28] data-3d=img_assets+img_artwork[29] alt='building')/

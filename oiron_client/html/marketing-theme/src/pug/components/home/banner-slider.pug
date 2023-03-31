@@ -1,0 +1,147 @@
+.banner-slider
+  .banner-wrap
+    .carousel
+      .slider#banner_slider
+        #slide1.slide
+          .inner
+            .img.background-banner
+              |
+              |
+              svg(width='918px', height='369px', viewbox='0 0 918 369', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+                g#deco-banner(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                  g
+                    polygon.secondary-light(transform='translate(665.000000, 103.500000) scale(-1, 1) translate(-665.000000, -103.500000) ', points='795 19 795 188 535 188')
+                    polygon.accent-light(transform='translate(500.500000, 130.500000) scale(-1, 1) translate(-500.500000, -130.500000) ', points='466 73 535 73 466 188')
+                    polygon.primary-light(transform='translate(875.500000, 42.500000) scale(-1, 1) translate(-875.500000, -42.500000) ', points='875.5 0 889.370415 5.1253534 903.239559 10.2519783 910.620415 23.2312905 918 36.2118742 915.436726 50.9712645 912.873452 65.7319262 890.260441 85 860.74083 85 838.126548 65.7319262 835.563274 50.9712645 833 36.2118742 840.380856 23.2312905 847.760441 10.2519783 861.630856 5.1253534')
+                    polygon.accent-light(transform='translate(435.000000, 201.500000) scale(-1, 1) translate(-435.000000, -201.500000) ', points='435 159 446.499376 180.25 458 201.5 446.499376 222.75 435 244 423.499376 222.75 412 201.5 423.499376 180.25')
+                    path.primary-main(d='M250.59544,299 C274.014488,299 293,317.960086 293,341.350244 C293,351.917326 289.122872,361.581125 282.714195,369 L223,309.195142 C230.417307,302.841166 240.056923,299 250.59544,299 Z')
+                    circle.primary-light(cx='252.615385', cy='343.230769', r='25.7692308')
+                    polygon.secondary-light(points='200 47 200 177 0 177')
+                    polygon.primary-light(fill-rule='nonzero', transform='translate(58.000000, 209.500000) scale(-1, -1) translate(-58.000000, -209.500000) ', points='0 177 116 242 0 242')
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[3]
+                data-2d=img_assets+img_artwork[2]
+                data-3d=img_assets+img_artwork[3]
+                alt='background'
+              )/
+              |
+              |
+            .container
+              .row
+                .col-md-7.col-lg-6.px-sm-6.d-flex.align-items-center
+                  .text
+                    h4.use-text-title #{$t.marketing_landing.banner_title}
+                    h5.use-text-subtitle #{$t.marketing_landing.banner_subtitle}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.use-text-primary(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.secondary(href=link.marketing.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-md-5.col-lg-6
+                  .img
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[5]
+                      data-2d=img_assets+img_artwork[4]
+                      data-3d=img_assets+img_artwork[5]
+                      alt='banner 1 3D'
+                    )/
+                    |
+                    |
+        #slide2.slide
+          .inner
+            .container
+              .row
+                .col-md-7.col-lg-6.px-sm-6.d-flex.align-items-center.order-md-last
+                  .text
+                    h4.use-text-title #{$t.marketing_landing.banner_title}
+                    h5.use-text-subtitle #{$t.marketing_landing.banner_subtitle}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.use-text-primary(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.secondary(href=link.marketing.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-md-5.col-lg-6.px-sm-6order-md-first
+                  .img
+                    |
+                    |
+                    img.img-2d3d.mr-md-12.float-lg-right(
+                      src=img_assets+img_artwork[7]
+                      data-2d=img_assets+img_artwork[6]
+                      data-3d=img_assets+img_artwork[7]
+                      alt='banner 2 3D'
+                    )/
+                    |
+                    |
+        #slide3.slide.center-content
+          .inner
+            .container
+              .row.justify-content-end
+                .col-12.px-sm-12
+                  .text.text-center
+                    h4.use-text-title #{$t.marketing_landing.banner_title}
+                    h5.use-text-subtitle #{$t.marketing_landing.banner_subtitle}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.use-text-primary(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.secondary(href=link.marketing.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-12
+                  .img.h-banner
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[9]
+                      data-2d=img_assets+img_artwork[8]
+                      data-3d=img_assets+img_artwork[9]
+                      alt='banner 3 3D'
+                    )/
+                    |
+                    |
+    .hidden-sm-down
+      .container.max-md
+        nav.slide-nav#banner_nav
+          |
+          |
+          a.waves-effect.active(data-slide='0')
+            strong First Slide
+            | Banner with left text and right image
+          |
+          |
+          hr.divider
+          |
+          |
+          a.waves-effect(data-slide='1')
+            strong Second Slide
+            | Banner with left image and right text
+          |
+          |
+          hr.divider
+          |
+          |
+          a.waves-effect(data-slide='2')
+            strong Third Slide
+            | Banner with center text and image
+          |
+          |

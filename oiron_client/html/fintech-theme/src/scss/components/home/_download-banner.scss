@@ -1,0 +1,127 @@
+#download-banner {
+  .root {
+    position: relative;
+    @include breakpoints-up(sm) {
+      margin-bottom: 200px
+    }
+  }
+
+  .paper {
+    @include palette-background-paper;
+    @include shade;
+    border-radius: $rounded-medium;
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+    display: flex;
+    position: relative;
+    padding: $spacing2;
+    margin-top: $spacing10;
+    @include breakpoints-up(md) {
+      padding: $spacing5;
+      margin-top: $spacing20;
+    }
+    @include breakpoints-up(sm) {
+      height: 240px;
+      margin: $spacing15 $spacing5 0;
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: $font-bold;
+      @include breakpoints-up(sm) {
+        font-size: 36px;
+      }
+    }
+  }
+  
+  .phone {
+    border: 6px solid $dark-background-default;
+    @include palette-background-paper;
+    overflow: hidden;
+    border-radius: $rounded-big;
+    width: 174px;
+    height: 325px;
+    @include shade;
+    position: relative;
+    top: -80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include margin-right($spacing5);
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+    & > span {
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light)
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .action {
+    flex: 1;
+  }
+  .btn-area {
+    margin-top: $spacing4;
+    display: flex;
+    a {
+      display: block;
+      flex: 1;
+      @include breakpoints-up(sm) {
+        @include margin-right($spacing2);
+      }
+      @include breakpoints-down(xs) {
+        margin: 0 2px;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .deco-left {
+    position: absolute;
+    left: 0px;
+    top: -130px;
+    @include breakpoints-up(sm) {
+      top: -80px;
+    }
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+  }
+
+  .deco-right {
+    position: absolute;
+    right: -40px;
+    top: -36px;
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+  }
+
+  .primary-light {
+    fill: $palette-primary-light
+  }
+
+  .primary-main {
+    fill: $palette-primary-main
+  }
+
+  .primary-dark {
+    fill: $palette-primary-dark
+  }
+
+  .secondary-main {
+    fill: $palette-secondary-main
+  }
+
+  .secondary-dark {
+    fill: $palette-secondary-dark
+  }
+
+  .accent-main {
+    fill: $palette-accent-main
+  }
+}

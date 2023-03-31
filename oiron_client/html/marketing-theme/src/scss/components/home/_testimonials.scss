@@ -1,0 +1,89 @@
+#testimonials {
+  .carousel-header {
+    position: relative;
+    z-index: 3;
+    @include breakpoints-up(sm) {
+      margin-bottom: $spacing2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+    }
+    h4 {
+      margin-bottom: $spacing1
+    }
+  }
+
+  .root {
+     width: 100%;
+    position: relative;
+    padding-bottom: $spacing10;
+  }
+
+  .carousel {
+    position: relative;
+    z-index: 6;
+    .slick-dots {
+      bottom: $spacing2 * -1;
+    }
+    @include breakpoints-up(lg) {
+      @include margin-left(-160px);
+      width: calc(100% + 180px);
+    }
+  }
+
+  .item {
+    padding: spacing(3, 2);
+    &:focus {
+      outline: none
+    }
+  }
+
+  .floating-artwork {
+    position: absolute;
+    width: 100%;
+    top: $spacing5 * -1;
+    left: 0;
+    @include breakpoints-up(lg) {
+      left: $spacing1;
+    }
+    @media (min-width: 1400px) {
+      left: $spacing10
+    }
+    .artwork {
+      display: flex;
+      align-items: flex-end;
+      height: 540px;
+      @include breakpoints-up(md) {
+        margin-right: $spacing5
+      }
+      @include breakpoints-up(lg) {
+        float: right
+      }
+      @media (min-width: 1400px) {
+        margin-right: 160px
+      }
+    }
+  }
+
+  .item-props {
+    &-first {
+      [dir="rtl"] & {
+        width: 450px
+      }
+      [dir="ltr"] & {
+        width: 160px
+      }
+    }
+    &-last {
+      [dir="rtl"] & {
+        width: 160px
+      }
+      [dir="ltr"] & {
+        width: 100px
+      }
+    }
+  }
+}

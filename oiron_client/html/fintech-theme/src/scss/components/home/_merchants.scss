@@ -1,0 +1,60 @@
+#merchant {
+  .tabs {
+    position: relative;
+    z-index: 55;
+    margin-top: $spacing5 * -1;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid;
+    @include use-theme(border-color, $light-text-disabled,  $dark-text-disabled);
+  }
+
+  .tabs-content {
+    position: relative;
+    display: block;
+    margin: $spacing5 auto;
+    height: 300px !important;
+    overflow: visible;
+    @include breakpoints-up(sm) {
+      height: 200px !important;
+      padding: spacing(8, 4, 0)
+    }
+    section {
+      position: relative;
+      div {
+        overflow: visible
+      }
+    }
+  }
+
+  .tab-label {
+    font-size: 18px;
+    font-weight: $font-medium;
+    letter-spacing: 0;
+    padding: spacing(0, 5);
+    @include breakpoints-down(xs) {
+      font-size: 14px;
+    }
+    .theme--dark & {
+      color: $palette-primary-light
+    }
+  }
+  
+  .img-logo {
+    padding: $spacing2;
+    @include breakpoints-up(lg) {
+      padding: $spacing4;
+    }
+    img {
+      width: 40px;
+      @include breakpoints-up(sm) {
+        width: 100%;
+      }
+    }
+  }
+  
+  .carousel-item {
+    transition: none;
+    min-height: 0;
+  }
+}

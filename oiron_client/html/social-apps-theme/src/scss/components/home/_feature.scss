@@ -1,0 +1,164 @@
+$liquid-deco: '../images/social/liquid-mini.svg';
+
+#feature {
+  .root {
+    position: relative;
+    .btn {
+      width: 160px;
+    }
+  }
+
+  .decoration-bg {
+    position: absolute;
+    width: 1280px;
+    height: 100%;
+    @include left(-20px);
+    top: 120px;
+    @include breakpoints-down(xs) {
+      top: 320px
+    }
+    svg {
+      width: 100%;
+      height: 1700px;
+      @include use-theme(fill, $palette-secondary-light, $palette-secondary-dark);
+      opacity: 0.2;
+      transform: scale(1.3);
+      @media only screen and (min-width: 1400px) {
+        transform: scale(2.5, 1);
+      }
+      @include breakpoints-up(xl) {
+        display: none
+      }
+      @include breakpoints-down(xs) {
+        transform-origin: center left
+      }
+    }
+  }
+
+  .item {
+    position: relative;
+    min-height: 320px;
+    margin-bottom: $spacing15;
+    .desc {
+      position: relative;
+      z-index: 60
+    }
+    &.last {
+      margin-bottom: $spacing10;
+      @include breakpoints-down(xs) {
+        margin-bottom: 0
+      }
+    }
+    @include breakpoints-down(md) {
+      margin-bottom: $spacing10
+    }
+    @include breakpoints-down(sm) {
+      text-align: center
+    }
+    h6 {
+      margin-bottom: $spacing5
+    }
+  }
+
+  .illustration {
+    position: relative;
+  }
+
+  .mobile-screen {
+    width: 203px;
+    height: 405px;
+    overflow: hidden;
+    position: relative;
+    border-radius: $rounded-medium;
+    @include shade2;
+    @include breakpoints-down(xs) {
+      margin: 0 auto;
+    }
+    img {
+      height: 100%;
+      min-width: 100%;
+    }
+  }
+
+  .desktop-screen {
+    max-width: 520px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: $rounded-medium;
+    @include shade2;
+    img {
+      @include breakpoints-down(xs) {
+        width: 100%
+      }
+    }
+  }
+
+  .graphic {
+    position: relative;
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+    img {
+      max-width: 100%
+    }
+  }
+
+  .screen1 {
+    margin: 0 auto;
+  }
+
+  .artwork1 {
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+    @include left($spacing5)
+  }
+
+  .artwork2 {
+    width: 240px;
+    position: absolute;
+    bottom: 0;
+    @include right($spacing5);
+  }
+
+  .artwork3 {
+    max-width: 870px;
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    left: 56%;
+    transform: translateX(-50%)
+  }
+
+  .bg {
+    position: absolute;
+    left: 51%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url($liquid-deco) no-repeat transparent;
+    background-size: 1663px 567px;
+    opacity: 0.15
+  }
+
+  .liquid1 {
+    width: 380px;
+    height: 350px;
+    background-position: -13px 0;
+  }
+
+  .liquid2 {
+    width: 335px;
+    height: 327px;
+    background-position: -592px -34px;
+  }
+
+  .liquid3 {
+    width: 555px;
+    height: 561px;
+    background-position: -1096px -14px;
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+  }
+}

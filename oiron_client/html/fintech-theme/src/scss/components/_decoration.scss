@@ -1,0 +1,67 @@
+.deco-page {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-width: 700px;
+  bottom: 0;
+  opacity: 0.25;
+  direction: ltr;
+  .deco-main {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .container {
+    position: relative;
+  }
+  figure {
+    height: 130px;
+    width: 340px;
+    top: 94px;
+    overflow: hidden;
+    position: absolute;
+    img {
+      width: 100%;
+    }
+  }
+  .deco-left {
+    width: 612px;
+    height: 612px;
+    border-radius: 50%;
+    bottom: -400px;
+    position: relative;
+    @include use-theme(background, $palette-primary-light, $palette-primary-main);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      @include use-theme(background, $palette-accent-light, $palette-accent-main);
+      @include pie2;
+      top: 110px;
+      left: 0;
+    }
+  }
+
+  .deco-right {
+    width: 173px;
+    height: 173px;
+    @include use-theme(background, $palette-primary-light, $palette-primary-main);
+    @include pie1;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -100px;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      @include pie2;
+      @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+    }
+  }
+}

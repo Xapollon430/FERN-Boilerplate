@@ -1,0 +1,48 @@
+.counter-wrap {
+  margin: spacing(3, 0);
+}
+
+.counter-item-home {
+  p {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: $font-regular
+  }
+  @include breakpoints-up(md) {
+    display: flex;
+  }
+  align-items: center;
+  justify-content: center;
+  .text {
+    text-align: center;
+    h3 {
+      position: relative;
+      font-weight: bold;
+      padding-bottom: $spacing2;
+      margin-bottom: $spacing4;
+      &:after {
+        content: "";
+        width: 50px;
+        height: 8px;
+        position: absolute;
+        bottom: $spacing2 * -1;
+        left: calc(50% - 25px)
+      }
+      &.primary-line {
+        &:after {
+          background: $palette-primary-main;
+        }
+      }
+      &.secondary-line {
+        &:after {
+          background: $palette-secondary-main;
+        }
+      }
+      &.accent-line {
+        &:after {
+          background: $palette-accent-main;
+        }
+      }
+    }
+  }
+}

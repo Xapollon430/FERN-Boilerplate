@@ -1,0 +1,18 @@
+mixin footer-deco(bg=false)
+  .footer-deco(class=bg ? "bg" : "")
+    .deco-wrap
+      .deco.bottom
+        |
+        |
+        svg.wave
+          include ../svg/deco-wave
+        |
+        |
+      .deco.top
+        |
+        |
+        svg.wave
+          include ../svg/deco-wave
+        |
+        |
+    .wave.wave-cover

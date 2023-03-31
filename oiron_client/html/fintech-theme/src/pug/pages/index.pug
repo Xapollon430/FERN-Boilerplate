@@ -1,0 +1,93 @@
+extends ../layouts/app.pug
+
+block variables
+  - var pageTitle = " Homepage"
+  - var pageName = "homepage"
+  - var headerHome = true
+
+block content
+  div#home
+    .main-wrap
+      include ../components/header/main.pug
+      |
+      |
+      |
+      main.container-wrap.container-front
+        // ##### BANNER #####
+        section#banner
+          include ../components/home/banner-slider.pug
+        // ##### END BANNER #####
+        |
+        |
+        |
+        // ##### ABOUT #####
+        section#about-home.space-top
+          include ../components/home/about.pug
+        // ##### ABOUT #####
+        |
+        |
+        |
+        // ##### FEATURE #####
+        section#feature.space-top-short
+          include ../components/home/feature.pug
+        // ##### END FEATURE #####
+        |
+        |
+        |
+        // ##### PAYMENT STEP #####
+        section#payment-step
+          include ../components/home/payment-step.pug
+        // ##### END PAYMENT STEP #####
+        |
+        |
+        |
+        // ##### PROMOTIONS #####
+        section#promotions.space-top-short
+          include ../components/home/top-promotions.pug
+        // ##### END PROMOTIONS #####
+        |
+        |
+        |
+        // ##### TESTIMONIALS #####
+        section#testimonials.mq-md-down(data-class="space-top-short")
+          include ../components/home/testimonials.pug
+        // ##### END TESTIMONIALS #####
+        |
+        |
+        |
+        // ##### MERCHANTS #####
+        section#merchant.space-top
+          include ../components/home/merchants.pug
+        // ##### END MERCHANTS #####
+        |
+        |
+        |
+        // ##### DOWNLOAD #####
+        section.container-front#download-banner
+          include ../components/home/download-banner.pug
+        // ##### END DOWNLOAD #####
+        |
+        |
+        |
+      // ##### FOOTER #####
+      include ../components/footer/extend.pug
+      +footer-extend(true)
+        div
+          include ../components/footer/main.pug
+      // ##### END FOOTER #####
+      |
+      |
+      |
+      // ##### NOTIFICATIONS #####
+      .hidden-md-down
+        include ../components/notifications.pug
+      // ##### END NOTIFICATIONS #####
+      |
+      |
+      |
+      // ##### CORNER #####
+      .hidden-md-down
+        include ../components/corner.pug
+      // ##### END CORNER #####
+      |
+      |

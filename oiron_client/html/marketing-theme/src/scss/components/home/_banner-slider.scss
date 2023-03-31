@@ -1,0 +1,212 @@
+.banner-slider {
+  .banner-wrap {
+    position: relative;
+    display: block;
+    .slider {
+      height: auto
+    }
+    .slick-dots {
+      bottom: 0px;
+    }
+  }
+  .center-content {
+    .btn-area {
+      margin: 0;
+    }
+  }
+  .slide {
+    position: relative;
+    direction: ltr;
+    * {
+      direction: ltr;
+    }
+    img {
+      margin-top: 80px;
+      max-width: 560px;
+      max-height: 320px;
+      @include breakpoints-down(sm) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    @include breakpoints-up(md) {
+      height: 560px;
+      &.center-content {
+        padding-top: $spacing10;
+      }
+    }
+    @include breakpoints-down(md) {
+      padding-top: $spacing5;
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      height: auto;
+      padding: spacing(15, 0, 5);
+      img {
+        margin-top: $spacing6 !important;
+      }
+    }
+  }
+
+  .background-banner {
+    position: absolute;
+    right: -90px;
+    display: none;
+    @include breakpoints-between(md, xl) {
+      display: block;
+    }
+    img {
+      max-width: 480px;
+      position: relative;
+    }
+    svg {
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      @include breakpoints-down(md) {
+        display: none;
+      }
+    }
+  }
+
+  .primary-light {
+    @include use-theme(fill, $palette-primary-light, $palette-primary-dark);
+  }
+
+  .primary-main {
+    fill: $palette-primary-main
+  }
+
+  .secondary-light {
+    @include use-theme(fill, $palette-secondary-light, $palette-secondary-dark);
+  }
+
+  .accent-light {
+    @include use-theme(fill, $palette-accent-light, $palette-accent-dark);
+  }
+
+  .h-banner {
+    text-align: center;
+    margin-top: $spacing3;
+    img {
+      margin: 0 auto;
+      @include breakpoints-up(md) {
+        height: 160px;
+      }
+      @include breakpoints-down(sm) {
+        max-width: none;
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    @include breakpoints-down('md') {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .text {
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing2;
+    }
+    h5 {
+      @include palette-text-secondary;
+      margin-bottom: $spacing4
+    }
+  }
+
+  .btn-area {
+    & > * {
+      font-size: 18px;
+      @include breakpoints-up(sm) {
+        @include margin-right($spacing3);
+      }
+    }
+    .btn {
+      font-size: 18px;
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-bottom: $spacing2
+      }
+    }
+    .btn-flat {
+      margin-left: -12px;
+      padding-left: $spacing2;
+      padding-right: $spacing2;
+    }
+  }
+
+  .slide-nav {
+    display: flex;
+    a {
+      text-transform: none;
+      height: auto;
+      padding: $spacing1;
+      line-height: initial;
+      flex: 1;
+      font-weight: $font-regular;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 0 auto;
+      @include text-align(left);
+      @include padding-left($spacing3);
+      strong {
+        text-transform: capitalize;
+        font-size: 28px;
+        display: block;
+        font-weight: $font-bold;
+        @include margin-left(-2px)
+      }
+       &:after {
+        content: '';
+        width: 0%;
+        position: absolute;
+        @include left(4px);
+        top: 26px;
+        opacity: 0;
+        border-left: 10px solid $palette-secondary-main;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        @include rtl-flip;
+        transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
+      }
+      &:hover {
+        transition: all 0.3s ease-out;
+        background: none;
+        &:after {
+          opacity: 1;
+        }
+      }
+      &.active {
+        strong {
+          @include use-theme(color, $palette-primary-dark, $palette-primary-light)
+        }
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .divider {
+    margin: auto $spacing2;
+    @include palette-divider;
+    min-height: 0;
+    max-height: calc(100% - 16px);
+    align-self: stretch;
+    border: solid;
+    border-width: 0 thin 0 0;
+    display: inline-flex;
+    height: inherit;
+    max-width: 0;
+    width: 0;
+    vertical-align: text-bottom;
+    flex: 1 1 0px;
+  }
+}

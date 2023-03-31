@@ -1,0 +1,34 @@
+.promo-card {
+  max-width: 300px;
+  @include breakpoints-up(sm) {
+    max-width: 360px;
+  }
+  .card {
+    border-radius: 40px 10px 40px 40px !important;
+    overflow: hidden;
+    figure {
+      overflow: hidden;
+      height: 205px;
+      > div  {
+        border-bottom-right-radius: 100px;
+      }
+      img {
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+  .property {
+    padding: $spacing1 0;
+    @include breakpoints-up(sm) {
+      padding: spacing(1, 4);
+    }
+    .card-title {
+      font-size: 18px;
+    }  
+  }
+
+  .date-line {
+    margin-top: 1px;
+  }
+}

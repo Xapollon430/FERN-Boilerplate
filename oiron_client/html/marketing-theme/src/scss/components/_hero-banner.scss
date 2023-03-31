@@ -1,0 +1,17 @@
+.hero-banner-wrap {
+  position: relative;
+  .container {
+    position: relative;  
+  }
+  .deco {
+    position: absolute;
+    @include right(0);
+    top: 130px;
+    opacity: 0.3;
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+  }
+}
+
+

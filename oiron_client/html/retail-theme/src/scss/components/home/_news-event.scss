@@ -1,0 +1,18 @@
+#news-event {
+  .root {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .blog-wrap {
+    position: relative;
+    z-index: 10;
+    margin: spacing(5, 0)
+  }
+
+  .card {
+    @include breakpoints-down(xs) {
+      margin-bottom: $spacing6
+    }
+  }
+}

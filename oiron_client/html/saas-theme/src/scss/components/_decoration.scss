@@ -1,0 +1,40 @@
+.form-deco, .page-deco {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.bg-deco {
+  .top-deco {
+    position: absolute;
+    top: -480px;
+    right: -280px;
+    transform-origin: top right;
+    transform: scale(0.8);
+    svg {
+      width: 1024px;
+      height: 1104px;
+      @include use-theme(fill, $palette-primary-light, $palette-primary-main);
+      opacity: 0.3;
+    }
+  }
+
+  .bottom-deco {
+    position: absolute;
+    bottom: -800px;
+    left: -600px;
+    transform-origin: top right;
+    transform: scale(0.8);
+    @include breakpoints-down(xs) {
+      transform: scale(0.7);
+    }
+    svg {
+      width: 1524px;
+      height: 1104px;
+      fill: $palette-secondary-main;
+      opacity: 0.3;
+    }
+  }
+}

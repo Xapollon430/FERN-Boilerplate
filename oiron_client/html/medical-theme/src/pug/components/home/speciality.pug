@@ -1,0 +1,52 @@
+-
+  var specialityeList = [
+    ['Dentist', 'Padriatic', 'Cardiology'],
+    ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
+    ['Reumatologi', 'Andrologi', 'Ortodonsia'],
+    ['Dentist', 'Padriatic', 'Cardiology'],
+    ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
+    ['Reumatologi', 'Andrologi', 'Ortodonsia'],
+    ['Dentist', 'Padriatic', 'Cardiology'],
+    ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
+    ['Reumatologi', 'Andrologi', 'Ortodonsia']
+  ]
+
+.root
+  .container
+    .row.spacing8
+      .col-md-6.px-sm-12
+        h4.use-text-title
+          | #{$t.medical_landing.expertise_title}
+        p.desc.use-text-subtitle2
+          | #{$t.medical_landing.expertise_subtitle}
+        .running-tag
+          .slick-carousel#speciality_carousel
+            each group in specialityeList
+              .tag-group
+                each item in group
+                  |
+                  |
+                  span.tag-item #{item}
+                  |
+                  |
+      .col-md-6.px-6.show-sm-up
+        .circle-wave
+          .ball
+            |
+            |
+            img.img-2d3d(
+              src=img_assets+img_artwork[23]
+              data-2d=img_assets+img_artwork[22]
+              data-3d=img_assets+img_artwork[23]
+              alt='speciality 3d'
+            )/
+            |
+            |
+        .wow.zoomInShort(data-wow-offset="0" data-wow-delay='0.3s' data-wow-duration='0.3s')
+          .illustration-wrap
+            div
+              span.icon-green
+            div
+              span.icon-red
+            div
+              span.icon-blue

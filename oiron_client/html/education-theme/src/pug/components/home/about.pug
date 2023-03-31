@@ -1,0 +1,21 @@
+include ../titles/title.pug
+.root
+  .container.fixed-width
+    .row
+      .col-md-6.illu-wrap
+        .wow.fadeInLeftShort(data-wow-offset='-100' data-wow-delay='0.2s' data-wow-duration='0.6s')
+          .illustration
+            |
+            |
+            img.img-2d3d(src=img_assets+img_artwork[38] data-2d=img_assets+img_artwork[37] data-3d=img_assets+img_artwork[38] alt='about')/
+            |
+            |
+      .col-md-6
+        div.text-md-start.text-center
+          +title-main('left', $t.education_landing.about_title, $t.education_landing.about_desc, 'secondary')
+          |
+          |
+          a.btn.secondary.waves-effect(href=link.education.login)
+            | #{$t.education_landing.about_join}
+          |
+          |

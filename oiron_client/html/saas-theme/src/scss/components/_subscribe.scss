@@ -1,0 +1,81 @@
+$wave-deco-light: '../images/saas/deco-wave-light.png';
+$wave-deco-dark: '../images/saas/deco-wave-dark.png';
+
+.subscribe-form{
+  .root {
+    position: relative;
+    text-align: center;
+    padding-top: 160px;
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      opacity: 0.8;
+      @include use-theme(background, $palette-common-white, $dark-background-default);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 140px;
+      left: 0;
+      transform: scaleY(-1);
+      transform-origin: top center;
+      background-repeat: repeat-x;
+      background-position: -210px 0px;
+      .theme--dark & {
+        background-image: url($wave-deco-dark)
+      }
+      .theme--light & {
+        background-image: url($wave-deco-light)
+      }
+    }
+    .container {
+      position: relative;
+    }
+  }
+
+  .form {
+    position: relative;
+    margin-top: $spacing2
+  }
+
+  .field {
+    padding-right: 150px;
+    padding-left: $spacing3;
+    color: #fff;
+    width: 100%;
+    border-radius: 56px;
+    @include palette-background-paper;
+    border: 1px solid $palette-primary-main;
+    .input-field {
+      margin: 0;
+    }
+    input {
+      border: none;
+      margin-bottom: 0;
+      height: auto;
+      padding: 15px 0;
+    }
+  }
+
+  .button {
+    position: absolute;
+    @include right($spacing1);
+    top: 7px;
+    width: 140px;
+    @include breakpoints-down(sm) {
+      padding: spacing(0.5, 3);
+      min-width: 0;
+      width:auto;
+    }
+    @include breakpoints-down(xs) {
+      padding: spacing(0.5, 1)
+    }
+  }
+}

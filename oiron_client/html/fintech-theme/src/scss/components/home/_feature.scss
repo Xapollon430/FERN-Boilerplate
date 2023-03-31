@@ -1,0 +1,60 @@
+#feature {
+  .more-feature {
+    position: relative;
+    z-index: 3;
+    figure {
+      margin: 0
+    }
+  }
+
+  .item {
+    position: relative;
+    padding: spacing(0, 1, 10);
+    @include breakpoints-up(sm) {
+      padding: spacing(0, 3, 10);
+    }
+    p {
+      margin-bottom: $spacing3
+    }
+  }
+
+  .text {
+    position: relative;
+    @include breakpoints-down(sm) {
+      margin: 0
+    }
+    > span {
+      position: absolute;
+      @include palette-text-disabled;
+      top: -10px;
+      @include left(7px);
+      font-size: 38px;
+      z-index: 2;
+    }
+  }
+
+  .text-center {
+    span {
+      @include left(calc(50% - 7px));
+    }
+  }
+
+  .illustration {
+    img {
+      display: block;
+      margin: $spacing2 auto 0;
+      max-height: 240px;
+      @include breakpoints-up(lg) {
+        max-height: 340px
+      }
+      @include breakpoints-down(xs) {
+        width: 100%;
+      }
+    }
+    &.horizontal{
+      img {
+        max-height: 335px;
+      }
+    }
+  }
+}

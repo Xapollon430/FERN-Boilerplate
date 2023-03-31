@@ -1,0 +1,166 @@
+#popular {
+  .carousel-header {
+    position: relative;
+    z-index: 3;
+    @include breakpoints-up(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+    }
+    .title-main {
+      flex: 1
+    }
+  }
+
+  .view-all {
+    margin-bottom: 50px;
+    display: flex;
+    @include breakpoints-up(lg) {
+      @include margin-right(160px);
+    }
+    @include breakpoints-up(sm) {
+      font-size: 24px;
+    }
+    @include breakpoints-down(sm) {
+      margin-bottom: 32px
+    }
+    @include breakpoints-down(xs) {
+      justify-content: center
+    }
+    .icon {
+      @include margin-left($spacing1);
+      @include rtl-flip;
+      @include breakpoints-up(sm) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .root {
+    position: relative;
+    padding: spacing(10, 0);
+    @include breakpoints-down(xs) {
+      padding: spacing(5, 0);
+    }
+    &:before {
+      content: "";
+      @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+      opacity: 0.27;
+      width: calc(100% - 160px);
+      height: 100%;
+      [dir="ltr"] & {
+        border-top-right-radius: 100px;
+      }
+      [dir="rtl"] & {
+        border-top-left-radius: 100px;
+      }
+      position: absolute;
+      top: 0;
+      @include left(0);
+      @include breakpoints-down(sm) {
+        width: 100%;
+        border-radius: 50px 50px 0 0 !important
+      }
+    }
+  }
+
+  .floating-artwork {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: -100px;
+    direction: ltr;
+    .artwork {
+      @include breakpoints-up(md) {
+        @include margin-right($spacing5)
+      }
+      @include breakpoints-up(lg) {
+        @include float(right)
+      }
+      @media (min-width: 1400px) {
+        @include margin-right($spacing5 * -1)
+      }
+    }
+  }
+
+  .props {
+    @include breakpoints-down(sm) {
+      display: none !important;
+    }
+    > div {
+      width: 440px;
+      height: 2px;
+    }
+    &:focus {
+      outline: none
+    }
+  }
+
+  .carousel {
+    position: relative;
+    z-index: 5;
+    @include breakpoints-up(md) {
+      margin-bottom: -20px;
+    }
+  }
+  .item {
+    padding: spacing(0, 1);
+    margin-bottom: $spacing5;
+    & > * {
+      width: 250px;
+    }
+    &:focus {
+      outline: none
+    }
+    > * {
+      margin: 0 auto
+    }
+  }
+  .link {
+    padding: 0;
+    span {
+      text-transform: none;
+      font-weight: $font-regular;
+    }
+  }
+  .nav {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    width: 36px;
+    z-index: 6;
+    height: 36px;
+    padding: 0;
+    min-width: 0;
+    @include use-theme(background, $palette-common-white, $dark-background-paper);
+    @include shadow3;
+    [dir="rtl"] & {
+      transform: scale(-1.6)
+    }
+    [dir="ltr"] & {
+      transform: scale(1.6)
+    }
+    border: none;
+    box-shadow: none;
+    &:hover {
+      @include palette-background-paper;
+    }
+    i {
+      font-size: 24px;
+      @include palette-text-primary;
+    }
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+  }
+
+  .prev {
+    @include left(0)
+  }
+  .next {
+    @include right(0)
+  }
+} 

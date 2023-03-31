@@ -1,0 +1,71 @@
+include ../titles/title.pug
+include ../cards/blog-card.pug
+
+-
+  var blogData = [
+    {
+      title: "Vestibulum vitae tristique urna. Mauris non cursus quam",
+      category: "Science - Math",
+      date: "Feb 08 2022"
+    },
+    {
+      title: "Vestibulum vitae tristique urna. Mauris non cursus quam",
+      category: "Science - Math",
+      date: "Feb 08 2022"
+    },
+    {
+      title: "Vestibulum vitae tristique urna. Mauris non cursus quam",
+      category: "Science - Math",
+      date: "Feb 08 2022"
+    }
+  ]
+
+.root
+  if youtube.use
+    #video_modal.modal.video-popup
+      .modal-content
+        .headline
+          |
+          |
+          h4 #{$t.education_landing.blog_video}
+          |
+          |
+          button.btn-icon.modal-close.waves-effect
+            i.material-icons close
+        .text-center
+          #video_blog_iframe
+  .hidden-sm-down
+    .deco
+  .container.fixed-width
+    .px-md-12.pa-2
+      +title-main("left", $t.education_landing.blog_title, $t.education_landing.blog_desc, "secondary")
+    .row.flex-sm-row-reverse
+      .col-md-6.pa-md-8.pa-0
+        .video-wrap
+          .video-carousel
+            .card.item
+              |
+              |
+              img(src=img_artwork[14] alt='cover')/
+              |
+              |
+              button.btn.play-btn.waves-effect.modal-trigger(data-target="video_modal")
+                |
+                |
+                i.icon.material-icons play_arrow
+                |
+                |
+              |
+              |
+      .col-md-6.pa-md-8.pa-2
+        .blog-list
+          each item, index in blogData
+            .wow.fadeInLeftShort(data-wow-offset='-200' data-wow-delay=(index * 0.2) + 's' data-wow-duration='0.6s')
+              +blog-card(item.category, item.title, item.date)
+          |
+          |
+          a.more.secondary-text.btn-flat.waves-effect
+            | more
+          |
+          |
+      

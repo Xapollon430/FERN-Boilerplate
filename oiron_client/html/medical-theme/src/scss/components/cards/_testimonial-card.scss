@@ -1,0 +1,64 @@
+/* Testimonial Card */
+.testimonial-card {
+  direction: ltr;
+  position: relative;
+  .paper.card {
+    padding: spacing(6, 2, 0, 0);
+    width: 300px;
+    height: 300px;
+    border-radius: 0 50% 50% 50%;
+    p {
+      padding: $spacing3;
+      height: 100px;
+      overflow: hidden;
+    }
+  }
+
+  .star-icon {
+    color: #FFC107
+  }
+  
+  .rating {
+    margin-left: $spacing3
+  }
+  
+  .star-icon-disable {
+    .theme--light & {
+      color: $light-divider;
+    }
+    .theme--dark & {
+      color: $dark-divider;
+    }
+  }
+
+  .person {
+    display: flex;
+    margin-top: $spacing12 * -1;
+    justify-content: flex-end;
+    position: relative;
+    @include margin-right($spacing5);
+    .avatar {
+      width: 70px;
+      height: 70px;
+    }
+    .name {
+      text-align: right;
+      @include margin-left($spacing2);
+      h6 {
+        font-size: 16px;
+        font-weight: $font-medium;
+      }
+    }
+    .caption {
+      font-weight: $font-regular
+    }
+  }
+
+  .avatar {
+    @include shadow8;
+    border: 1px solid #FFF;
+    box-sizing: content-box;
+    @include margin-left($spacing1);
+    border-radius: 50% 50% 0 50%;
+  }
+}

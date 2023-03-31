@@ -1,0 +1,48 @@
+-
+  var expertiseList = [
+    ['social media', 'marketing', 'SEO'],
+    ['Web Development', 'UI Designs', 'Mobile Apps'],
+    ['Photography', 'Company Profile', 'Visual Editing'],
+    ['social media', 'marketing', 'SEO'],
+    ['Web Development', 'UI Designs', 'Mobile Apps'],
+    ['Photography', 'Company Profile', 'Visual Editing'],
+    ['social media', 'marketing', 'SEO'],
+    ['Web Development', 'UI Designs', 'Mobile Apps'],
+    ['Photography', 'Company Profile', 'Visual Editing']
+  ]
+
+.root
+  .container
+    .row
+      .col-lg-6.col-md-7.px-sm-6
+        h4.use-text-title2.text-capitalize
+          | #{$t.marketing_landing.expertise_title}
+        p.desc.use-text-subtitle2
+          | #{$t.marketing_landing.expertise_paragraph}
+        .running-tag
+          .slick-carousel#speciality_carousel
+            each group in expertiseList
+              .tag-group
+                each item in group
+                  |
+                  |
+                  span.tag-item #{item}
+                  |
+                  |
+      .col-lg-6.col-md-5.px-6
+        .illustration-wrap
+          .wow.fadeIn(data-wow-offset='-150' data-wow-delay='0s' data-wow-duration='0.3s')
+            div
+              include ./deco/building
+          .wow.fadeInRightShort(data-wow-offset='-150' data-wow-delay='0.3s' data-wow-duration='0.3s')
+            figure
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[13]
+                data-2d=img_assets+img_artwork[12]
+                data-3d=img_assets+img_artwork[13]
+                alt='speciality 3d'
+              )/
+              |
+              |

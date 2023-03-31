@@ -1,0 +1,81 @@
+.testimonial-card {
+  position: relative;
+  margin-top: 50px;
+  h5 {
+    font-weight: $font-medium;
+  }
+
+  .caption-name {
+    display: block;
+    font-size: 14px;
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+  }
+
+  .paper {
+    height: 250px;
+    margin: spacing(3, 0);
+    text-align: center;
+    border: 1px solid transparent;
+    transition: border 0.4s ease-out;
+    padding: $spacing1;
+    position: relative;
+    overflow: visible;
+    &.card {
+      border-radius: 40px;
+      display: block;
+    }
+    @include breakpoints-up(sm) {
+      padding: spacing(8, 15)
+    }
+  }
+
+  .text {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 80px;
+    font-size: 18px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    @include breakpoints-down(xs) {
+      font-size: 14px;
+      -webkit-line-clamp: 4
+    }
+  }
+
+  .avatar {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50% !important;
+    box-sizing: content-box;
+    border: 20px solid;
+    @include use-theme(border-color, rgba(255, 255, 255, 0.5), rgba(66, 66, 66, 0.5));
+    overflow: visible;
+    box-shadow: none;
+    margin: -64px auto $spacing5;
+    @include breakpoints-down(xs) {
+      margin-bottom: 0
+    }
+    img {
+      border-radius: inherit;
+      display: inline-flex;
+      height: inherit;
+      width: inherit;
+    }
+    @include breakpoints-up(sm) {
+      margin: -120px auto 0;
+    }
+    &:before {
+      content: "";
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      box-shadow: 0 0px 30px -10px #000;
+    }
+  }
+}

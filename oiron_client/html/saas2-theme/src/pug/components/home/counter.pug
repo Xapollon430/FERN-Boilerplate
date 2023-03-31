@@ -1,0 +1,60 @@
+.counter-wrap
+  .counter-wrap
+    .container.max-md
+      .row.counter-inner.spacing6.justify-content-center.align-items-center
+        .col-sm-4.pa-6
+          .counter-item
+            .text
+              h3.use-text-title
+                |
+                |
+                span.numscroller(
+                  data-min="0"
+                  data-max="12"
+                  data-delay="5"
+                  data-increment="8"
+                )
+                | &nbsp; #{$t.saas2_landing.counter_month}
+                |
+                |
+              p.use-text-subtitle
+                i.material-icons reply
+                | #{$t.saas2_landing.counter_free}
+        .col-sm-4.pa-6
+          .counter-item
+            .text
+              h3.use-text-title
+                |
+                |
+                | +
+                span.numscroller(
+                  data-min="0"
+                  data-max="80"
+                  data-delay="5"
+                  data-increment="8"
+                )
+                | M
+                |
+                |
+              p.use-text-subtitle
+                i.material-icons people
+                | #{$t.saas2_landing.counter_users}
+        .col-sm-4.pa-6
+          .counter-item
+            .text
+              h3.use-text-title
+                |
+                |
+                | +
+                span.numscroller(
+                  data-min="0"
+                  data-max="180"
+                  data-delay="5"
+                  data-increment="8"
+                )
+                | K
+                |
+                |
+              p.use-text-subtitle
+                i.material-icons layers
+                | #{$t.saas2_landing.counter_providers}

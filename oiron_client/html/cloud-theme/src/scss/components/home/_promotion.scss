@@ -1,0 +1,265 @@
+$building-deco-light: '../images/cloud/building_deco_light.png';
+$building-deco-dark: '../images/cloud/building_deco_dark.png';
+
+#promotion {
+  .cloud-top, .cloud-top-cover {
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: -270px;
+    transform: scale(1.1);
+    @include left(0);
+    @include breakpoints-down(sm) {
+      top: -250px
+    }
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .cloud-top svg {
+    @include use-theme(fill, #FFF, #000);
+  }
+
+  .cloud-top-cover svg {
+    @include use-theme(fill, #FFF, #393939);
+  }
+
+  .root {
+    position: relative;
+    @include use-theme(background, #FFF, #393939);
+    @include breakpoints-up(md) {
+      height: 360px;
+      padding: spacing(3, 0)
+    }
+    &:before {
+      @include use-theme(background, #FFF, #000);
+    }
+    &:after {
+      @include use-theme(background-image, url($building-deco-light), url($building-deco-dark));
+      background-repeat: repeat-x;
+      background-position: bottom center;
+      content: "";
+      position: absolute;
+      @include left(0);
+      bottom: -40px;
+      width: 100%;
+      height: 150px;
+    }
+  }
+
+  .slider-wrap {
+    position: relative;
+    z-index: 1;
+    > div {
+      overflow: hidden;
+      > a {
+        z-index: 11;
+        background: none !important;
+        position: absolute;
+        transition: all 0.3s ease;
+        top: 40%;
+        svg {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          @include left(0);
+          top: 0;
+          @include use-theme(fill, $light-text-secondary, $dark-text-secondary)
+        }
+      }
+    }
+    .slider-wrapper {
+      a {
+        @include breakpoints-down(sm) {
+          display: none
+        }
+      }
+    }
+    .slick-dots {
+      @include breakpoints-down(sm) {
+        bottom: 0px
+      }
+    }
+  }
+
+  .item {
+    z-index: 10;
+    margin-top: $spacing1;
+    @include breakpoints-up(sm) {
+      height: 300px;
+      margin-top: $spacing4;
+    }
+    @include breakpoints-up(md) {
+      margin-top: $spacing8;
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+    }
+    .image {
+      background: $palette-secondary-light;
+      border: 4px solid $palette-primary-light;
+      border-radius: 50%;
+      width: 190px;
+      height: 190px;
+      line-height: 200px;
+      text-align: center;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      @include breakpoints-up(md) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      @include breakpoints-down(xs) {
+        margin-top: $spacing3;
+      }
+      &:before {
+        content: "";
+        background: $palette-secondary-light;
+        border: 4px solid $palette-primary-light;
+        border-radius: 50%;
+        width: 240px;
+        height: 240px;
+        line-height: 300px;
+        text-align: center;
+        opacity: 0.5;
+        position: absolute;
+        top: -30px;
+        left: -30px;
+      }
+      &:after {
+        @include breakpoints-up(lg) {
+          content: "";
+          background: $palette-secondary-light;
+          border: 4px solid $palette-primary-light;
+          border-radius: 50%;
+          width: 320px;
+          height: 320px;
+          line-height: 380px;
+          text-align: center;
+          opacity: 0.2;
+          position: absolute;
+          top: -70px;
+          left: -70px;
+        }
+      }
+      img {
+        vertical-align: middle;
+        max-width: 200px;
+        max-height: 200px
+      }
+    }
+    .text {
+      padding: spacing(2, 3);
+      overflow: hidden;
+      @include breakpoints-down(md) {
+        padding: $spacing1;
+      }
+      @include breakpoints-down(xs) {
+        margin-top: $spacing5
+      }
+    }
+    h1 {
+      margin-bottom: $spacing3;
+      .btn-flat {
+        display: block;
+        line-height: 36px;
+        padding: 0;
+        text-transform: none;
+        color: $palette-secondary-main;
+        font-size: 28px;
+        line-height: 36px;
+        font-family: 'Montserrat';
+        font-weight: $font-bold;
+        text-align: left;
+        white-space: normal;
+        width: 100%;
+        .btn-content {
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+          max-width: 100%;
+          text-overflow: ellipsis;
+        }
+        @include breakpoints-down(xs) {
+          width: 100%;
+          text-align: center;
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+      @include breakpoints-down(xs) {
+        white-space: normal;
+        line-height: 32px;
+      }
+    }
+    p {
+      margin-bottom: $spacing2
+    }
+    .time {
+      span {
+        @include palette-text-secondary
+      }
+    }
+    &:before {
+      display: none
+    }
+  }
+
+  .icon {
+    font-size: 140px;
+    position: relative;
+    z-index: 1;
+    &:before {
+      color: $palette-primary-main;
+      background: linear-gradient($palette-primary-light, $palette-primary-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @include breakpoints-down(md) {
+      font-size: 120px;
+    }
+  }
+
+  .prev, .next {
+    position: absolute;
+    z-index: 5;
+    top: 200px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    @include palette-text-secondary;
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+    i {
+      font-size: 40px;
+    }
+  }
+
+  /* Position the "next button" to the right */
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .next {
+    right: 0;
+    &:hover {
+      right: -10px;
+    }
+  }
+
+  .prev {
+    left: 0;
+    &:hover {
+      left: -10px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.hero-banner-wrap  {
+  position: relative;
+  .container {
+    position: relative;  
+  }
+  .deco {
+    position: absolute;
+    top: -100px;
+    @include right(0);
+    display: flex;
+    width: 480px;
+    height: 100%;
+    @include use-theme(opacity, 0.5, 0.2);
+    @include rtl-flip;
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+    & > div {
+      position: relative;
+      flex: 1;
+    }
+    &-left {
+      .leaf {
+        left: -60px;
+        @include pie4;
+        @include use-theme(background, $palette-accent-light, $palette-accent-dark);
+      }
+      .round {
+        @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+      }
+      .land {
+        right: 0;
+        @include pie1;
+        @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+      }
+    }
+  }
+
+  .round {
+    width: 176px;
+    height: 176px;
+    position: absolute;
+    top: 180px;
+    left: 30%;
+    border-radius: 50%
+  }
+
+  .leaf {
+    width: 192px;
+    height: 192px;
+    position: absolute;
+    top: 260px;
+  }
+
+  .land {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    bottom: 0;
+  }
+}
+

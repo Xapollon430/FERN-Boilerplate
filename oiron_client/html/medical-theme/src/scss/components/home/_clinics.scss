@@ -1,0 +1,9 @@
+#clinics {
+  .root {
+    position: relative;
+    z-index: 10;
+    @include breakpoints-down(sm) {
+      text-align: center
+    }
+  }
+}

@@ -1,0 +1,192 @@
+#about-home {
+  .video-popup {
+    max-width: none;
+    @include breakpoints-up(sm) {
+      width: 690px;
+    }
+    iframe {
+      width: 100%
+    }
+  }
+
+  .headline {
+    margin-bottom: $spacing2;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.0125em;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    h4 {
+      font-size: 20px;
+      font-weight: $font-bold;
+    }
+  }
+
+  .main-feature {
+    position: relative;
+    display: block;
+    z-index: 2;
+    @include breakpoints-up(lg) {
+      padding-bottom: $spacing8
+    }
+  }
+
+  .video {
+    overflow: hidden;
+    position: relative;
+    margin: spacing(6, 0, 2);
+    figure {
+      margin: 0;
+      background: $palette-common-black;
+      img {
+        opacity: 0.62;
+        min-height: 100%;
+        width: 100%
+      }
+    }
+  }
+
+  .feature-wrap {
+    position: relative
+  }
+
+  .play-btn {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 50%;
+    @include palette-background-paper;
+    @include shade;
+    @include left(50%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    i {
+      display: block;
+      line-height: normal;
+      @include padding-left(10px);
+      &:before {
+        font-size: 60px;
+        color: $palette-primary-main;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 4px;
+    @include right(4px);
+  }
+
+  .deco {
+    position: absolute;
+    top: $spacing2;
+    @include right(0);
+    width: 100%;
+    svg {
+      width: 100%;
+    }
+  }
+
+  .counter {
+    display: flex;
+    @include breakpoints-up(lg) {
+      justify-content: flex-end
+    }
+    @include breakpoints-up(sm) {
+      margin-top: $spacing10;
+      @include padding-right($spacing8)
+    }
+    > * {
+      @include breakpoints-down(xs) {
+        width: 50%;
+        padding: spacing(0.5)
+      }
+    }
+  }
+
+  .lower {
+    @include breakpoints-up(sm) {
+      margin-top: $spacing3
+    }
+  }
+
+  .higher {
+    @include breakpoints-up(sm) {
+      margin-top: $spacing3 * -1
+    }
+  }
+
+  .paper {
+    position: relative;
+    height: 193px;
+    &.card {
+      color: $palette-common-white;
+      border-radius: 0;
+      margin: 0;
+      padding: $spacing3;
+      @include breakpoints-up(sm) {
+        padding: spacing(3, 5);
+        @include margin-right($spacing4);
+      }
+      &.primary {
+        background: $palette-primary-main
+      }
+      &.secondary {
+        background: $palette-secondary-main
+      }
+      &.accent {
+        background: $palette-accent-main
+      }
+      &.pie1 {
+        border-top-left-radius: 100px;
+      }
+      &.pie2 {
+        border-top-right-radius: 100px;
+      }
+      &.pie3 {
+        border-bottom-right-radius: 100px;
+      }
+      &.pie4 {
+        border-bottom-left-radius: 100px;
+      }
+    }
+    @include breakpoints-up(sm) {
+      padding: spacing(3, 5);
+      margin-right: $spacing4;
+      width: 193px;
+    }
+    span {
+      font-size: 64px;
+      line-height: 64px;
+    }
+    h6 {
+      font-weight: $font-bold;
+    }
+    p {
+      font-size: 18px;
+      font-weight: $font-medium;
+      @include breakpoints-down(xs) {
+        font-size: 16px;
+      }
+    }
+  }
+  
+  .primary-light-bg {
+    @include use-theme(fill, $palette-primary-light, $palette-primary-dark)
+  }
+
+  .secondary-light-bg {
+    @include use-theme(fill, $palette-secondary-light, $palette-secondary-dark)
+  }
+
+  .primary-main-bg {
+    fill: $palette-primary-main
+  }
+
+  .secondary-main-bg {
+    fill: $palette-secondary-main
+  }
+}

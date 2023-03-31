@@ -1,0 +1,67 @@
+-
+  var testiData = [
+    {
+      text: 'I have worked with every conceivable service provider, and it\'s amazing documentation, great UI/UX, and reasonable and understandable pricing scheme are unsurpassed.',
+      name: 'John Doe',
+      title: 'Chief Digital Officer'
+    },
+    {
+      text: 'Simplicity is key but also performance/price. DO excels at both compared to another cloud services.',
+      name: 'Jean Doe',
+      title: 'Chief Digital Officer'
+    },
+    {
+      text: 'From the marketing to the UI for managing your site, it feels like a premium host.',
+      name: 'Jena Doe',
+      title: 'Graphic Designer'
+    },
+    {
+      text: 'Hostinger is a reliable hosting company with years of experience in the shared hosting industry.',
+      name: 'Jovelin Doe',
+      title: 'Senior Graphic Designer'
+    },
+    {
+      text: 'It has been a trusted partner for our critical domain names. As we continue to grow, we know we can always count on them.',
+      name: 'Jihan Doe',
+      title: 'CEO Software House'
+    },
+    {
+      text: 'With a high value domain name like Privacy.com, it\'s important to use a registrar that you trust. We can sleep at night knowing that Namecheap is keeping our asset secure.',
+      name: 'Jovelin Doe',
+      title: 'Senior Graphic Designer'
+    }
+  ]
+
+
+include ../titles/title.pug
+include ../cards/testi-card.pug
+
+.root
+  .container.fixed-width-lg-up
+    +title-main("center", $t.cloud_landing.testi_headtitle, $t.cloud_landing.testi_title)
+    .slider-wrap
+      .carousel
+        |
+        |
+        button.waves-effect.btn.btn-small.primary.nav.prev#prev_testi
+          |
+          |
+          i.ion-ios-arrow-back
+          |
+          |
+        |
+        |
+        .slick-carousel#testimonial_carousel
+          each item in testiData
+            .item
+              +testi-card(item.name, item.title, item.text)
+        |
+        |
+        button.waves-effect.btn.btn-small.primary.nav.next#next_testi
+          |
+          |
+          i.ion-ios-arrow-forward
+          |
+          |
+        |
+        |

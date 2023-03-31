@@ -1,0 +1,91 @@
+$wave-deco-light: '../images/saas2/deco-wave-light.png';
+$wave-deco-dark: '../images/saas2/deco-wave-dark.png';
+
+.hero-banner-wrap {
+  position: relative;
+  padding-bottom: $spacing10;
+  &:before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(120deg, $palette-primary-main, $palette-secondary-main);
+    opacity: 0.15;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  .deco-wrap {
+    width: 100%;
+    height: 100%;
+    @media only screen and (min-width: 1400px) { 
+      display: none;
+    }
+  }
+
+  .deco {
+    position: absolute;
+    bottom: 0;
+    svg {
+      width: 2000px;
+    }
+    &.top {
+      bottom: 0;
+      left: 0;
+      height: 240px;
+      width: 100%;
+      opacity: 0.5;
+      @include breakpoints-down(sm) {
+        bottom: -20px;
+      }
+      .wave-cover {
+        background-position: 470px 110px;
+        background-size: 1900px 110px;
+        background-repeat: repeat-x;
+        @include breakpoints-down(xs) {
+          background-size: 1000px 110px;  
+        }
+      }
+    }
+    &.bottom {
+      left: -370px;
+      bottom: -10px;
+      opacity: 0.4;
+      @include breakpoints-down(sm) {
+        bottom: -20px;
+      }
+      svg {
+        @include use-theme(fill, $palette-primary-light, $palette-primary-dark);
+      }
+    }
+  }
+
+  .wave-cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: -5px;
+    @include left(0);
+    transform: scale(1.2, 1);
+    background-position: 50px bottom;
+    background-size: 1370px 80px;
+    background-repeat: repeat-x;
+    .theme--dark & {
+      background-image: url($wave-deco-dark)
+    }
+    .theme--light & {
+      background-image: url($wave-deco-light)
+    }
+    @include breakpoints-down(xs) {
+      background-size: 600px 40px;
+    }
+    @include breakpoints-down(md) {
+      background-position: center bottom
+    }
+  }
+}
+

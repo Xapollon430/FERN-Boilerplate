@@ -1,0 +1,59 @@
+/* Profile Card */
+.card.doctor-card {
+  overflow: visible;
+  .person {
+    display: flex;
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 0 50% 50% 50%;
+      position: relative;
+      top: -8px;
+      @include left(-8px);
+    }
+    .name {
+      padding: $spacing1
+    }
+    h4 {
+      font-size: 22px;
+      font-weight: $font-medium
+    }
+    p {
+      font-size: 16px;
+      @include palette-text-secondary
+    }
+  }
+  .divider {
+    @include palette-divider;
+    background: none;
+    margin: spacing(0, 2)
+  }
+  .action {
+    padding: 12px;
+    @include breakpoints-up(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .property {
+      span {
+        @include palette-text-disabled;
+        font-size: 14px;
+        display: inline-block;
+        @include margin-right($spacing4);
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+    .btn {
+      @include breakpoints-up(sm) {
+        width: 100px
+      }
+      @include breakpoints-down(xs) {
+        width: 100%;
+        margin-top: $spacing2
+      }
+    }
+  }
+}

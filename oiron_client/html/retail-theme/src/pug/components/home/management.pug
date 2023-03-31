@@ -1,0 +1,97 @@
+include ../titles/title.pug
+
+-
+  var managementData = [
+    {
+      title: 'item1_title',
+      desc: 'item1_desc',
+      color: 'primary',
+      illustration: [img_artwork[13], img_artwork[14]],
+      img: img_artwork[28]
+    },
+    {
+      title: 'item2_title',
+      desc: 'item2_desc',
+      color: 'secondary',
+      illustration: [img_artwork[15], img_artwork[16]],
+      img: img_artwork[29]
+    },
+    {
+      title: 'item3_title',
+      desc: 'item3_desc',
+      color: 'accent',
+      illustration: [img_artwork[17], img_artwork[18]],
+      img: img_artwork[30]
+    },
+    {
+      title: 'item4_title',
+      desc: 'item4_desc',
+      color: 'primary',
+      illustration: [img_artwork[19], img_artwork[20]],
+      img: img_artwork[31]
+    },
+    {
+      title: 'item5_title',
+      desc: 'item5_desc',
+      color: 'secondary',
+      illustration: [img_artwork[21], img_artwork[22]],
+      img: img_artwork[32]
+    },
+    {
+      title: 'item6_title',
+      desc: 'item6_desc',
+      color: 'accent',
+      illustration: [img_artwork[23], img_artwork[24]],
+      img: img_artwork[33]
+    }
+  ]
+  
+.root
+  +title-main("center")
+    | #{$t.retail_landing.management_title}
+  p.use-text-subtitle2.text-center.px-4.px-sm-12
+    | #{$t.retail_landing.management_desc}
+  .slider-wrap
+    .carousel.carousel-side
+      .slick-carousel.slider-side#slider_side
+        each item in managementData
+          .item
+            .paper-round
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+item.illustration[1]
+                data-2d=img_assets+item.illustration[0]
+                data-3d=img_assets+item.illustration[1]
+                alt='illustration'
+              )/
+              |
+              |
+              h4(class="use-text-" + item.color + '-color')
+                | #{$t.retail_landing['management_'+item.title]}
+    .carousel.carousel-center
+      .slick-carousel.slider-center#slider_center
+        each item, index in managementData
+          .item(class=index % 2 === 0 ? 'desktop' : 'mobile')
+            figure
+              |
+              |
+              img(src=item.img alt='screen')/
+              |
+              |
+            .desc
+              div
+                |
+                |
+                img.img-2d3d(
+                  src=img_assets+item.illustration[1]
+                  data-2d=img_assets+item.illustration[0]
+                  data-3d=img_assets+item.illustration[1]
+                  alt='illustration'
+                )/
+                |
+                |
+                .text
+                  h4(class="use-text-" + item.color + '-color')
+                    | #{$t.retail_landing['management_'+item.title]}
+                  p #{$t.retail_landing['management_'+item.desc]}

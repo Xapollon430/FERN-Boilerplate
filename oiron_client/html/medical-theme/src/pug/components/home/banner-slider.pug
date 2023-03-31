@@ -1,0 +1,151 @@
+.banner-slider
+  .banner-wrap
+    .carousel
+      .slider-deco#slider_deco
+        .slide
+          .inner
+            .deco-wrap
+              .deco.bottom.s1 &nbsp;
+              .deco.top.s1 &nbsp;
+        .slide
+          .inner
+            .deco-wrap
+              .deco.bottom.s2 &nbsp;
+              .deco.top.s2 &nbsp;
+        .slide
+          .inner &nbsp;
+      .slider#banner_slider
+        #slide1.slide
+          .inner
+            .img.background-banner
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[3]
+                data-2d=img_assets+img_artwork[2]
+                data-3d=img_assets+img_artwork[3]
+                alt="background"
+              )/
+              |
+              |
+            .container
+              .row
+                .col-md-7.col-lg-6.px-sm-6.px-0.d-flex.align-items-center
+                  .text
+                    h4.use-text-title #{$t.medical_landing.banner_title}
+                    h5.use-text-subtitle #{$t.medical_landing.banner_subtitle}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.primary.use-text-secondary(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.primary(href=link.medical.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-md-5.col-lg-6
+                  .img
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[5]
+                      data-2d=img_assets+img_artwork[4]
+                      data-3d=img_assets+img_artwork[5]
+                      alt='banner 1 3D'
+                    )/
+                    |
+                    |
+        #slide2.slide
+          .inner
+            .container
+              .row
+                .col-md-7.col-lg-6.px-sm-6.px-0.d-flex.align-items-center.order-md-last
+                  .text
+                    h4.use-text-title #{$t.medical_landing.banner_title}
+                    h5.use-text-subtitle #{$t.medical_landing.banner_subtitle}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.primary.use-text-secondary(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.primary(href=link.medical.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-md-5.col-lg-6.order-md-first
+                  .img
+                    |
+                    |
+                    img.img-2d3d.mq-lg-up(
+                      src=img_assets+img_artwork[7]
+                      data-2d=img_assets+img_artwork[6]
+                      data-3d=img_assets+img_artwork[7]
+                      alt='banner 2 3D'
+                      data-class="float-right mr-sm-12"
+                    )/
+                    |
+                    |
+        #slide3.slide.center-content
+          .inner
+            .container.max-md
+              .row.justify-content-center
+                .col-xs-12.px-md-12
+                  .text.text-center
+                    h4.use-text-title #{$t.medical_landing.banner_title}
+                    h5.use-text-subtitle #{$t.medical_landing.banner_subtitle}
+                    .btn-area
+                      |
+                      |
+                      a.btn-flat.waves-effect.btn-large.button.primary.use-text-secondary(href='#')
+                        | #{$t.common.btn_detail}
+                      |
+                      |
+                      a.btn.waves-effect.button.btn-large.primary(href=link.medical.register)
+                        | #{$t.common.btn_get}
+                      |
+                      |
+                .col-12
+                  .img.h-banner
+                    |
+                    |
+                    img.img-2d3d(
+                      src=img_assets+img_artwork[9]
+                      data-2d=img_assets+img_artwork[8]
+                      data-3d=img_assets+img_artwork[9]
+                      alt='banner 3 3D'
+                    )/
+                    |
+                    |
+    .hidden-sm-down
+      .container.max-md
+        nav.slide-nav#banner_nav
+          |
+          |
+          a.active(data-slide='0')
+            span.waves-effect
+              strong First Slide
+              | Interdum et malesuada fames ac ante
+          |
+          |
+          hr.divider
+          |
+          |
+          a(data-slide='1')
+            span.waves-effect
+              strong Second Slide
+              | Interdum et malesuada fames ac ante
+          |
+          |
+          hr.divider
+          |
+          |
+          a(data-slide='2')
+            span.waves-effect
+              strong Third Slide
+              | Interdum et malesuada fames ac ante
+          |
+          |

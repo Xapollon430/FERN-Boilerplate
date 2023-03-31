@@ -1,0 +1,42 @@
+.counter-wrap {
+  position: relative;
+  .counter-item {
+    align-items: center;
+    justify-content: center;
+    @include breakpoints-up(md) {
+      display: flex
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+    }
+    @include breakpoints-down(xs) {
+      display: flex;
+      text-align: left;
+      margin: $spacing2 0;
+    }
+    .icon {
+      font-size: 80px;
+      line-height: 80px;
+      text-align: center;
+      @include margin-right($spacing1);
+      @include breakpoints-between(sm, md) {
+        @include margin-right(0);
+      }
+      @include breakpoints-up(md) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .text {
+      h4 {
+        @include use-theme(color, $palette-secondary-dark, $palette-secondary-light);
+        font-weight: $font-bold;
+        font-size: 36px;
+        line-height: 36px;
+      }
+      h6 {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

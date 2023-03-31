@@ -1,0 +1,105 @@
+include ../titles/title.pug
+-
+  var storiesData = [
+    {
+      text:
+        'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam nec ex aliquet, aliquam neque non.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[10],
+      name: 'John Doe',
+      title: '@johndoe'
+    },
+    {
+      text:
+        'Vestibulum sit amet tortor sit amet libero lobortis semper at et odio. In eu tellus tellus. Pellentesque ullamcorper aliquet ultrices. Aenean facilisis vitae purus facilisis semper. Nam vitae scelerisque lorem, quis tempus libero.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[1],
+      name: 'Jean Doe',
+      title: '@doe_jean'
+    },
+    {
+      text:
+        'Cras convallis lacus orci, tristique tincidunt magna consequat in. In vel pulvinar est, at euismod libero.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[2],
+      name: 'Jena Doe',
+      title: '@jena_doe'
+    },
+    {
+      text: 'Sed imperdiet enim ligula, vitae viverra justo porta vel.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[3],
+      name: 'Jovelin Doe',
+      title: '@jovelindoe'
+    },
+    {
+      text:
+        'Cras convallis lacus orci, tristique tincidunt magna consequat in. In vel pulvinar est, at euismod libero.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[4],
+      name: 'Jihan Doe',
+      title: '@jdoe'
+    },
+    {
+      text:
+        'Vestibulum sit amet tortor sit amet libero lobortis semper at et odio. In eu tellus tellus. Pellentesque ullamcorper aliquet ultrices. Aenean facilisis vitae purus facilisis semper. Nam vitae scelerisque lorem, quis tempus libero.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[6],
+      name: 'Jovelin Doe',
+      title: '@jovelin'
+    },
+    {
+      text:
+        'Cras convallis lacus orci, tristique tincidunt magna consequat in. In vel pulvinar est, at euismod libero.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[7],
+      name: 'John Doe',
+      title: '@john_doe'
+    },
+    {
+      text:
+        'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam nec ex aliquet, aliquam neque non.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[9],
+      name: 'John Doe',
+      title: '@john_doe'
+    },
+    {
+      text:
+        'Cras convallis lacus orci, tristique tincidunt magna consequat in. In vel pulvinar est, at euismod libero.',
+      tags: '#Aliquam #Necex #Aliquet',
+      avatar: imgAPI.avatar[8],
+      name: 'Jean Doe',
+      title: '@doe_jean'
+    }
+  ]
+
+.root
+  .wow.fadeInUpShort(data-wow-offset="-50" data-wow-delay="0.3s" data-wow-duration="0.5s")
+    div
+      +title-main("center")
+        | #{$t.social_landing.stories_title}
+  .carousel-wrap
+    .wow.fadeInUpShort(data-wow-offset="-150" data-wow-delay="0.4s" data-wow-duration="0.5s")
+      div
+        .carousel-avatar
+          .slick-carousel.slider-avatar#slider_avatar
+            each item in storiesData
+              .item
+                .avatar-img.avatar
+                  |
+                  |
+                  span
+                    img(alt=item.name src=item.avatar)/
+                  |
+                  |
+        .container.max-sm
+          .carousel-text
+            .slick-carousel.slider-text#slider_text
+              each item in storiesData
+                .item
+                  p.name
+                    strong #{item.name}
+                    | &nbsp; - #{item.title}
+                  p.content #{item.text}
+                    strong #{item.tags}

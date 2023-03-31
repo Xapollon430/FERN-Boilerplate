@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="840px" height="71px" viewBox="0 0 840 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Light" transform="translate(-1167.000000, 0.000000)">
+            <g id="Group" transform="translate(1167.000000, 0.000000)">
+                <g id="Deco">
+                    <rect id="Rectangle" fill="#FFECB3" x="83" y="39" width="32" height="32"></rect>
+                    <polygon id="Path" fill="#2196F3" transform="translate(22.500000, 55.000000) scale(1, -1) translate(-22.500000, -55.000000) " points="0 71 0.425634502 71 11.4625864 62.8297872 22.5004616 54.6602291 33.5374136 62.8297872 44.5743655 71 45 71 45 39 0 39"></polygon>
+                    <polygon id="Path" fill="#B2EBF2" points="44.0129685 39 95 71 44 71"></polygon>
+                    <rect id="Rectangle" fill="#1565C0" x="284" y="2" width="68" height="69"></rect>
+                    <polygon id="Path" fill="#FFECB3" points="183 71 183.302667 71 191.151005 62.8297872 199 54.6602291 206.848338 62.8297872 214.696676 71 215 71 215 39 183 39"></polygon>
+                    <rect id="Rectangle" stroke="#FFC108" stroke-width="10" x="216" y="7" width="32" height="32"></rect>
+                    <polygon id="Path" fill="#B2EBF2" points="318 39 335 20.4995798 352 2 284 2 301 20.4995798"></polygon>
+                    <polygon id="Path" fill="#BBDEFB" fill-rule="nonzero" points="183 2 115 71 183 71"></polygon>
+                    <circle id="Oval" fill="#FFECB3" cx="372" cy="20" r="12"></circle>
+                    <polygon id="Path" fill="#B2EBF2" fill-rule="nonzero" points="420 0 352 71 420 71"></polygon>
+                    <polygon id="Path" fill="#B2EBF2" fill-rule="nonzero" points="284 2 216 71 284 71"></polygon>
+                </g>
+                <g id="Deco" transform="translate(420.000000, 0.000000)">
+                    <rect id="Rectangle" fill="#FFECB3" x="83" y="39" width="32" height="32"></rect>
+                    <polygon id="Path" fill="#BBDEFB" transform="translate(22.500000, 55.000000) scale(1, -1) translate(-22.500000, -55.000000) " points="0 71 0.425634502 71 11.4625864 62.8297872 22.5004616 54.6602291 33.5374136 62.8297872 44.5743655 71 45 71 45 39 0 39"></polygon>
+                    <polygon id="Path" fill="#FFC108" points="44.0129685 39 95 71 44 71"></polygon>
+                    <rect id="Rectangle" fill="#2196F3" x="284" y="2" width="68" height="69"></rect>
+                    <polygon id="Path" fill="#FFC108" points="183 71 183.302667 71 191.151005 62.8297872 199 54.6602291 206.848338 62.8297872 214.696676 71 215 71 215 39 183 39"></polygon>
+                    <rect id="Rectangle" stroke="#FFECB3" stroke-width="10" x="216" y="7" width="32" height="32"></rect>
+                    <polygon id="Path" fill="#B2EBF2" points="318 39 335 20.4995798 352 2 284 2 301 20.4995798"></polygon>
+                    <polygon id="Path" fill="#BBDEFB" fill-rule="nonzero" points="183 2 115 71 183 71"></polygon>
+                    <circle id="Oval" fill="#FFC108" cx="372" cy="20" r="12"></circle>
+                    <polygon id="Path" fill="#00BCD4" fill-rule="nonzero" points="420 0 352 71 420 71"></polygon>
+                    <polygon id="Path" fill="#B2EBF2" fill-rule="nonzero" points="284 2 216 71 284 71"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

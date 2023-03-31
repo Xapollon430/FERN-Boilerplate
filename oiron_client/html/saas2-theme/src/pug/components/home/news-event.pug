@@ -1,0 +1,43 @@
+include ../cards/news-event-card.pug
+
+-
+  var newsContent = [
+    {
+      text: 'Work Check features workplace practices, and debates if, why, and how practices should be applied.',
+      img: imgAPI.photo[1],
+      type: 'caption_news'
+    },
+    {
+      text: 'Learn how to use on-premises and cloud resources seamlessly together to meet your business needs.',
+      img: imgAPI.photo[2],
+      type: 'caption_news'
+    },
+    {
+      text: 'Go beyond the limits of on-premises datacenters with more regions than any other provider.',
+      img: imgAPI.photo[3],
+      type: 'caption_event'
+    },
+    {
+      text: 'Explore expanded programs, tools, and guidance to accelerate your cloud migration and modernization.',
+      img: imgAPI.photo[4],
+      type: 'caption_news'
+    },
+    {
+      text: 'See how game developers dynamically scale and seamlessly migrate players through shared worlds.',
+      img: imgAPI.photo[5],
+      type: 'caption_event'
+    },
+    {
+      text: 'Get the answers you need—from how to get started to questions about your unique scenario.',
+      img: imgAPI.photo[6],
+      type: 'caption_news'
+    }
+  ]
+
+.root
+  .carousel
+    .slick-carousel#news_carousel
+      each item in newsContent
+        div
+          .item
+            +news-card(item.img, item.type, item.text)

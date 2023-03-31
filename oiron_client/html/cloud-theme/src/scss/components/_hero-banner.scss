@@ -1,0 +1,71 @@
+$cloud-bottom-light: '../images/cloud/cloud_bottom_light.svg';
+$cloud-bottom-dark:  '../images/cloud/cloud_bottom_dark.svg';
+$building-deco-light: '../images/cloud/building_deco_light.png';
+$building-deco-dark: '../images/cloud/building_deco_dark.png';
+
+.hero-banner-wrap  {
+  padding-bottom: $spacing10;
+  position: relative;
+  @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include use-theme(background, $palette-common-white, $palette-common-black);
+    opacity: 0.5;
+  }
+  &:after {
+    @include use-theme(background-image, url($building-deco-light), url($building-deco-dark));
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    content: "";
+    position: absolute;
+    @include left(0);
+    width: 100%;
+    height: 150px;
+    @indlude breakpoints-up(md) {
+      bottom: -40px;
+    }
+  }
+  .container {
+    position: relative;  
+  }
+  .cloud-deco {
+    @include use-theme(background-image, url($cloud-bottom-light), url($cloud-bottom-dark));
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    opacity: 0.5;
+    bottom: 100px;
+    @include breakpoints-down(md) {
+      bottom: -120px;
+      background-size: 150%;
+    }
+  }
+
+  .inner-deco {
+    height: 800px;
+    width: 100%;
+    position: absolute;
+    display: block;
+    .deco-wrap {
+      height: 100%;
+      margin: 0px;
+      width: 100%;
+      display: block;
+      position: absolute
+    }
+    .deco-wrap > div {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      svg {
+        position: absolute
+      }
+    }
+  }
+}
+

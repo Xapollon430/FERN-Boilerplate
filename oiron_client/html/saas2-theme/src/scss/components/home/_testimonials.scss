@@ -1,0 +1,158 @@
+#testimonials {
+  .root {
+    position: relative;
+    @include breakpoints-up(sm) {
+      padding-bottom: $spacing5;
+    }
+  }
+
+  .carousel {
+    position: relative;
+    @include breakpoints-up(md) {
+      padding: spacing(0, 2);
+    }
+    > div {
+      z-index: 10
+    }
+    .slick-dots {
+      @include breakpoints-up(sm) {
+        bottom: $spacing12 * -1;
+      }
+      li {
+        width: 15px;
+        height: 10px;
+        border: 1px solid;
+        @include use-theme(border-color, $light-text-disabled, $dark-text-disabled);
+        border-radius: 15px;
+        opacity: 0.7;
+        transition: all 0.5s ease-out;
+        &.slick-active {
+          @include use-theme(background, $palette-primary-main, $palette-primary-light);
+          @include use-theme(border-color, $palette-primary-main, $palette-primary-light);
+          width: 30px;
+        }
+      }
+      li button:before {
+        display: none
+      }
+    }
+    &:after, &:before {
+      @include breakpoints-up(sm) {
+        content: "";
+        border-radius: 12px;
+        @include palette-background-paper;
+        @include shade;
+        height: 150px;
+        position: absolute;
+      }
+    }
+    &:after {
+      width: 90%;
+      bottom: 0px;
+      @include left(50%);
+      border-radius: 40px;
+      [dir="ltr"] & {
+        transform: translate(-50%, 0)
+      }
+      [dir="rtl"] & {
+        transform: translate(50%, 0)
+      }
+    }
+    &:before {
+      width: 80%;
+      bottom: -35px;
+      @include left(50%);
+      border-radius: 40px;
+      [dir="ltr"] & {
+        transform: translate(-50%, 0)
+      }
+      [dir="rtl"] & {
+        transform: translate(50%, 0)
+      }
+    }
+    > button {
+      @include breakpoints-down(xs) {
+        display: none;
+      }
+    }
+  }
+
+  .item {
+    @include breakpoints-up(md) {
+      padding: $spacing1
+    }
+    &:focus {
+      outline: none
+    }
+  }
+
+  .testi-content {
+    position: relative;
+    padding: 0 $spacing3;
+    @include breakpoints-down(xs) {
+      padding: 0 $spacing1;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: calc(100% + 40px);
+      top: -20px;
+      left: 0;
+      @include use-theme(background, $palette-secondary-light, $palette-secondary-dark);
+      opacity: 0.3;
+      border-radius: 40px;
+    }
+  }
+
+  .slide-content {
+    animation-duration: 1s;
+    animation-fill-mode: both
+  }
+
+  .slide {
+    background: none
+  }
+
+  .nav {
+    position: absolute;
+    border: none;
+    z-index: 12;
+    top: 48%;
+    width: 60px;
+    height: 60px !important;
+    @include palette-background-paper;
+    @include shade;
+    border-radius: 50%;
+    cursor: pointer;
+    [dir="rtl"] & {
+      transform: rotate(180deg)
+    }
+    [dir="ltr"] & {
+      transform: rotate(0deg)
+    }
+    i {
+      color: $palette-primary-main;
+      position: relative;
+      font-size: 48px;
+    }
+    &:focus {
+      outline: none
+    }
+    &:hover {
+      opacity: 0.6
+    }
+  }
+  .prev {
+    @include left(-64px);
+    i {
+      @include right(3px);
+    }
+  }
+  .next {
+    @include right(-64px);
+    i {
+      @include left(1px);
+    }
+  }
+}

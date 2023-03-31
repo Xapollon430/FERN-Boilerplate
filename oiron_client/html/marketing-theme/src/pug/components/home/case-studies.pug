@@ -1,0 +1,231 @@
+include ../cards/case-card.pug
+include ./slider-art.pug
+
+-
+  var caseData = [
+    {
+      bg: img_artwork[27],
+      logo: '/images/logos/cloud.png',
+      title: 'Building Inspectors',
+      desc: 'Responsible for inspecting buildings',
+      size: 'big'
+    },
+    {
+      bg: img_artwork[28],
+      logo: '/images/logos/fashion.png',
+      title: 'Car Seat Clip',
+      desc: 'Powering many of the personal computers',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[29],
+      logo: '/images/logos/mobile.png',
+      title: 'Indoor Solution',
+      desc: 'Solutions for the retail industry',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[30],
+      logo: '/images/logos/profile.png',
+      title: 'Media Asset Management',
+      desc: 'Builds advanced media asset',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[31],
+      logo: '/images/logos/architect.png',
+      title: 'Investment Evolution',
+      desc: 'Global fintech in consumer loans',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[36],
+      logo: '/images/logos/cloud.png',
+      title: 'Case City of Tampere',
+      desc: 'Speeds up the handling of matters in the City of Tampere',
+      size: 'big'
+    },
+    {
+      bg: img_artwork[33],
+      logo: '/images/logos/fashion.png',
+      title: 'Systems modelling',
+      desc: 'Situational snapshot as a basis for strategic development',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[23],
+      logo: '/images/logos/fashion.png',
+      title: 'Legal register centre',
+      desc: 'From ideas to concepts with service design',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[35],
+      logo: '/images/logos/fashion.png',
+      title: '5G test automation',
+      desc: 'Test automation for testing 5G phones and mobile routers.',
+      size: 'medium'
+    },
+    {
+      bg: img_artwork[32],
+      logo: '/images/logos/cloud.png',
+      title: 'Finnish Tax Administration',
+      desc: 'Expertise in testing large-scale products',
+      size: 'medium'
+    }
+  ]
+
+.root
+  .container.carousel-header
+    .text
+      h4.use-text-title2.text-capitalize
+        | #{$t.marketing_landing.case_title}
+      p.use-text-subtitle2
+        | Projects crafted with passion, built for results
+    a.btn-flat.primary-text.waves-effect.view-all(href=link.marketing.product)
+      | #{$t.common.btn_seeall}
+      i.material-icons.icon arrow_forward
+  .carousel-handle
+    .carousel-wrap
+      .slick-carousel#case_studies_carousel(data-length=caseData.length)
+        .item.carousel-prop
+          div
+        .item
+          div
+            |
+            |
+            +case-card(
+              caseData[0].bg || '',
+              assets + caseData[0].logo,
+              caseData[0].title,
+              caseData[0].desc,
+              caseData[0].size,
+              caseData[0].simple || false
+            )
+            |
+            |
+            +case-card(
+              caseData[1].bg || '',
+              assets + caseData[1].logo,
+              caseData[1].title,
+              caseData[1].desc,
+              caseData[1].size,
+              caseData[1].simple || false
+            )
+            |
+            |
+        .item
+          div
+            |
+            |
+            +case-card(
+              caseData[2].bg || '',
+              assets + caseData[2].logo,
+              caseData[2].title,
+              caseData[2].desc,
+              caseData[2].size,
+              caseData[2].simple || false
+            )
+            |
+            |
+            +case-card(
+              caseData[3].bg || '',
+              assets + caseData[3].logo,
+              caseData[3].title,
+              caseData[3].desc,
+              caseData[3].size,
+              caseData[3].simple || false
+            )
+            |
+            |
+            +case-card(
+              caseData[4].bg || '',
+              assets + caseData[4].logo,
+              caseData[4].title,
+              caseData[4].desc,
+              caseData[4].size,
+              caseData[4].simple || false
+            )
+            |
+            |
+        .item
+          div
+            |
+            |
+            +case-card(
+              caseData[5].bg || '',
+              assets + caseData[5].logo,
+              caseData[5].title,
+              caseData[5].desc,
+              caseData[5].size,
+              caseData[5].simple || false
+            )
+            |
+            |
+            +case-card(
+              caseData[6].bg || '',
+              assets + caseData[6].logo,
+              caseData[6].title,
+              caseData[6].desc,
+              caseData[6].size,
+              caseData[6].simple || false
+            )
+            |
+            |
+        .item
+          div
+            |
+            |
+            +case-card(
+              caseData[7].bg || '',
+              assets + caseData[7].logo,
+              caseData[7].title,
+              caseData[7].desc,
+              caseData[7].size,
+              caseData[7].simple || false
+            )
+            |
+            |
+            +case-card(
+              caseData[8].bg || '',
+              assets + caseData[8].logo,
+              caseData[8].title,
+              caseData[8].desc,
+              caseData[8].size,
+              caseData[8].simple || false
+            )
+            |
+            |
+            +case-card(
+              caseData[9].bg || '',
+              assets + caseData[9].logo,
+              caseData[9].title,
+              caseData[9].desc,
+              caseData[9].size,
+              caseData[9].simple || false
+            )
+            |
+            |
+    nav.arrow
+      a.btn#prev_case.waves-effect.margin.prev.primary.disabled
+        i.material-icons.icon arrow_back
+      a.btn#next_case.waves-effect.margin.next.primary
+        i.material-icons.icon arrow_forward
+  .floating-artwork
+    .container.fixed-width
+      .artwork
+        +slider-art('case_studies')
+          div
+            .wow.fadeIn(data-wow-offset="0" data-wow-delay="0s" data-wow-duration="0.3s")
+              include ./deco/light
+            .wow.fadeInLeftShort(data-wow-offset="250" data-wow-delay="0.3s" data-wow-duration="0.5s")
+              |
+              |
+              img.illustration.img-2d3d(
+                src=img_assets+img_artwork[15]
+                data-2d=img_assets+img_artwork[14]
+                data-3d=img_assets+img_artwork[15]
+                alt='case-studies'
+              )/
+              |
+              |

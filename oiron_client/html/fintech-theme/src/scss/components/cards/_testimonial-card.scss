@@ -1,0 +1,113 @@
+.testimonial-card {
+  max-width: 540px;
+  margin: 0 auto;
+  border-radius: 100px 30px 30px 30px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 240px;
+  [dir='rtl'] & {
+    direction: rtl
+  }
+  @include breakpoints-up(sm) {
+    height: 300px;
+  }
+
+  figure {
+    width: 60%;
+    @include breakpoints-down(xs){
+      display: none;
+    }
+    img {
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .content {
+    position: relative;
+    margin-top: $spacing5;
+    margin-bottom: $spacing3;
+    span {
+      height: 70px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+      padding: 0 $spacing1;
+    }
+    &:after {
+      content: '"';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:before {
+      content: '"';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  h6 {
+    font-weight: $font-bold
+  }
+
+  .deco {
+    position: absolute;
+    @include use-theme(background, $palette-primary-main, $palette-primary-dark);
+    height: 428px;
+    width: 100%;
+    top: -60px;
+    @include breakpoints-up(sm) {
+      width: 428px;
+      border-radius: 50%;
+      @include left(-150px);
+    }
+    &:after {
+      content: "";
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      top: 80px;
+      right: 25px;
+      border-radius: 50%;
+      background: $palette-accent-main;
+      @include breakpoints-down(xs) {
+        display: none
+      }
+    }
+    &:before {
+      content: "";
+      width: 82px;
+      height: 82px;
+      position: absolute;
+      bottom: 30px;
+      left: 120px;
+      border-radius: 50%;
+      background: $palette-secondary-main;
+      @include breakpoints-down(xs) {
+        display: none
+      }
+    }
+  }
+
+  .text {
+    flex: 1;
+    color: $palette-common-white;
+    z-index: 2;
+    position: relative;
+    padding: $spacing3;
+    @include breakpoints-up(sm) {
+      padding: spacing(4, 0, 4, 3);
+      width: 40%;
+    }
+    [dir="rtl"] & {
+      padding: spacing(4, 3, 4, 0);  
+    }
+  }
+
+}
+
